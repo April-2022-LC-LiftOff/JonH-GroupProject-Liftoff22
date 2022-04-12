@@ -1,0 +1,1 @@
+All group project files should be in this section of the repository.
