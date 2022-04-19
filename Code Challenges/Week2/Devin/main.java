@@ -1,12 +1,16 @@
-// Create a function that takes two strings and returns true if the first string ends with the second string;
-// otherwise return false.
+// Create a function that takes an array of numbers and return both the minimum and maximum numbers,
+// in that order.
 
-public class Challenge {
-    public static boolean checkEnding(String str1, String str2) {
-        if(str1.endsWith(str2)) {
-            return true;
-        } else {
-            return false;
+function minMax(arr) {
+    let min = arr[0];
+    let max = arr[0];
+    for(let i = 1;i < arr.length;i++) {
+        if(min > arr[i]) {
+            min = arr[i];
+        } else if(max < arr[i]) {
+            max = arr[i];
         }
+    }
+    return [min, max];
     }
 }
