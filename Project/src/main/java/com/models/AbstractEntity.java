@@ -1,13 +1,10 @@
-package org.launchcode.codingevents.models;
+package com.models;
 
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
 import java.util.Objects;
 
-/**
- * Created by Chris Bay
- */
 @MappedSuperclass
 public abstract class AbstractEntity {
 

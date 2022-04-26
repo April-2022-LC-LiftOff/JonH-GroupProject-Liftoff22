@@ -1,4 +1,4 @@
-package org.launchcode.codingevents.models;
+package com.models;
 
 import javax.persistence.Entity;
 import javax.validation.constraints.NotNull;
