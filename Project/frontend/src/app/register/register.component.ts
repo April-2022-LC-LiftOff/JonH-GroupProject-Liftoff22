@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
-import { AppService } from "../config/config.service";
+import { RegisterService } from "./register.service";
+import { User } from "./registeruser";
 
 @Component({
   selector: "app-register",
@@ -7,7 +8,24 @@ import { AppService } from "../config/config.service";
   styleUrls: ["./register.component.css"],
 })
 export class RegisterComponent implements OnInit {
-  constructor(private appService: AppService) {}
+  user: User = { username: "", email: "", password: "", verifyPassword: "" };
+  isLoading: boolean = false;
+
+  constructor(private registerService: RegisterService) {}
 
   ngOnInit() {}
+
+  onClickSubmit(): void {
+    this.isLoading = true;
+    this.registerService.addUser(this.user).subscribe(
+      (savedUser) => {
+        console.log(`user saved: ${JSON.stringify(savedUser)}`);
+        this.isLoading = false;
+      },
+      (e) => {
+        console.error("Error adding user " + JSON.stringify(e));
+        this.isLoading = false;
+      }
+    );
+  }
 }

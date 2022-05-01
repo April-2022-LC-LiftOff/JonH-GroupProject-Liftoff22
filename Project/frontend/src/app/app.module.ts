@@ -3,13 +3,12 @@ import { NgModule } from "@angular/core";
 
 import { AppComponent } from "./app.component";
 import { RegisterComponent } from "./register/register.component";
-import { AppService } from "./config/config.service";
 import { HttpClientModule } from "@angular/common/http";
-import { ReactiveFormsModule } from "@angular/forms";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 
 @NgModule({
-  declarations: [AppComponent, RegisterComponent, AppService],
-  imports: [BrowserModule, ReactiveFormsModule],
+  declarations: [AppComponent, RegisterComponent],
+  imports: [BrowserModule, ReactiveFormsModule, FormsModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],
 })
