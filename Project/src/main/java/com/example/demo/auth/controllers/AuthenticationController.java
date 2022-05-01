@@ -4,19 +4,20 @@ import com.example.demo.auth.data.UserRepository;
 import com.example.demo.auth.models.User;
 import com.example.demo.auth.models.dto.RegisterFormDTO;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
+import org.springframework.http.ResponseEntity;
 import org.springframework.ui.Model;
 import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 import java.util.Optional;
 
-@Controller
+@RestController
 public class AuthenticationController {
 
     @Autowired
@@ -51,13 +52,13 @@ public class AuthenticationController {
     }
 
     @PostMapping("/register")
-    public String processRegistrationForm(@ModelAttribute @Valid RegisterFormDTO registerFormDTO,
-                                          Errors errors, HttpServletRequest request,
-                                          Model model) {
+    public ResponseEntity<Object> processRegistrationForm(@ModelAttribute @Valid RegisterFormDTO registerFormDTO,
+                                                        Errors errors, HttpServletRequest request,
+                                                        Model model) {
 
         if (errors.hasErrors()) {
             model.addAttribute("title", "Register");
-            return "register";
+            return ResponseEntity.badRequest().body("Has Errors");
         }
 
         User existingUser = userRepository.findByUsername(registerFormDTO.getUsername());
@@ -65,7 +66,7 @@ public class AuthenticationController {
         if (existingUser != null) {
             errors.rejectValue("username", "username.alreadyexists", "A user with that username already exists");
             model.addAttribute("title", "Register");
-            return "register";
+            return ResponseEntity.badRequest().body("Already Exists");
         }
 
         String password = registerFormDTO.getPassword();
@@ -73,14 +74,14 @@ public class AuthenticationController {
         if (!password.equals(verifyPassword)) {
             errors.rejectValue("password", "passwords.mismatch", "Passwords do not match");
             model.addAttribute("title", "Register");
-            return "register";
+            return ResponseEntity.badRequest().body("Password mismatch");
         }
 
         User newUser = new User(registerFormDTO.getUsername(), registerFormDTO.getPassword());
         userRepository.save(newUser);
         setUserInSession(request.getSession(), newUser);
 
-        return "redirect:";
+        return ResponseEntity.ok(newUser);
     }
 
 }
