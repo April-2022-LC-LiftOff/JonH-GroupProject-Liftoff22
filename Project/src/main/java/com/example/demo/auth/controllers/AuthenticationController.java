@@ -1,8 +1,8 @@
-package com.controllers;
+package com.example.demo.auth.controllers;
 
-import com.data.UserRepository;
-import com.models.User;
-import com.models.dto.RegisterFormDTO;
+import com.example.demo.auth.data.UserRepository;
+import com.example.demo.auth.models.User;
+import com.example.demo.auth.models.dto.RegisterFormDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
