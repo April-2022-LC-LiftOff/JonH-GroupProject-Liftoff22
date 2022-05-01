@@ -1,4 +1,8 @@
-package com.models.dto;
+package com.example.demo.auth.models.dto;
+
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 public class RegisterFormDTO {
 
