@@ -13,6 +13,10 @@ public class RegisterFormDTO {
 
     @NotNull
     @NotBlank
+    private String email;
+
+    @NotNull
+    @NotBlank
     @Size(min = 5, max = 30, message = "Invalid password. Must be between 5 and 30 characters.")
     private String password;
 
@@ -24,6 +28,14 @@ public class RegisterFormDTO {
 
     public void setUsername(String username) {
         this.username = username;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public String getPassword() {
