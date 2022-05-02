@@ -1,0 +1,18 @@
+.centered {
+    text-align: center;
+}
+
+form {
+    display: block;
+    border: 3px solid black;
+    border-radius: 10px;
+    padding: 5px;
+}
+
+div {
+    padding: 1%;
+}
+
+input {
+    padding: 1px 1px;
+}
