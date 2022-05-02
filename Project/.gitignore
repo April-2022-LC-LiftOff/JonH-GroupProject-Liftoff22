@@ -35,3 +35,10 @@ out/
 
 ### VS Code ###
 .vscode/
+
+
+### Frontend output directory
+/src/main/resources/public
+
+### Frontend Dependencies
+/frontend/node_modules
