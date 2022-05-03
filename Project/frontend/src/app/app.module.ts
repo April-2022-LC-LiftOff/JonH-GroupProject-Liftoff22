@@ -5,9 +5,11 @@ import { AppComponent } from "./app.component";
 import { RegisterComponent } from "./register/register.component";
 import { HttpClientModule } from "@angular/common/http";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { LandingPageComponent } from './landing/landing-page/landing-page.component';
+import { LandingComponent } from './landing/landing.component';
 
 @NgModule({
-  declarations: [AppComponent, RegisterComponent],
+  declarations: [AppComponent, RegisterComponent, LandingPageComponent, LandingComponent],
   imports: [BrowserModule, ReactiveFormsModule, FormsModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],
