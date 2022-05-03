@@ -13,13 +13,13 @@ public class LandingController {
         return "index";
     }
 
-    @RequestMapping("login")
+    @RequestMapping("/login")
     public String loginLink(Model model) {
         model.addAttribute("login", "Log In");
         return "login";
     }
 
-    @RequestMapping("register")
+    @RequestMapping("/register")
     public String registerLink(Model model) {
         model.addAttribute("register", "Register");
         return "register";
