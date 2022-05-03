@@ -4,7 +4,7 @@ package com.example.demo.auth.controllers;
 public class LandingController {
     @RequestMapping("")
     public String index(Model model) {
-        model.addAttribute("jobs", jobRepository.findAll());
+        model.addAttribute("title", "Greetings");
         return "index";
     }
 
