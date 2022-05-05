@@ -7,10 +7,10 @@ import com.example.demo.auth.stereotype.Controller;
 
 @Controller
 public class LandingController {
-    @RequestMapping("./landing.component.html")
+    @RequestMapping("landing")
     public String landing(Model model) {
         model.addAttribute("title", "Greetings");
-        return "landing";
+        return "./landing.component.html";
     }
 
     //when login page is created
@@ -20,9 +20,9 @@ public class LandingController {
         return "login";
     }
 
-    @RequestMapping("./register.component.html")
+    @RequestMapping("register")
     public String registerLink(Model model) {
         model.addAttribute("title", "Register");
-        return "register";
+        return "./register.component.html";
     }
 }
