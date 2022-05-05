@@ -1,9 +1,8 @@
-package com;
+package com.example.demo;
 
-import com.controllers.AuthenticationController;
-import com.data.UserRepository;
-import com.models.User;
-
+import com.example.demo.auth.controllers.AuthenticationController;
+import com.example.demo.auth.data.UserRepository;
+import com.example.demo.auth.models.User;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
@@ -15,9 +14,7 @@ import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
 
-/**
- * Created by Chris Bay
- */
+
 public class AuthenticationFilter extends HandlerInterceptorAdapter {
 
     @Autowired
@@ -26,7 +23,7 @@ public class AuthenticationFilter extends HandlerInterceptorAdapter {
     @Autowired
     AuthenticationController authenticationController;
 
-    private static final List<String> whitelist = Arrays.asList("/login", "/register", "/logout", "/css", "/");
+    private static final List<String> whitelist = Arrays.asList("/login", "/logout", "/", "/register", "/home");
 
     private static boolean isWhitelisted(String path) {
         for (String pathRoot : whitelist) {
