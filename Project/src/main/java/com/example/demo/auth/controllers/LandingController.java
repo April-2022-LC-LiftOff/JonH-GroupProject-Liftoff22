@@ -8,20 +8,20 @@ import com.example.demo.auth.stereotype.Controller;
 @Controller
 public class LandingController {
     @RequestMapping("")
-    public String index(Model model) {
+    public String landing(Model model) {
         model.addAttribute("title", "Greetings");
-        return "index";
+        return "landing";
     }
 
     @RequestMapping("/login")
     public String loginLink(Model model) {
-        model.addAttribute("login", "Log In");
+        model.addAttribute("title", "Log In");
         return "login";
     }
 
     @RequestMapping("/register")
     public String registerLink(Model model) {
-        model.addAttribute("register", "Register");
+        model.addAttribute("title", "Register");
         return "register";
     }
 }
