@@ -1,16 +1,11 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { Routes, RouterModule } from '@angular/router';
+import { NgModule } from "@angular/core";
+import { CommonModule } from "@angular/common";
+import { Routes, RouterModule } from "@angular/router";
 
-const routes: Routes = [
-  { path: '', }
-]
-
+const routes: Routes = [{ path: "" }];
 
 @NgModule({
   declarations: [],
-  imports: [
-    CommonModule
-  ]
+  imports: [CommonModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
