@@ -2,6 +2,7 @@ package com.example.demo.auth.controllers;
 
 import com.example.demo.auth.data.UserRepository;
 import com.example.demo.auth.models.User;
+import com.example.demo.auth.models.dto.LoginFormDTO;
 import com.example.demo.auth.models.dto.RegisterFormDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -15,6 +16,7 @@ import javax.validation.Valid;
 import java.util.Optional;
 
 @RestController
+@RequestMapping("/api")
 public class AuthenticationController {
 
     @Autowired
@@ -41,12 +43,6 @@ public class AuthenticationController {
         session.setAttribute(userSessionKey, user.getId());
     }
 
-    @GetMapping("/register")
-    public String displayRegistrationForm(Model model) {
-        model.addAttribute(new RegisterFormDTO());
-        model.addAttribute("title", "Register");
-        return "register";
-    }
 
     @PostMapping("/register")
     public ResponseEntity<Object> processRegistrationForm(@RequestBody @Valid RegisterFormDTO registerFormDTO,
@@ -61,16 +57,12 @@ public class AuthenticationController {
         User existingUser = userRepository.findByUsername(registerFormDTO.getUsername());
 
         if (existingUser != null) {
-            errors.rejectValue("username", "username.alreadyexists", "A user with that username already exists");
-            model.addAttribute("title", "Register");
             return ResponseEntity.badRequest().body("Already Exists");
         }
 
         String password = registerFormDTO.getPassword();
         String verifyPassword = registerFormDTO.getVerifyPassword();
         if (!password.equals(verifyPassword)) {
-            errors.rejectValue("password", "passwords.mismatch", "Passwords do not match");
-            model.addAttribute("title", "Register");
             return ResponseEntity.badRequest().body("Password mismatch");
         }
 
@@ -79,6 +71,39 @@ public class AuthenticationController {
         setUserInSession(request.getSession(), newUser);
 
         return ResponseEntity.ok(newUser);
+    }
+
+
+    @PostMapping("/login")
+    public ResponseEntity<Object> processLoginForm(@RequestBody @Valid LoginFormDTO loginFormDTO,
+                                   Errors errors, HttpServletRequest request,
+                                   Model model) {
+
+        if (errors.hasErrors()) {
+            return ResponseEntity.badRequest().body("Log in");
+        }
+
+        User theUser = userRepository.findByUsername(loginFormDTO.getUsername());
+
+        if (theUser == null) {
+            return ResponseEntity.badRequest().body("The given username does not exist");
+        }
+
+        String password = loginFormDTO.getPassword();
+
+        if (!theUser.isMatchingPassword(password)) {
+            return ResponseEntity.badRequest().body("Password mismatch");
+        }
+
+        setUserInSession(request.getSession(), theUser);
+
+        return ResponseEntity.ok(theUser);
+    }
+
+    @GetMapping("/logout")
+    public String logout(HttpServletRequest request){
+        request.getSession().invalidate();
+        return "redirect:/login";
     }
 
 }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from "@angular/core";
+import { Router } from "@angular/router";
 import { RegisterService } from "./register.service";
 import { User } from "./registeruser";
 
@@ -11,7 +12,10 @@ export class RegisterComponent implements OnInit {
   user: User = { username: "", email: "", password: "", verifyPassword: "" };
   isLoading: boolean = false;
 
-  constructor(private registerService: RegisterService) {}
+  constructor(
+    private registerService: RegisterService,
+    private router: Router
+  ) {}
 
   ngOnInit() {}
 
@@ -21,6 +25,7 @@ export class RegisterComponent implements OnInit {
       (savedUser) => {
         console.log(`user saved: ${JSON.stringify(savedUser)}`);
         this.isLoading = false;
+        this.router.navigate(["login"]);
       },
       (e) => {
         console.error("Error adding user " + JSON.stringify(e));
