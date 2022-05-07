@@ -1,8 +1,9 @@
 package com.example.demo.auth.controllers;
 
-import com.example.demo.auth.web.bind.annotation.*;
-import com.example.demo.auth.ui.Model;
-import com.example.demo.auth.stereotype.Controller;
+import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 
 @Controller
@@ -15,14 +16,14 @@ public class LandingController {
 
     //when login page is created
     @RequestMapping("/login")
-    public String loginLink(Model model) {
+    public ResponseEntity<Object> loginLink(Model model) {
         model.addAttribute("title", "Log In");
-        return "./login.component.html";
+        return ResponseEntity.ok(newUser);
     }
 
-    @RequestMapping("register")
+    @RequestMapping("/register")
     public String registerLink(Model model) {
         model.addAttribute("title", "Register");
-        return "./register.component.html";
+        return ResponseEntity.ok(newUser);
     }
 }
