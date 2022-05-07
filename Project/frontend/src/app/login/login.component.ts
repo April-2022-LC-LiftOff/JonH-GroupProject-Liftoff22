@@ -2,6 +2,8 @@ import { Component, OnInit } from "@angular/core";
 import { LoginService } from "./login.service";
 import { LoginUser } from "./loginuser";
 
+import { Router, ActivatedRoute, ParamMap } from "@angular/router";
+
 @Component({
   selector: "app-login",
   templateUrl: "./login.component.html",
@@ -14,9 +16,16 @@ export class LoginComponent implements OnInit {
   };
   isLoading: boolean = false;
 
-  constructor(private loginService: LoginService) {}
+  constructor(
+    private loginService: LoginService,
+    private route: ActivatedRoute
+  ) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.route.queryParams.subscribe((params) => {
+      this.loginService = params["login"];
+    });
+  }
 
   onLoginSubmit(): void {
     this.isLoading = true;
