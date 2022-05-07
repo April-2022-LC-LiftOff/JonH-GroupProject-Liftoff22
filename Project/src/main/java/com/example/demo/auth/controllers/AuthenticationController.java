@@ -16,6 +16,7 @@ import javax.validation.Valid;
 import java.util.Optional;
 
 @RestController
+@RequestMapping("/api")
 public class AuthenticationController {
 
     @Autowired
@@ -42,12 +43,6 @@ public class AuthenticationController {
         session.setAttribute(userSessionKey, user.getId());
     }
 
-    @GetMapping("/register")
-    public String displayRegistrationForm(Model model) {
-        model.addAttribute(new RegisterFormDTO());
-        model.addAttribute("title", "Register");
-        return "register";
-    }
 
     @PostMapping("/register")
     public ResponseEntity<Object> processRegistrationForm(@RequestBody @Valid RegisterFormDTO registerFormDTO,
@@ -62,16 +57,12 @@ public class AuthenticationController {
         User existingUser = userRepository.findByUsername(registerFormDTO.getUsername());
 
         if (existingUser != null) {
-            errors.rejectValue("username", "username.alreadyexists", "A user with that username already exists");
-            model.addAttribute("title", "Register");
             return ResponseEntity.badRequest().body("Already Exists");
         }
 
         String password = registerFormDTO.getPassword();
         String verifyPassword = registerFormDTO.getVerifyPassword();
         if (!password.equals(verifyPassword)) {
-            errors.rejectValue("password", "passwords.mismatch", "Passwords do not match");
-            model.addAttribute("title", "Register");
             return ResponseEntity.badRequest().body("Password mismatch");
         }
 
@@ -82,13 +73,6 @@ public class AuthenticationController {
         return ResponseEntity.ok(newUser);
     }
 
-
-    @GetMapping("/login")
-    public String displayLoginForm(Model model) {
-        model.addAttribute(new LoginFormDTO());
-        model.addAttribute("title", "Log In");
-        return "login";
-    }
 
     @PostMapping("/login")
     public ResponseEntity<Object> processLoginForm(@RequestBody @Valid LoginFormDTO loginFormDTO,
