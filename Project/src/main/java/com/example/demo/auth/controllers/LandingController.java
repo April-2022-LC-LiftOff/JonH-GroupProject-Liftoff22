@@ -7,17 +7,17 @@ import com.example.demo.auth.stereotype.Controller;
 
 @Controller
 public class LandingController {
-    @RequestMapping("landing")
+    @RequestMapping("")
     public String landing(Model model) {
         model.addAttribute("title", "Greetings");
-        return "./landing.component.html";
+        return "index";
     }
 
     //when login page is created
     @RequestMapping("/login")
     public String loginLink(Model model) {
         model.addAttribute("title", "Log In");
-        return "login";
+        return "./login.component.html";
     }
 
     @RequestMapping("register")
