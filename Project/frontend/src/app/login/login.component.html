@@ -4,7 +4,7 @@
   method="post"
   action="login"
   #userlogin="ngForm"
-  (ngSubmit)="onClickSubmit()"
+  (ngSubmit)="onLoginSubmit()"
 >
   <div>
     <label for="userName">User Name: </label>
@@ -16,16 +16,7 @@
       required
     />
   </div>
-  <div>
-    <label for="email">Email: </label>
-    <input
-      type="email"
-      id="email"
-      name="email"
-      [(ngModel)]="user.email"
-      required
-    />
-  </div>
+
   <div>
     <label for="password">Password: </label>
     <input
