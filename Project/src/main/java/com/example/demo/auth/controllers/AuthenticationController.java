@@ -91,13 +91,13 @@ public class AuthenticationController {
     }
 
     @PostMapping("/login")
-    public String processLoginForm(@ModelAttribute @Valid LoginFormDTO loginFormDTO,
+    public ResponseEntity<Object> processLoginForm(@RequestBody @Valid LoginFormDTO loginFormDTO,
                                    Errors errors, HttpServletRequest request,
                                    Model model) {
 
         if (errors.hasErrors()) {
             model.addAttribute("title", "Log In");
-            return "login";
+            return ResponseEntity.badRequest().body("Log in");
         }
 
         User theUser = userRepository.findByUsername(loginFormDTO.getUsername());
@@ -105,7 +105,7 @@ public class AuthenticationController {
         if (theUser == null) {
             errors.rejectValue("username", "user.invalid", "The given username does not exist");
             model.addAttribute("title", "Log In");
-            return "login";
+            return ResponseEntity.badRequest().body("The given username does not exist");
         }
 
         String password = loginFormDTO.getPassword();
@@ -113,12 +113,12 @@ public class AuthenticationController {
         if (!theUser.isMatchingPassword(password)) {
             errors.rejectValue("password", "password.invalid", "Invalid password");
             model.addAttribute("title", "Log In");
-            return "login";
+            return ResponseEntity.badRequest().body("Password mismatch");
         }
 
         setUserInSession(request.getSession(), theUser);
 
-        return "redirect:";
+        return ResponseEntity.ok(theUser);
     }
 
     @GetMapping("/logout")
