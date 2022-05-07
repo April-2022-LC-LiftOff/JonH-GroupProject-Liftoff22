@@ -9,6 +9,11 @@ import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { LoginComponent } from "./login/login.component";
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 
+
+// @NgModule({
+//   declarations: [AppComponent, RegisterComponent],
+//   imports: [BrowserModule, ReactiveFormsModule, FormsModule, HttpClientModule],
+
 @NgModule({
   declarations: [AppComponent, RegisterComponent, LoginComponent, PagenotfoundComponent],
   imports: [
