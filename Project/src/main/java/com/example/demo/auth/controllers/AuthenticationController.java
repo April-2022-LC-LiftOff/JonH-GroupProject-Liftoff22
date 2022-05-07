@@ -96,23 +96,18 @@ public class AuthenticationController {
                                    Model model) {
 
         if (errors.hasErrors()) {
-            model.addAttribute("title", "Log In");
             return ResponseEntity.badRequest().body("Log in");
         }
 
         User theUser = userRepository.findByUsername(loginFormDTO.getUsername());
 
         if (theUser == null) {
-            errors.rejectValue("username", "user.invalid", "The given username does not exist");
-            model.addAttribute("title", "Log In");
             return ResponseEntity.badRequest().body("The given username does not exist");
         }
 
         String password = loginFormDTO.getPassword();
 
         if (!theUser.isMatchingPassword(password)) {
-            errors.rejectValue("password", "password.invalid", "Invalid password");
-            model.addAttribute("title", "Log In");
             return ResponseEntity.badRequest().body("Password mismatch");
         }
 

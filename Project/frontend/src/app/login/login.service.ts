@@ -1,7 +1,7 @@
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { Observable } from "rxjs";
-import { loginUser } from "../login/loginuser";
+import { LoginUser } from "../login/loginuser";
 
 @Injectable({
   providedIn: "root",
@@ -11,7 +11,7 @@ export class LoginService {
 
   rootURL = "http://localhost:8080";
 
-  getUser(loginuser: loginUser): Observable<loginUser> {
-    return this.http.post<loginUser>(this.rootURL + "/login", loginuser);
+  getUser(loginuser: LoginUser): Observable<LoginUser> {
+    return this.http.post<LoginUser>(this.rootURL + "/login", loginuser);
   }
 }
