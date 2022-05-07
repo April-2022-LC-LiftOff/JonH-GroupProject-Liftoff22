@@ -11,7 +11,7 @@ export class LoginService {
 
   rootURL = "http://localhost:8080";
 
-  addUser(loginuser: loginUser): Observable<loginUser> {
+  getUser(loginuser: loginUser): Observable<loginUser> {
     return this.http.post<loginUser>(this.rootURL + "/login", loginuser);
   }
 }
