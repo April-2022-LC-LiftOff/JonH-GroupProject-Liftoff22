@@ -8,6 +8,7 @@ import { HttpClientModule } from "@angular/common/http";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { LoginComponent } from "./login/login.component";
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
+import { LandingComponent } from './landing/landing.component';
 
 
 // @NgModule({
@@ -15,7 +16,7 @@ import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 //   imports: [BrowserModule, ReactiveFormsModule, FormsModule, HttpClientModule],
 
 @NgModule({
-  declarations: [AppComponent, RegisterComponent, LoginComponent, PagenotfoundComponent],
+  declarations: [AppComponent, RegisterComponent, LoginComponent, PagenotfoundComponent, LandingComponent],
   imports: [
     BrowserModule,
     ReactiveFormsModule,
