@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.*;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
+import javax.validation.constraints.Null;
 import java.util.Optional;
 
 @RestController
@@ -103,7 +104,7 @@ public class AuthenticationController {
     @PostMapping("/logout")
     public ResponseEntity<Object> logout(HttpServletRequest request){
         request.getSession().invalidate();
-        return ResponseEntity.badRequest().body("Logged out");
+        return ResponseEntity.ok().build();
     }
 
 }
