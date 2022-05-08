@@ -75,7 +75,7 @@ public class AuthenticationController {
 
 
     @PostMapping("/login")
-    public ResponseEntity<Object> processLoginForm(@RequestBody @Valid LoginFormDTO loginFormDTO,
+    public ResponseEntity<Object> processLoginForm(@Valid LoginFormDTO loginFormDTO,
                                    Errors errors, HttpServletRequest request,
                                    Model model) {
 
@@ -101,9 +101,9 @@ public class AuthenticationController {
     }
 
     @GetMapping("/logout")
-    public String logout(HttpServletRequest request){
+    public ResponseEntity<Object> logout(@RequestBody HttpServletRequest request){
         request.getSession().invalidate();
-        return "redirect:/login";
+        return ResponseEntity.ok(request);
     }
 
 }
