@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.*;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
+import javax.validation.constraints.Null;
 import java.util.Optional;
 
 @RestController
@@ -100,10 +101,10 @@ public class AuthenticationController {
         return ResponseEntity.ok(theUser);
     }
 
-    @GetMapping("/logout")
-    public String logout(HttpServletRequest request){
+    @PostMapping("/logout")
+    public ResponseEntity<Object> logout(HttpServletRequest request){
         request.getSession().invalidate();
-        return "redirect:/login";
+        return ResponseEntity.ok().build();
     }
 
 }
