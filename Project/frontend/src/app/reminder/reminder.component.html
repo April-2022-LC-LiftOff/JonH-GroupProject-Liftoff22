@@ -1,0 +1,40 @@
+<p>reminder works!</p>
+<form
+        #form="ngForm"
+        method="post"
+        action="reminder"
+        #userregister="ngForm"
+        (ngSubmit)="onClickSubmit()"
+>
+    <div>
+        <label for="name">Reminder Name: </label>
+        <input
+                type="text"
+                id="name"
+                name="name"
+                [(ngModel)]="reminder.name"
+                required
+        />
+    </div>
+    <div>
+        <label for="description">Description: </label>
+        <input
+                type="text"
+                id="description"
+                name="description"
+                [(ngModel)]="reminder.description"
+                required
+        />
+    </div>
+    <div>
+        <label>Frequency:</label>
+        <select name="frequency" [(ngModel)]="reminder.frequency" required>
+            <option *ngFor="let frequency of frequencies" required>{{frequency.name}}</option>
+        </select>
+    </div>
+    <div>
+        <button type="submit" [disabled]="!form.valid || isLoading || !selectedValue">
+            Create Reminder
+        </button>
+    </div>
+</form>
