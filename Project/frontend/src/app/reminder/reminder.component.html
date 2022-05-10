@@ -29,11 +29,11 @@
     <div>
         <label>Frequency:</label>
         <select name="frequency" [(ngModel)]="reminder.frequency" required>
-            <option *ngFor="let frequency of frequencies" required>{{frequency.name}}</option>
+            <option *ngFor="let frequency of frequencies">{{frequency.name}}</option>
         </select>
     </div>
     <div>
-        <button type="submit" [disabled]="!form.valid || isLoading || !selectedValue">
+        <button type="submit" [disabled]="!form.valid || isLoading">
             Create Reminder
         </button>
     </div>
