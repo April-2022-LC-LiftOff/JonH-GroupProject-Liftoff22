@@ -21,6 +21,7 @@ public class Reminder extends AbstractEntity {
     @NotNull
     private String frequency;
 
+    @NotNull
     private LocalDate dateCreated;
 
 
@@ -43,6 +44,10 @@ public class Reminder extends AbstractEntity {
 
     public String getFrequency() {
         return frequency;
+    }
+
+    public LocalDate getDateCreated() {
+        return dateCreated;
     }
 
     @Override

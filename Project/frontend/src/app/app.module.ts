@@ -11,13 +11,15 @@ import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { ReminderComponent } from './reminder/reminder.component';
 import { LandingComponent } from "./landing/landing.component";
 import { LogoutComponent } from "./logout/logout.component";
+import { SimpleTableComponent } from './simple-table/simple-table.component';
 
 @NgModule({
   declarations: [
   AppComponent, RegisterComponent,
   LoginComponent, PagenotfoundComponent,
   ReminderComponent, LandingComponent,
-  LogoutComponent
+  LogoutComponent,
+  SimpleTableComponent
   ],
   imports: [
     BrowserModule,
