@@ -9,14 +9,18 @@ import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { LoginComponent } from "./login/login.component";
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { HomeComponent } from './home/home.component';
+import { ReminderComponent } from './reminder/reminder.component';
+import { LandingComponent } from "./landing/landing.component";
+import { LogoutComponent } from "./logout/logout.component";
 
-
-// @NgModule({
-//   declarations: [AppComponent, RegisterComponent],
-//   imports: [BrowserModule, ReactiveFormsModule, FormsModule, HttpClientModule],
 
 @NgModule({
-  declarations: [AppComponent, RegisterComponent, LoginComponent, PagenotfoundComponent, HomeComponent],
+  declarations: [
+  AppComponent, RegisterComponent,
+  LoginComponent, PagenotfoundComponent,
+  ReminderComponent, LandingComponent,
+  LogoutComponent
+  ],
   imports: [
     BrowserModule,
     ReactiveFormsModule,
@@ -27,4 +31,4 @@ import { HomeComponent } from './home/home.component';
   providers: [],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+

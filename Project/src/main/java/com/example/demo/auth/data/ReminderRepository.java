@@ -1,12 +1,10 @@
 package com.example.demo.auth.data;
 
-import com.example.demo.auth.models.User;
+import com.example.demo.auth.models.Reminder;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface UserRepository extends CrudRepository<User, Integer> {
-
-    User findByUsername(String username);
+public interface ReminderRepository extends CrudRepository<Reminder, Integer> {
 
 }
