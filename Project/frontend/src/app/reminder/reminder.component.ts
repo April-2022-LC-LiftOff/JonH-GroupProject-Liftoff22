@@ -13,8 +13,6 @@ import { ConstantsService } from '../constants.service';
 export class ReminderComponent implements OnInit {
     reminder: Reminder = { name: "", description: "", frequency: "", dateCreated: ""};
     isLoading: boolean = false;
-    mySelect = '2';
-    selectedValue: any;
     frequencies = [
         {id: 0, name: 'Daily'},
         {id: 1, name: 'Weekly'},
