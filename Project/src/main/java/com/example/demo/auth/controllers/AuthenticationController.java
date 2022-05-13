@@ -47,8 +47,8 @@ public class AuthenticationController {
 
     @PostMapping("/register")
     public ResponseEntity<Object> processRegistrationForm(@RequestBody @Valid RegisterFormDTO registerFormDTO,
-                                                        Errors errors, HttpServletRequest request,
-                                                        Model model) {
+                                                          Errors errors, HttpServletRequest request,
+                                                          Model model) {
 
         if (errors.hasErrors()) {
             model.addAttribute("title", "Register");
@@ -77,8 +77,8 @@ public class AuthenticationController {
 
     @PostMapping("/login")
     public ResponseEntity<Object> processLoginForm(@RequestBody @Valid LoginFormDTO loginFormDTO,
-                                   Errors errors, HttpServletRequest request,
-                                   Model model) {
+                                                   Errors errors, HttpServletRequest request,
+                                                   Model model) {
 
         if (errors.hasErrors()) {
             return ResponseEntity.badRequest().body("Log in");

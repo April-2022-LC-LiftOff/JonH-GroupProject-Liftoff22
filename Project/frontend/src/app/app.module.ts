@@ -7,18 +7,19 @@ import { RegisterComponent } from "./register/register.component";
 import { HttpClientModule } from "@angular/common/http";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { LoginComponent } from "./login/login.component";
-import { PagenotfoundComponent } from "./pagenotfound/pagenotfound.component";
+import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
+import { ReminderComponent } from './reminder/reminder.component';
 import { LandingComponent } from "./landing/landing.component";
 import { LogoutComponent } from "./logout/logout.component";
+import { SimpleTableComponent } from './simple-table/simple-table.component';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    RegisterComponent,
-    LoginComponent,
-    PagenotfoundComponent,
-    LandingComponent,
-    LogoutComponent,
+  AppComponent, RegisterComponent,
+  LoginComponent, PagenotfoundComponent,
+  ReminderComponent, LandingComponent,
+  LogoutComponent,
+  SimpleTableComponent
   ],
   imports: [
     BrowserModule,
