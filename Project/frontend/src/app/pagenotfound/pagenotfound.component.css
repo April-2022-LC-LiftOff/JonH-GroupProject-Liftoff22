@@ -1,0 +1,33 @@
+html {
+
+    background-color: rgb(250, 243, 221);
+
+}
+
+h1 {
+
+    color: rgb(423, 79, 112);
+    font-size: 35px;
+    border-radius: 25px;
+    background-color: rgb(255, 166, 158);
+    padding: 15px 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-right: 800px;
+    margin-left: 800px;
+
+}
+
+p {
+
+    color: rgb(75, 93, 186);
+    font-size: 25px;
+    border-radius: 15px;
+    background-color: rgb(184, 242, 230);
+    padding: 15px 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-right: 650px;
+    margin-left: 650px;
+
+}

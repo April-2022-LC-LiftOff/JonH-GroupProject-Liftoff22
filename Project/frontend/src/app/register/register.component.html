@@ -1,4 +1,8 @@
-<p>register B!!!</p>
+<!DOCTYPE html>
+<html lang="en">
+<!--<link href='https://fonts.googleapis.com/css?family=Coustard' rel='stylesheet'>-->
+
+<p style="text-align: center">Registration</p>
 <form
   #form="ngForm"
   method="post"
@@ -6,6 +10,8 @@
   #userregister="ngForm"
   (ngSubmit)="onClickSubmit()"
 >
+
+  <div class="registration" style="text-align: center">
   <div>
     <label for="userName">User Name: </label>
     <input
@@ -47,8 +53,10 @@
     />
   </div>
   <div>
-    <button type="submit" [disabled]="!form.valid || isLoading">
+    <button class="btn btn-warning" type="submit" [disabled]="!form.valid || isLoading">
       Register
     </button>
   </div>
+  </div>
 </form>
+</html>

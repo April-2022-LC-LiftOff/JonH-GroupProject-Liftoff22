@@ -1,0 +1,19 @@
+html {
+
+    background-color: rgb(250, 243, 221);
+
+}
+
+.registration {
+
+    color: rgb(75, 93, 186);
+    font-size: 25px;
+    border-radius: 15px;
+    background-color: rgb(184, 242, 230);
+    padding: 15px 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-right: 650px;
+    margin-left: 650px;
+
+}
