@@ -33,7 +33,7 @@ export class ReminderComponent implements OnInit {
       (savedReminder) => {
         console.log(`reminder saved: ${JSON.stringify(savedReminder)}`);
         this.isLoading = false;
-        this.router.navigate(["reminder"]);
+        this.router.navigate(["dashboard"]);
       },
       (e) => {
         console.error("Error adding reminder " + JSON.stringify(e));
