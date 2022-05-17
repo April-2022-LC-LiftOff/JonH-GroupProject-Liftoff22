@@ -4,12 +4,13 @@ import { Routes, RouterModule } from "@angular/router";
 import { RegisterComponent } from "./register/register.component";
 import { LoginComponent } from "./login/login.component";
 import { PagenotfoundComponent } from "./pagenotfound/pagenotfound.component";
-
+import { DashboardComponent } from "./dashboard/dashboard.component";
 import { ReminderComponent } from "./reminder/reminder.component";
 import { LandingComponent } from "./landing/landing.component";
 
 
 const routes: Routes = [
+  { path: "dashboard", component: DashboardComponent },
   { path: "reminder", component: ReminderComponent },
   { path: "register", component: RegisterComponent },
   { path: "login", component: LoginComponent },

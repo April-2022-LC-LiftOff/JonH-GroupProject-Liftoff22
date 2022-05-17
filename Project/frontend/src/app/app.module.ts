@@ -12,6 +12,7 @@ import { ReminderComponent } from './reminder/reminder.component';
 import { LandingComponent } from "./landing/landing.component";
 import { LogoutComponent } from "./logout/logout.component";
 import { SimpleTableComponent } from './simple-table/simple-table.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { SimpleTableComponent } from './simple-table/simple-table.component';
   LoginComponent, PagenotfoundComponent,
   ReminderComponent, LandingComponent,
   LogoutComponent,
-  SimpleTableComponent
+  SimpleTableComponent,
+  DashboardComponent
   ],
   imports: [
     BrowserModule,
