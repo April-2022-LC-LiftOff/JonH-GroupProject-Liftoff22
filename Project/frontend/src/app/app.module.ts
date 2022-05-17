@@ -12,14 +12,18 @@ import { HomeComponent } from './home/home.component';
 import { ReminderComponent } from './reminder/reminder.component';
 import { LandingComponent } from "./landing/landing.component";
 import { LogoutComponent } from "./logout/logout.component";
+import { SimpleTableComponent } from './simple-table/simple-table.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 
 @NgModule({
   declarations: [
   AppComponent, RegisterComponent,
   LoginComponent, PagenotfoundComponent,
-  HomeComponent, ReminderComponent, LandingComponent,
-  LogoutComponent
+  ReminderComponent, LandingComponent,
+  LogoutComponent,
+  SimpleTableComponent,
+  DashboardComponent
   ],
   imports: [
     BrowserModule,
@@ -31,4 +35,5 @@ import { LogoutComponent } from "./logout/logout.component";
   providers: [],
   bootstrap: [AppComponent],
 })
+export class AppModule {}
 

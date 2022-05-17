@@ -49,6 +49,10 @@ public class ReminderFormDTO {
     }
 
     public LocalDate getDateCreated() {
+
+        if(dateCreated==null) {
+            dateCreated = LocalDate.now();
+        }
         return dateCreated;
     }
 

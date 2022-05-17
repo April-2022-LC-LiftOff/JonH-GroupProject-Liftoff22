@@ -55,5 +55,4 @@ public class AuthenticationFilter implements HandlerInterceptor {
         ResponseEntity.badRequest().body("Not Logged in");
         return false;
     }
-
 }
