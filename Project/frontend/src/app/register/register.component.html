@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<!--<link href='https://fonts.googleapis.com/css?family=Coustard' rel='stylesheet'>-->
+<link href='https://fonts.googleapis.com/css?family=Niramit' rel='stylesheet'>
 
 <p style="text-align: center">Registration</p>
 <form
@@ -12,51 +12,59 @@
 >
 
   <div class="registration" style="text-align: center">
-  <div>
+
+  <div class ="row row-cols-2">
+    <div class="col">
     <label for="userName">User Name: </label>
-    <input
+    <input class="form-control"
       type="text"
       id="userName"
       name="userName"
       [(ngModel)]="user.username"
       required
     />
-  </div>
-  <div>
+    </div>
+  <div class="col">
     <label for="email">Email: </label>
-    <input
+    <input class="form-control"
       type="email"
       id="email"
       name="email"
       [(ngModel)]="user.email"
       required
     />
+    </div>
   </div>
-  <div>
-    <label for="password">Password: </label>
-    <input
-      type="password"
-      id="password"
-      name="password"
-      [(ngModel)]="user.password"
-      required
-    />
+
+    <div class ="row row-cols-2">
+      <div class="col">
+      <label for="password">Password: </label>
+      <input class="form-control"
+        type="password"
+        id="password"
+        name="password"
+        [(ngModel)]="user.password"
+        required
+      />
+    </div>
+    <div class="col">
+      <label for="verifyPassword">Verify Password: </label>
+      <input class="form-control"
+        type="password"
+        id="verifyPassword"
+        name="verifyPassword"
+        [(ngModel)]="user.verifyPassword"
+        required
+      />
+    </div>
   </div>
-  <div>
-    <label for="verifyPassword">Verify Password: </label>
-    <input
-      type="password"
-      id="verifyPassword"
-      name="verifyPassword"
-      [(ngModel)]="user.verifyPassword"
-      required
-    />
-  </div>
-  <div>
-    <button class="btn btn-warning" type="submit" [disabled]="!form.valid || isLoading">
+
+  <div class="button">
+    <button class="btn btn-outline-info" type="submit" [disabled]="!form.valid || isLoading">
       Register
     </button>
   </div>
   </div>
 </form>
+
 </html>

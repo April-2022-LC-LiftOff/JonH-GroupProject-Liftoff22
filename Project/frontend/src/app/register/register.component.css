@@ -4,10 +4,24 @@ html {
 
 }
 
+p{
+
+    color: rgb(255, 166, 158);
+    font-family: 'Niramit';
+    font-size: 28px;
+    border-radius: 10px;
+    background-color: rgb(255, 208, 202);
+    margin-top: 15px;
+    margin-bottom: 15px;
+    margin-right: 800px;
+    margin-left: 800px;
+
+}
+
 .registration {
 
     color: rgb(75, 93, 186);
-    font-size: 25px;
+    font-size: 20px;
     border-radius: 15px;
     background-color: rgb(184, 242, 230);
     padding: 15px 10px;
@@ -15,5 +29,11 @@ html {
     margin-bottom: 20px;
     margin-right: 650px;
     margin-left: 650px;
+
+}
+
+.button {
+
+    padding-top: 20px;
 
 }
