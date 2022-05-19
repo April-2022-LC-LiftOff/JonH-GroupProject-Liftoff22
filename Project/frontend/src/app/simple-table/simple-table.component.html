@@ -7,9 +7,8 @@
         </tr>
     </thead>
     <tbody>
-    <tr *ngFor="let oneReminder of reminder">
-        <td>{{oneReminder}}</td>
-        <td>{{oneReminder}}</td>
+    <tr *ngIf="reminder">
+        <td>Reminder</td>
     </tr>
     </tbody>
 </table>
