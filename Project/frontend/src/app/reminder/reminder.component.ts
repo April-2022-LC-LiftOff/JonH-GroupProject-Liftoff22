@@ -32,12 +32,7 @@ export class ReminderComponent implements OnInit {
     private constantsService: ConstantsService
   ) {}
 
-  ngOnInit() {
-  const remindersObservable = this.reminderService.getAllReminders();
-          remindersObservable.subscribe((remindersData: Reminder[]) => {
-              this.reminders = remindersData;
-          });
-  }
+  ngOnInit() { }
 
   onClickSubmit(): void {
     this.isLoading = true;
@@ -46,7 +41,7 @@ export class ReminderComponent implements OnInit {
         console.log(`reminder saved: ${JSON.stringify(savedReminder)}`);
         this.isLoading = false;
         this.reminders.push(savedReminder);
-        this.router.navigate(["reminder"]);
+        this.router.navigate(["dashboard"]);
       },
       (e) => {
         console.error("Error adding reminder " + JSON.stringify(e));
