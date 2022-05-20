@@ -33,12 +33,12 @@ public class ReminderController {
             return ResponseEntity.badRequest().body("Has Errors");
         }
 
-        Reminder newReminder = new Reminder(reminderFormDTO.getName(), reminderFormDTO.getDescription(), reminderFormDTO.getFrequency());
+        Reminder newReminder = new Reminder(reminderFormDTO.getName(), reminderFormDTO.getDescription(), reminderFormDTO.getFrequency(), reminderFormDTO.getTimeToRemind());
         reminderRepository.save(newReminder);
         try {
             Files.write(Paths.get("output.txt"), Arrays.asList("Reminder Summary:\nName: " + reminderFormDTO.getName() + "\nDescription: "
             + reminderFormDTO.getDescription() + "\nFrequency: " + reminderFormDTO.getFrequency()
-            + "\nDate Created: " + reminderFormDTO.getDateCreated()));
+            + "\nDate Created: " + reminderFormDTO.getDateCreated() + "\nReminder Time: " + reminderFormDTO.getTimeToRemind()));
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -65,6 +65,7 @@ public class ReminderController {
             _reminder.setName(reminder.getName());
             _reminder.setDescription(reminder.getDescription());
             _reminder.setFrequency(reminder.getFrequency());
+            _reminder.setTimeToRemind(reminder.getTimeToRemind());
             return new ResponseEntity<>(reminderRepository.save(_reminder), HttpStatus.OK);
         } else {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);

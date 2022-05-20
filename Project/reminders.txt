@@ -1,291 +1,286 @@
-All Reminders: [Name: Updated Reminder
-Description: Update
-Frequency: Daily
-Date Created: 2022-05-10
- 
-, Name: testing
-Description: Talking
-Frequency: 
-Date Created: 2022-05-10
+All Reminders: [Name: Isaac1
+Description: Updated
+Frequency: Weekly
+Date Created: 2022-05-10Reminder Time: 18:15
  
 , Name: testing
 Description: Apple
 Frequency: 
-Date Created: 2022-05-10
+Date Created: 2022-05-10Reminder Time: null
  
 , Name: testing
 Description: Apple
 Frequency: 
-Date Created: 2022-05-10
- 
-, Name: testing
-Description: Apple
-Frequency: 
-Date Created: 2022-05-10
+Date Created: 2022-05-10Reminder Time: null
  
 , Name: Lu
 Description: JavaScript, Java, SpringBoot
 Frequency: 
-Date Created: 2022-05-10
+Date Created: 2022-05-10Reminder Time: null
  
 , Name: testing
 Description: None
 Frequency: 
-Date Created: 2022-05-10
+Date Created: 2022-05-10Reminder Time: null
  
 , Name: Lu
 Description: test reminder
 Frequency: 
-Date Created: 2022-05-10
+Date Created: 2022-05-10Reminder Time: null
  
 , Name: Lu
 Description: None
 Frequency: 
-Date Created: 2022-05-10
+Date Created: 2022-05-10Reminder Time: null
  
 , Name: testing
 Description: test reminder
 Frequency: 
-Date Created: 2022-05-10
+Date Created: 2022-05-10Reminder Time: null
  
 , Name: testing
 Description: test reminder
 Frequency: 
-Date Created: 2022-05-10
+Date Created: 2022-05-10Reminder Time: null
  
 , Name: testing
 Description: test reminder
 Frequency: 
-Date Created: 2022-05-10
+Date Created: 2022-05-10Reminder Time: null
  
 , Name: testing
 Description: test reminder
 Frequency: 
-Date Created: 2022-05-10
+Date Created: 2022-05-10Reminder Time: null
  
 , Name: Lu
 Description: Apple
 Frequency: Weekly
-Date Created: 2022-05-10
+Date Created: 2022-05-10Reminder Time: null
  
 , Name: Lu
 Description: Apple
 Frequency: Weekly
-Date Created: 2022-05-10
+Date Created: 2022-05-10Reminder Time: null
  
 , Name: testing
 Description: test reminder
 Frequency: Monthly
-Date Created: 2022-05-10
+Date Created: 2022-05-10Reminder Time: null
  
 , Name: Lu
 Description: test reminder
 Frequency: Weekly
-Date Created: 2022-05-10
+Date Created: 2022-05-10Reminder Time: null
  
 , Name: testing
 Description: Apple
 Frequency: Weekly
-Date Created: 2022-05-10
+Date Created: 2022-05-10Reminder Time: null
  
 , Name: Lu
 Description: test reminder
 Frequency: Daily
-Date Created: 2022-05-10
+Date Created: 2022-05-10Reminder Time: null
  
 , Name: testing
 Description: test reminder
 Frequency: Daily
-Date Created: 2022-05-10
+Date Created: 2022-05-10Reminder Time: null
  
 , Name: WWDC
 Description: None
 Frequency: Daily
-Date Created: 2022-05-10
+Date Created: 2022-05-10Reminder Time: null
  
 , Name: testing
 Description: Apple
 Frequency: Weekly
-Date Created: 2022-05-10
+Date Created: 2022-05-10Reminder Time: null
  
 , Name: WWDC
 Description: Apple
 Frequency: Monthly
-Date Created: 2022-05-10
+Date Created: 2022-05-10Reminder Time: null
  
 , Name: testing
 Description: None
 Frequency: Monthly
-Date Created: 2022-05-10
+Date Created: 2022-05-10Reminder Time: null
  
 , Name: FeeFee
 Description: doggy time
 Frequency: Daily
-Date Created: 2022-05-10
+Date Created: 2022-05-10Reminder Time: null
  
 , Name: Mica
 Description: test reminder
 Frequency: Weekly
-Date Created: 2022-05-11
+Date Created: 2022-05-11Reminder Time: null
  
 , Name: LiftOff
 Description: Do your resume
 Frequency: Weekly
-Date Created: 2022-05-12
+Date Created: 2022-05-12Reminder Time: null
  
 , Name: Lu
 Description: test reminder
 Frequency: Weekly
-Date Created: 2022-05-13
+Date Created: 2022-05-13Reminder Time: null
  
 , Name: testing
 Description: Apple
 Frequency: Weekly
-Date Created: 2022-05-13
+Date Created: 2022-05-13Reminder Time: null
  
 , Name: bbb
 Description: None
 Frequency: Weekly
-Date Created: 2022-05-13
+Date Created: 2022-05-13Reminder Time: null
  
 , Name: testing
 Description: Apple
 Frequency: Weekly
-Date Created: 2022-05-16
+Date Created: 2022-05-16Reminder Time: null
  
 , Name: testing
 Description: Apple
 Frequency: Weekly
-Date Created: 2022-05-16
+Date Created: 2022-05-16Reminder Time: null
  
 , Name: NewTest
 Description: Apple
 Frequency: Weekly
-Date Created: 2022-05-16
+Date Created: 2022-05-16Reminder Time: null
  
 , Name: NewTest
 Description: Apple
 Frequency: Weekly
-Date Created: 2022-05-16
+Date Created: 2022-05-16Reminder Time: null
  
 , Name: bbb
 Description: Apple
 Frequency: Monthly
-Date Created: 2022-05-16
+Date Created: 2022-05-16Reminder Time: null
  
 , Name: Dev Test
 Description: Dev ops
 Frequency: Monthly
-Date Created: 2022-05-17
+Date Created: 2022-05-17Reminder Time: null
  
 , Name: Dev Test2
 Description: Dev ops
 Frequency: Weekly
-Date Created: 2022-05-17
+Date Created: 2022-05-17Reminder Time: null
  
 , Name: WWDC
 Description: None
 Frequency: Monthly
-Date Created: 2022-05-17
+Date Created: 2022-05-17Reminder Time: null
  
 , Name: WWDC
 Description: Isaac
 Frequency: Weekly
-Date Created: 2022-05-17
+Date Created: 2022-05-17Reminder Time: null
  
 , Name: LC101
 Description: Studios werent worthless
 Frequency: Weekly
-Date Created: 2022-05-17
+Date Created: 2022-05-17Reminder Time: null
  
 , Name: testing
 Description: test reminder
 Frequency: Weekly
-Date Created: 2022-05-17
+Date Created: 2022-05-17Reminder Time: null
  
 , Name: testing
 Description: JavaScript, Java, SpringBoot
 Frequency: Monthly
-Date Created: 2022-05-17
+Date Created: 2022-05-17Reminder Time: null
  
 , Name: bbb
 Description: test reminder
 Frequency: Monthly
-Date Created: 2022-05-17
+Date Created: 2022-05-17Reminder Time: null
  
 , Name: LC101
 Description: Dev ops
 Frequency: Monthly
-Date Created: 2022-05-17
+Date Created: 2022-05-17Reminder Time: null
  
 , Name: WWDC
 Description: test reminder
 Frequency: Weekly
-Date Created: 2022-05-17
+Date Created: 2022-05-17Reminder Time: null
  
 , Name: LC101
 Description: test reminder
 Frequency: Weekly
-Date Created: 2022-05-17
+Date Created: 2022-05-17Reminder Time: null
  
 , Name: testing
 Description: Apple
 Frequency: Daily
-Date Created: 2022-05-18
+Date Created: 2022-05-18Reminder Time: null
  
 , Name: testing
 Description: Dev ops
 Frequency: Weekly
-Date Created: 2022-05-19
+Date Created: 2022-05-19Reminder Time: null
  
 , Name: WWDC
 Description: Apple
 Frequency: Weekly
-Date Created: 2022-05-19
+Date Created: 2022-05-19Reminder Time: null
  
 , Name: LC101
 Description: JavaScript, Java, SpringBoot
 Frequency: Daily
-Date Created: 2022-05-19
+Date Created: 2022-05-19Reminder Time: null
  
 , Name: LC101
 Description: Dev ops
 Frequency: Monthly
-Date Created: 2022-05-19
+Date Created: 2022-05-19Reminder Time: null
  
 , Name: testing
 Description: test reminder
 Frequency: Weekly
-Date Created: 2022-05-19
+Date Created: 2022-05-19Reminder Time: null
  
 , Name: testing
 Description: Apple
 Frequency: Monthly
-Date Created: 2022-05-19
+Date Created: 2022-05-19Reminder Time: null
  
 , Name: Dev
 Description: Dev reminder
 Frequency: Weekly
-Date Created: 2022-05-19
+Date Created: 2022-05-19Reminder Time: null
  
 , Name: WWDC
 Description: Apple
 Frequency: Weekly
-Date Created: 2022-05-19
+Date Created: 2022-05-19Reminder Time: null
  
 , Name: testing
 Description: Apple
 Frequency: Weekly
-Date Created: 2022-05-19
+Date Created: 2022-05-19Reminder Time: null
  
 , Name: testing1
 Description: Apple
 Frequency: Weekly
-Date Created: 2022-05-19
+Date Created: 2022-05-19Reminder Time: null
  
 , Name: testing
 Description: None
 Frequency: Monthly
-Date Created: 2022-05-19
+Date Created: 2022-05-19Reminder Time: null
+ 
+, Name: bbb
+Description: None
+Frequency: Weekly
+Date Created: 2022-05-20Reminder Time: 14:30
  
 ]

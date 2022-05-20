@@ -28,6 +28,24 @@
                     <option *ngFor="let frequency of frequencies">{{frequency.name}}</option>
                 </select>
             </div>
+            <div>
+                <label>Time To Remind:</label>
+                <select name="hourToRemind" [(ngModel)]="rTime.hour" required>
+                    <option *ngFor="let hour of hours">
+                        {{ hour }}
+                    </option>
+                </select>
+                <select name="minuteToRemind" [(ngModel)]="rTime.minute" required>
+                    <option *ngFor="let minute of minutes">
+                        {{ minute }}
+                    </option>
+                </select>
+                <select name="meridiemToRemind" [(ngModel)]="rTime.meridiem" required>
+                    <option *ngFor="let meridiem of meridiems">
+                        {{ meridiem }}
+                    </option>
+                </select>
+            </div>
         </form>
         <button
                 type="submit"

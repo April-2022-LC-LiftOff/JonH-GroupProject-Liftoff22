@@ -12,13 +12,15 @@ import { HttpClient } from "@angular/common/http";
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
-    reminder: Reminder = {
-      id: 0,
-      name: "",
-      description: "",
-      frequency: "",
-      dateCreated: "",
-    };
+  reminder: Reminder = {
+    id: 0,
+    name: "",
+    description: "",
+    frequency: "",
+    dateCreated: "",
+    timeToRemind: ""
+  };
+
   reminders: Reminder[] = [];
   currentReminder = null;
   currentIndex = -1;

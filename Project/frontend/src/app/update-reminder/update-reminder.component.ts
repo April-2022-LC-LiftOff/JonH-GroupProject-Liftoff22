@@ -5,6 +5,7 @@ import { Reminder } from "../reminder/reminder";
 import { ConstantsService } from "../constants.service";
 import { ThrowStmt } from "@angular/compiler";
 import { HttpClient } from "@angular/common/http";
+import { RTime } from "../reminder/rTime";
 
 @Component({
   selector: 'app-update-reminder',
@@ -13,13 +14,14 @@ import { HttpClient } from "@angular/common/http";
 })
 export class UpdateReminderComponent implements OnInit {
 
-      reminder: Reminder = {
-        id: 0,
-        name: "",
-        description: "",
-        frequency: "",
-        dateCreated: "",
-      };
+  reminder: Reminder = {
+    id: 0,
+    name: "",
+    description: "",
+    frequency: "",
+    dateCreated: "",
+    timeToRemind: ""
+  };
       isLoading: boolean = false;
       frequencies = [
         { id: 0, name: "Daily" },
@@ -30,6 +32,18 @@ export class UpdateReminderComponent implements OnInit {
       reminders: Reminder[] = [];
       message = "";
       currentReminder = null;
+
+        rTime: RTime = {
+          hour: "",
+          minute: "",
+          meridiem: ""
+        }
+
+        hours = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12'];
+
+        minutes = ['00', '15', '30', '45'];
+
+        meridiems = ['AM', 'PM'];
 
   constructor(
   private http: HttpClient,
@@ -57,8 +71,18 @@ export class UpdateReminderComponent implements OnInit {
           });
     }
 
+      gatherTime(): string {
+
+        if (this.rTime.meridiem == 'PM') {
+            this.rTime.hour = (parseInt(this.rTime.hour) + 12).toString(10);
+
+        }
+        return this.rTime.hour + ":" + this.rTime.minute + ":00";
+      }
+
   updateReminder(): void {
       this.isLoading = true;
+      this.currentReminder.timeToRemind = this.gatherTime();
       this.reminderService.update(this.currentReminder.id, this.currentReminder)
         .subscribe(
           response => {

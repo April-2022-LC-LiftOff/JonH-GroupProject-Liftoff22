@@ -4,4 +4,5 @@ export interface Reminder {
   description: string;
   frequency: string;
   dateCreated: string;
+  timeToRemind: string;
 }
