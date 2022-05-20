@@ -10,4 +10,5 @@ import java.util.List;
 public interface ReminderRepository extends CrudRepository<Reminder, Integer> {
     List<Reminder> findAll();
 
+
 }

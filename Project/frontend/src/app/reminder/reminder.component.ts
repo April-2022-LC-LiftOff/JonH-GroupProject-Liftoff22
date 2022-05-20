@@ -12,6 +12,7 @@ import { ThrowStmt } from "@angular/compiler";
 })
 export class ReminderComponent implements OnInit {
   reminder: Reminder = {
+    id: 0,
     name: "",
     description: "",
     frequency: "",

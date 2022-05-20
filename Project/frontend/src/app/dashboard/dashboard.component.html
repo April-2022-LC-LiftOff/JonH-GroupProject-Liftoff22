@@ -3,11 +3,12 @@
 </div>
 <div class="reminder-container">
     <div *ngFor="let r of reminders">
-        <div class="reminder-wrapper">
+        <div class="reminder-wrapper" id="{{r.id}}" >
             <p>Name: {{r.name}}</p>
             <p>Description: {{r.description}}</p>
             <p>Frequency: {{r.frequency}}</p>
             <p>Date Created: {{r.dateCreated}}</p>
+            <button type="button" (click)="deleteReminder(r)">Delete</button>
         </div>
     </div>
 </div>

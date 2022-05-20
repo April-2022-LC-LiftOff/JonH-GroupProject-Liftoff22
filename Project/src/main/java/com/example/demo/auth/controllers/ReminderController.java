@@ -4,6 +4,7 @@ import com.example.demo.auth.data.ReminderRepository;
 import com.example.demo.auth.models.Reminder;
 import com.example.demo.auth.models.dto.ReminderFormDTO;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.ui.Model;
 import org.springframework.validation.Errors;
@@ -16,6 +17,7 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/api")
@@ -43,14 +45,42 @@ public class ReminderController {
         return ResponseEntity.ok(newReminder);
     }
 
-    @PostMapping("/reminder/delete")
-    public ResponseEntity<Object> deleteReminder(@RequestParam(required = false) int id, HttpServletRequest request, Errors errors) {
-        if(errors.hasErrors()) {
-            return ResponseEntity.badRequest().body("Has Errors");
-        }
+//    @PostMapping("reminder/delete")
+//    public ResponseEntity<Object> deleteReminder(@RequestBody @Valid ReminderFormDTO reminderFormDTO, HttpServletRequest request, Errors errors, Model model) {
+//        System.out.println("Delete function starting");
+//        List<Reminder> allReminders = reminderRepository.findAll();
+//        if(errors.hasErrors()) {
+//            return ResponseEntity.badRequest().body("Has Errors");
+//        }
+//
+//        reminderRepository.deleteById(reminderFormDTO.getId());
+//        System.out.println("Delete function ran");
+//        return ResponseEntity.ok(allReminders);
+//    }
 
-        reminderRepository.deleteById(id);
-        return ResponseEntity.ok().build();
+    @PutMapping("/reminders/{id}")
+    public ResponseEntity<Reminder> updateReminder(@PathVariable("id") int id, @RequestBody Reminder reminder) {
+        Optional<Reminder> reminderData = reminderRepository.findById(id);
+
+        if (reminderData.isPresent()) {
+            Reminder _reminder = reminderData.get();
+            _reminder.setName(reminder.getName());
+            _reminder.setDescription(reminder.getDescription());
+            _reminder.setFrequency(reminder.getFrequency());
+            return new ResponseEntity<>(reminderRepository.save(_reminder), HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+    }
+
+    @DeleteMapping("/reminders/{id}")
+    public ResponseEntity<HttpStatus> deleteReminder(@PathVariable("id") int id) {
+        try {
+            reminderRepository.deleteById(id);
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        } catch (Exception e) {
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
     }
 
     @GetMapping("reminders")

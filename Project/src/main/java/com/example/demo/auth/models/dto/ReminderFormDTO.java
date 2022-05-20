@@ -9,6 +9,9 @@ import java.time.LocalDate;
 public class ReminderFormDTO {
 
     @NotNull
+    private int id;
+
+    @NotNull
     @NotBlank
     @Size(min = 3, max = 20, message = "Invalid name. Must be between 3 and 20 characters.")
     private String name;
@@ -47,6 +50,8 @@ public class ReminderFormDTO {
     public void setFrequency(String frequency) {
         this.frequency = frequency;
     }
+
+    public int getId() { return id; }
 
     public LocalDate getDateCreated() {
 

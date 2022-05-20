@@ -1,40 +1,5 @@
 All Reminders: [Name: testing
 Description: test reminder
-Frequency: null
-Date Created: null
- 
-, Name: test1
-Description: test reminder
-Frequency: 
-Date Created: 2022-05-09
- 
-, Name: testing1
-Description: test reminder
-Frequency: 
-Date Created: 2022-05-09
- 
-, Name: testing1
-Description: test reminder
-Frequency: 
-Date Created: 2022-05-09
- 
-, Name: testing
-Description: test
-Frequency: 
-Date Created: 2022-05-09
- 
-, Name: testing
-Description: test reminder
-Frequency: 
-Date Created: 2022-05-10
- 
-, Name: testing
-Description: test reminder
-Frequency: 
-Date Created: 2022-05-10
- 
-, Name: testing
-Description: test reminder
 Frequency: 
 Date Created: 2022-05-10
  
@@ -336,11 +301,6 @@ Date Created: 2022-05-19
 , Name: testing
 Description: None
 Frequency: Monthly
-Date Created: 2022-05-19
- 
-, Name: Isaac
-Description: Did we do it?
-Frequency: Daily
 Date Created: 2022-05-19
  
 ]
