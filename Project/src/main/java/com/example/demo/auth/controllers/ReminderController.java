@@ -42,7 +42,7 @@ public class ReminderController {
         }
         return ResponseEntity.ok(newReminder);
     }
-
+    //test
     @GetMapping("reminders")
     public ResponseEntity<Object> displayAllReminders() {
         List<Reminder> allReminders = reminderRepository.findAll();
