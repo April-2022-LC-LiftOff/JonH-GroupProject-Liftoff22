@@ -42,7 +42,17 @@ public class ReminderController {
         }
         return ResponseEntity.ok(newReminder);
     }
-    //test
+
+    @PostMapping("/reminder/delete")
+    public ResponseEntity<Object> deleteReminder(@RequestParam(required = false) int id, HttpServletRequest request, Errors errors) {
+        if(errors.hasErrors()) {
+            return ResponseEntity.badRequest().body("Has Errors");
+        }
+
+        reminderRepository.deleteById(id);
+        return ResponseEntity.ok().build();
+    }
+
     @GetMapping("reminders")
     public ResponseEntity<Object> displayAllReminders() {
         List<Reminder> allReminders = reminderRepository.findAll();
