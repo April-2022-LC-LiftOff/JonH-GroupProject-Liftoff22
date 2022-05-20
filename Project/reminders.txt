@@ -1,21 +1,6 @@
-All Reminders: [Name: testing
-Description: test reminder
-Frequency: 
-Date Created: 2022-05-10
- 
-, Name: testing
-Description: test reminder
-Frequency: 
-Date Created: 2022-05-10
- 
-, Name: testing
-Description: test reminder
-Frequency: null
-Date Created: 2022-05-10
- 
-, Name: testing
-Description: none
-Frequency: 
+All Reminders: [Name: Updated Reminder
+Description: Update
+Frequency: Daily
 Date Created: 2022-05-10
  
 , Name: testing

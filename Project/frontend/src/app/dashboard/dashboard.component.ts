@@ -20,6 +20,11 @@ export class DashboardComponent implements OnInit {
       dateCreated: "",
     };
   reminders: Reminder[] = [];
+  currentReminder = null;
+  currentIndex = -1;
+  message = "";
+  isLoading: boolean = false;
+  visible: boolean = true;
 
   constructor(
       private http: HttpClient,
@@ -40,6 +45,11 @@ export class DashboardComponent implements OnInit {
     this.router.navigate([pageName]);
   }
 
+  goToUpdate(id: string) {
+      this.router.navigate(['/reminders/' + id]);
+    }
+
+
   deleteReminder(reminder: Reminder): void {
     document.getElementById(reminder.id.toString()).remove();
     console.log(`deleted reminder: ${JSON.stringify(reminder)}`);
@@ -52,6 +62,26 @@ export class DashboardComponent implements OnInit {
             error => {
               console.log(error);
             });
-      }
+  }
+
+  setActiveReminder(reminder, index): void {
+      this.currentReminder = reminder;
+      this.currentIndex = index;
+    }
+
+  updateReminder(reminder: Reminder): void {
+        this.isLoading = true;
+        this.reminderService.update(reminder.id, reminder)
+          .subscribe(
+            response => {
+              this.isLoading = false;
+              console.log(response);
+              this.message = 'The reminder was updated successfully!';
+            },
+            error => {
+              console.log(error);
+              this.isLoading = false;
+            });
+    }
 
 }

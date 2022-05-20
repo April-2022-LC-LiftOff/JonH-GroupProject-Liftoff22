@@ -45,18 +45,16 @@ public class ReminderController {
         return ResponseEntity.ok(newReminder);
     }
 
-//    @PostMapping("reminder/delete")
-//    public ResponseEntity<Object> deleteReminder(@RequestBody @Valid ReminderFormDTO reminderFormDTO, HttpServletRequest request, Errors errors, Model model) {
-//        System.out.println("Delete function starting");
-//        List<Reminder> allReminders = reminderRepository.findAll();
-//        if(errors.hasErrors()) {
-//            return ResponseEntity.badRequest().body("Has Errors");
-//        }
-//
-//        reminderRepository.deleteById(reminderFormDTO.getId());
-//        System.out.println("Delete function ran");
-//        return ResponseEntity.ok(allReminders);
-//    }
+    @GetMapping("/reminders/{id}")
+    public ResponseEntity<Reminder> getReminderById(@PathVariable("id") int id) {
+        Optional<Reminder> reminderData = reminderRepository.findById(id);
+
+        if (reminderData.isPresent()) {
+            return new ResponseEntity<>(reminderData.get(), HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+    }
 
     @PutMapping("/reminders/{id}")
     public ResponseEntity<Reminder> updateReminder(@PathVariable("id") int id, @RequestBody Reminder reminder) {

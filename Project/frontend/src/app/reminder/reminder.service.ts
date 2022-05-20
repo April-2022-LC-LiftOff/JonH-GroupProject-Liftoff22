@@ -11,28 +11,30 @@ const baseUrl = 'http://localhost:8080/api/reminders';
 export class ReminderService {
   constructor(private http: HttpClient, private constants: ConstantsService ) {}
 
-  addReminder(reminder: Reminder): Observable<Reminder> {
-    return this.http.post<Reminder>(
-      this.constants.getRootURL() + "/reminder",
-      reminder
-    );
-  }
-
   getAllReminders(): Observable<Reminder[]> {
     return this.http.get<Reminder[]>(
       this.constants.getRootURL() + "/reminders");
   }
 
-//   deleteReminder(reminder: Reminder): Observable<Reminder> {
-//       console.log(`deleted reminder: ${JSON.stringify(reminder)}`);
-//          return this.http.post<Reminder>(
-//             this.constants.getRootURL() + "/reminder/delete",
-//             reminder
-//          );
-//   }
+  get(id): Observable<any> {
+      return this.http.get(`${baseUrl}/${id}`);
+    }
+
+  addReminder(reminder: Reminder): Observable<Reminder> {
+      return this.http.post<Reminder>(
+        this.constants.getRootURL() + "/reminder",
+        reminder
+      );
+    }
 
   delete(id): Observable<any> {
       return this.http.delete(`${baseUrl}/${id}`);
     }
+
+  update(id, data): Observable<any> {
+      return this.http.put(`${baseUrl}/${id}`, data);
+    }
+
+
 
 }
