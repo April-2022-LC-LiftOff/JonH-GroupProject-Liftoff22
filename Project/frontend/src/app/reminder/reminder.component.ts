@@ -32,7 +32,12 @@ export class ReminderComponent implements OnInit {
     private constantsService: ConstantsService
   ) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+  const remindersObservable = this.reminderService.getAllReminders();
+          remindersObservable.subscribe((remindersData: Reminder[]) => {
+              this.reminders = remindersData;
+          });
+  }
 
   onClickSubmit(): void {
     this.isLoading = true;

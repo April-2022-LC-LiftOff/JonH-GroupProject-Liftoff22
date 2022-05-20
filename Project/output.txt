@@ -1,5 +1,5 @@
 Reminder Summary:
-Name: www
-Description: www
-Frequency: Weekly
+Name: Isaac
+Description: Did we do it?
+Frequency: Daily
 Date Created: 2022-05-19

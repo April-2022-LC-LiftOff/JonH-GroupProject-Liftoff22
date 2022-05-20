@@ -1,46 +1,346 @@
-All Reminders: [Name: test
+All Reminders: [Name: testing
+Description: test reminder
+Frequency: null
+Date Created: null
+ 
+, Name: test1
+Description: test reminder
+Frequency: 
+Date Created: 2022-05-09
+ 
+, Name: testing1
+Description: test reminder
+Frequency: 
+Date Created: 2022-05-09
+ 
+, Name: testing1
+Description: test reminder
+Frequency: 
+Date Created: 2022-05-09
+ 
+, Name: testing
 Description: test
+Frequency: 
+Date Created: 2022-05-09
+ 
+, Name: testing
+Description: test reminder
+Frequency: 
+Date Created: 2022-05-10
+ 
+, Name: testing
+Description: test reminder
+Frequency: 
+Date Created: 2022-05-10
+ 
+, Name: testing
+Description: test reminder
+Frequency: 
+Date Created: 2022-05-10
+ 
+, Name: testing
+Description: test reminder
+Frequency: 
+Date Created: 2022-05-10
+ 
+, Name: testing
+Description: test reminder
+Frequency: null
+Date Created: 2022-05-10
+ 
+, Name: testing
+Description: none
+Frequency: 
+Date Created: 2022-05-10
+ 
+, Name: testing
+Description: Talking
+Frequency: 
+Date Created: 2022-05-10
+ 
+, Name: testing
+Description: Apple
+Frequency: 
+Date Created: 2022-05-10
+ 
+, Name: testing
+Description: Apple
+Frequency: 
+Date Created: 2022-05-10
+ 
+, Name: testing
+Description: Apple
+Frequency: 
+Date Created: 2022-05-10
+ 
+, Name: Lu
+Description: JavaScript, Java, SpringBoot
+Frequency: 
+Date Created: 2022-05-10
+ 
+, Name: testing
+Description: None
+Frequency: 
+Date Created: 2022-05-10
+ 
+, Name: Lu
+Description: test reminder
+Frequency: 
+Date Created: 2022-05-10
+ 
+, Name: Lu
+Description: None
+Frequency: 
+Date Created: 2022-05-10
+ 
+, Name: testing
+Description: test reminder
+Frequency: 
+Date Created: 2022-05-10
+ 
+, Name: testing
+Description: test reminder
+Frequency: 
+Date Created: 2022-05-10
+ 
+, Name: testing
+Description: test reminder
+Frequency: 
+Date Created: 2022-05-10
+ 
+, Name: testing
+Description: test reminder
+Frequency: 
+Date Created: 2022-05-10
+ 
+, Name: Lu
+Description: Apple
+Frequency: Weekly
+Date Created: 2022-05-10
+ 
+, Name: Lu
+Description: Apple
+Frequency: Weekly
+Date Created: 2022-05-10
+ 
+, Name: testing
+Description: test reminder
+Frequency: Monthly
+Date Created: 2022-05-10
+ 
+, Name: Lu
+Description: test reminder
+Frequency: Weekly
+Date Created: 2022-05-10
+ 
+, Name: testing
+Description: Apple
+Frequency: Weekly
+Date Created: 2022-05-10
+ 
+, Name: Lu
+Description: test reminder
+Frequency: Daily
+Date Created: 2022-05-10
+ 
+, Name: testing
+Description: test reminder
+Frequency: Daily
+Date Created: 2022-05-10
+ 
+, Name: WWDC
+Description: None
+Frequency: Daily
+Date Created: 2022-05-10
+ 
+, Name: testing
+Description: Apple
+Frequency: Weekly
+Date Created: 2022-05-10
+ 
+, Name: WWDC
+Description: Apple
+Frequency: Monthly
+Date Created: 2022-05-10
+ 
+, Name: testing
+Description: None
+Frequency: Monthly
+Date Created: 2022-05-10
+ 
+, Name: FeeFee
+Description: doggy time
+Frequency: Daily
+Date Created: 2022-05-10
+ 
+, Name: Mica
+Description: test reminder
+Frequency: Weekly
+Date Created: 2022-05-11
+ 
+, Name: LiftOff
+Description: Do your resume
+Frequency: Weekly
+Date Created: 2022-05-12
+ 
+, Name: Lu
+Description: test reminder
+Frequency: Weekly
+Date Created: 2022-05-13
+ 
+, Name: testing
+Description: Apple
+Frequency: Weekly
+Date Created: 2022-05-13
+ 
+, Name: bbb
+Description: None
+Frequency: Weekly
+Date Created: 2022-05-13
+ 
+, Name: testing
+Description: Apple
+Frequency: Weekly
+Date Created: 2022-05-16
+ 
+, Name: testing
+Description: Apple
+Frequency: Weekly
+Date Created: 2022-05-16
+ 
+, Name: NewTest
+Description: Apple
+Frequency: Weekly
+Date Created: 2022-05-16
+ 
+, Name: NewTest
+Description: Apple
+Frequency: Weekly
+Date Created: 2022-05-16
+ 
+, Name: bbb
+Description: Apple
+Frequency: Monthly
+Date Created: 2022-05-16
+ 
+, Name: Dev Test
+Description: Dev ops
+Frequency: Monthly
+Date Created: 2022-05-17
+ 
+, Name: Dev Test2
+Description: Dev ops
+Frequency: Weekly
+Date Created: 2022-05-17
+ 
+, Name: WWDC
+Description: None
+Frequency: Monthly
+Date Created: 2022-05-17
+ 
+, Name: WWDC
+Description: Isaac
+Frequency: Weekly
+Date Created: 2022-05-17
+ 
+, Name: LC101
+Description: Studios werent worthless
+Frequency: Weekly
+Date Created: 2022-05-17
+ 
+, Name: testing
+Description: test reminder
+Frequency: Weekly
+Date Created: 2022-05-17
+ 
+, Name: testing
+Description: JavaScript, Java, SpringBoot
+Frequency: Monthly
+Date Created: 2022-05-17
+ 
+, Name: bbb
+Description: test reminder
+Frequency: Monthly
+Date Created: 2022-05-17
+ 
+, Name: LC101
+Description: Dev ops
+Frequency: Monthly
+Date Created: 2022-05-17
+ 
+, Name: WWDC
+Description: test reminder
+Frequency: Weekly
+Date Created: 2022-05-17
+ 
+, Name: LC101
+Description: test reminder
+Frequency: Weekly
+Date Created: 2022-05-17
+ 
+, Name: testing
+Description: Apple
+Frequency: Daily
+Date Created: 2022-05-18
+ 
+, Name: testing
+Description: Dev ops
+Frequency: Weekly
+Date Created: 2022-05-19
+ 
+, Name: WWDC
+Description: Apple
+Frequency: Weekly
+Date Created: 2022-05-19
+ 
+, Name: LC101
+Description: JavaScript, Java, SpringBoot
 Frequency: Daily
 Date Created: 2022-05-19
  
-, Name: www
-Description: www
+, Name: LC101
+Description: Dev ops
+Frequency: Monthly
+Date Created: 2022-05-19
+ 
+, Name: testing
+Description: test reminder
 Frequency: Weekly
 Date Created: 2022-05-19
  
-, Name: www
-Description: www
+, Name: testing
+Description: Apple
+Frequency: Monthly
+Date Created: 2022-05-19
+ 
+, Name: Dev
+Description: Dev reminder
 Frequency: Weekly
 Date Created: 2022-05-19
  
-, Name: www
-Description: www
+, Name: WWDC
+Description: Apple
 Frequency: Weekly
 Date Created: 2022-05-19
  
-, Name: www
-Description: www
+, Name: testing
+Description: Apple
 Frequency: Weekly
 Date Created: 2022-05-19
  
-, Name: www
-Description: www
+, Name: testing1
+Description: Apple
 Frequency: Weekly
 Date Created: 2022-05-19
  
-, Name: www
-Description: www
-Frequency: Weekly
+, Name: testing
+Description: None
+Frequency: Monthly
 Date Created: 2022-05-19
  
-, Name: www
-Description: www
-Frequency: Weekly
-Date Created: 2022-05-19
- 
-, Name: www
-Description: www
-Frequency: Weekly
+, Name: Isaac
+Description: Did we do it?
+Frequency: Daily
 Date Created: 2022-05-19
  
 ]

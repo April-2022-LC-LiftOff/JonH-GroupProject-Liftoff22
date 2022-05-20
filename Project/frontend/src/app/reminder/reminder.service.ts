@@ -8,13 +8,18 @@ import { ConstantsService } from "../constants.service";
   providedIn: "root",
 })
 export class ReminderService {
-  constructor(private http: HttpClient, private constants: ConstantsService) {}
+  constructor(private http: HttpClient, private constants: ConstantsService, ) {}
 
   addReminder(reminder: Reminder): Observable<Reminder> {
     return this.http.post<Reminder>(
       this.constants.getRootURL() + "/reminder",
       reminder
     );
+  }
+
+  getAllReminders(): Observable<Reminder[]> {
+    return this.http.get<Reminder[]>(
+      this.constants.getRootURL() + "/reminders");
   }
 
 }

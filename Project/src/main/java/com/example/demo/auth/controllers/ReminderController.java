@@ -18,17 +18,16 @@ import java.util.Arrays;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/reminder")
+@RequestMapping("/api")
 public class ReminderController {
 
     @Autowired
     ReminderRepository reminderRepository;
 
-    @PostMapping("")
+    @PostMapping("reminder")
     public ResponseEntity<Object> processCreateReminderForm(@RequestBody @Valid ReminderFormDTO reminderFormDTO,
                                                             HttpServletRequest request, Errors errors, Model model) {
         if(errors.hasErrors()) {
-            model.addAttribute("title", "Create Event");
             return ResponseEntity.badRequest().body("Has Errors");
         }
 
@@ -41,13 +40,18 @@ public class ReminderController {
         } catch (IOException e) {
             e.printStackTrace();
         }
+        return ResponseEntity.ok(newReminder);
+    }
+
+    @GetMapping("reminders")
+    public ResponseEntity<Object> displayAllReminders() {
         List<Reminder> allReminders = reminderRepository.findAll();
         try {
             Files.write(Paths.get("reminders.txt"), Arrays.asList("All Reminders: " + allReminders));
         } catch (IOException e) {
             e.printStackTrace();
         }
-        return ResponseEntity.ok(newReminder);
+        return ResponseEntity.ok(allReminders);
     }
 
 
