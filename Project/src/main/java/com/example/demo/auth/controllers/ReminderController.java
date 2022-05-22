@@ -15,6 +15,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.Arrays;
+import java.util.List;
 
 @RestController
 @RequestMapping("/api/reminder")
@@ -37,6 +38,12 @@ public class ReminderController {
             Files.write(Paths.get("output.txt"), Arrays.asList("Reminder Summary:\nName: " + reminderFormDTO.getName() + "\nDescription: "
             + reminderFormDTO.getDescription() + "\nFrequency: " + reminderFormDTO.getFrequency()
             + "\nDate Created: " + reminderFormDTO.getDateCreated()));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        List<Reminder> allReminders = reminderRepository.findAll();
+        try {
+            Files.write(Paths.get("reminders.txt"), Arrays.asList("All Reminders: " + allReminders));
         } catch (IOException e) {
             e.printStackTrace();
         }

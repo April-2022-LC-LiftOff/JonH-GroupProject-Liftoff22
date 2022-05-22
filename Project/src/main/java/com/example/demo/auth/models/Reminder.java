@@ -54,7 +54,7 @@ public class Reminder extends AbstractEntity {
 
     @Override
     public String toString() {
-        return name;
+        return "Name: " + name + "\nDescription: " + description + "\nFrequency: " + frequency + "\nDate Created: " + dateCreated + "\n \n";
     }
 
 }
