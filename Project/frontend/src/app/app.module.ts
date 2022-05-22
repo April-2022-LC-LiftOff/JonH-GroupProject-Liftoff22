@@ -14,6 +14,7 @@ import { LandingComponent } from "./landing/landing.component";
 import { LogoutComponent } from "./logout/logout.component";
 import { SimpleTableComponent } from './simple-table/simple-table.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { UpdateReminderComponent } from './update-reminder/update-reminder.component';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
   ReminderComponent, LandingComponent,
   LogoutComponent,
   SimpleTableComponent,
-  DashboardComponent
+  DashboardComponent,
+  UpdateReminderComponent
   ],
   imports: [
     BrowserModule,

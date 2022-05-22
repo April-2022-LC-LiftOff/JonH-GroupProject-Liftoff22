@@ -5,8 +5,12 @@ import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import java.time.LocalDate;
+import java.time.LocalTime;
 
 public class ReminderFormDTO {
+
+    @NotNull
+    private int id;
 
     @NotNull
     @NotBlank
@@ -23,6 +27,10 @@ public class ReminderFormDTO {
     @NotNull
     @NotEmpty
     private LocalDate dateCreated;
+
+    @NotNull
+    @NotEmpty
+    private LocalTime timeToRemind;
 
     public String getName() {
         return name;
@@ -48,6 +56,8 @@ public class ReminderFormDTO {
         this.frequency = frequency;
     }
 
+    public int getId() { return id; }
+
     public LocalDate getDateCreated() {
 
         if(dateCreated==null) {
@@ -59,4 +69,14 @@ public class ReminderFormDTO {
     public void setDateCreated(LocalDate dateCreated) {
         this.dateCreated = dateCreated;
     }
+
+    public LocalTime getTimeToRemind() {
+        return timeToRemind;
+    }
+
+    public void setTimeToRemind(LocalTime timeToRemind) {
+        this.timeToRemind = timeToRemind;
+    }
 }
+
+
