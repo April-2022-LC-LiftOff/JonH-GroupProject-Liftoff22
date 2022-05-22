@@ -9,6 +9,6 @@ import java.util.List;
 @Repository
 public interface ReminderRepository extends CrudRepository<Reminder, Integer> {
     List<Reminder> findAll();
-
+    List<Reminder> findByrUserId(int userId);
 
 }

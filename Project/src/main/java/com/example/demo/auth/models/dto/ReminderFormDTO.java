@@ -32,6 +32,8 @@ public class ReminderFormDTO {
     @NotEmpty
     private LocalTime timeToRemind;
 
+    private int rUserId;
+
     public String getName() {
         return name;
     }

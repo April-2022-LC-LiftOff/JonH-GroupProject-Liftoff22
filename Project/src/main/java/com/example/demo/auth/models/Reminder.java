@@ -8,7 +8,6 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import java.time.LocalDate;
 import java.time.LocalTime;
-import java.util.ArrayList;
 
 @Entity
 public class Reminder extends AbstractEntity {
@@ -31,6 +30,8 @@ public class Reminder extends AbstractEntity {
     @NotNull
     @NotEmpty
     private LocalTime timeToRemind;
+
+    private int rUserId;
 
 
     public Reminder(String name, String description, String frequency, LocalTime timeToRemind) {
@@ -68,6 +69,14 @@ public class Reminder extends AbstractEntity {
     public LocalTime getTimeToRemind() { return timeToRemind; }
 
     public void setTimeToRemind(LocalTime timeToRemind) { this.timeToRemind = timeToRemind; }
+
+    public int getRUserId() {
+        return rUserId;
+    }
+
+    public void setRUserId(int rUserId) {
+        this.rUserId = rUserId;
+    }
 
     @Override
     public String toString() {

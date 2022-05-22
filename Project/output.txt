@@ -1,6 +1,0 @@
-Reminder Summary:
-Name: bbb
-Description: None
-Frequency: Weekly
-Date Created: 2022-05-20
-Reminder Time: 14:30

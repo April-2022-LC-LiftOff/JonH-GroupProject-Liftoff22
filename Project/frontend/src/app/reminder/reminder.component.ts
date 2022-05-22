@@ -52,11 +52,10 @@ export class ReminderComponent implements OnInit {
 
   gatherTime(): string {
 
-    if (this.rTime.meridiem == 'PM') {
-        this.rTime.hour = (parseInt(this.rTime.hour) + 12).toString(10);
-
-    }
-    return this.rTime.hour + ":" + this.rTime.minute + ":00";
+     if (this.rTime.meridiem == 'PM') {
+         this.rTime.hour = (parseInt(this.rTime.hour) + 12).toString(10);
+     }
+     return this.rTime.hour + ":" + this.rTime.minute + ":00";
   }
 
   onClickSubmit(): void {
