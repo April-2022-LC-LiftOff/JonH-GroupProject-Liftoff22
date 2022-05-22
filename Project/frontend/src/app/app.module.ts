@@ -16,6 +16,7 @@ import { SimpleTableComponent } from './simple-table/simple-table.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { UpdateReminderComponent } from './update-reminder/update-reminder.component';
 
+import { NavbarComponent } from './navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { UpdateReminderComponent } from './update-reminder/update-reminder.compo
   SimpleTableComponent,
   DashboardComponent,
   UpdateReminderComponent
+  NavbarComponent
   ],
   imports: [
     BrowserModule,
