@@ -1,6 +1,6 @@
 Reminder Summary:
-Name: lunch
-Description: panera
+Name: WWDC
+Description: Apple
 Frequency: Monthly
 Date Created: 2022-05-22
-Reminder Time: 15:30
+Reminder Time: 10:15
