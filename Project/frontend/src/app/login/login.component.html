@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-<p>Login !!</p>
+<link href='https://fonts.googleapis.com/css?family=Niramit' rel='stylesheet'>
+
+<p style="text-align: center">LOGIN</p>
 <form
   #form="ngForm"
   method="post"
@@ -8,6 +10,8 @@
   #userlogin="ngForm"
   (ngSubmit)="onLoginSubmit()"
 >
+
+  <div class="loginTab" style="text-align: center">
   <div>
     <label for="userName">User Name: </label>
     <input
@@ -32,6 +36,7 @@
 
   <div>
     <button type="submit" [disabled]="!form.valid || isLoading">Login</button>
+  </div>
   </div>
 </form>
 </html>
