@@ -17,6 +17,7 @@ import { DashboardComponent } from "./dashboard/dashboard.component";
 import { UpdateReminderComponent } from "./update-reminder/update-reminder.component";
 
 import { NavbarComponent } from "./navbar/navbar.component";
+import { ErrorBoxComponent } from './error-box/error-box.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { NavbarComponent } from "./navbar/navbar.component";
     DashboardComponent,
     UpdateReminderComponent,
     NavbarComponent,
+    ErrorBoxComponent,
   ],
   imports: [
     BrowserModule,
