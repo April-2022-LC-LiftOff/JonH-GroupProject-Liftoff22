@@ -16,3 +16,28 @@
     </tbody>
 </table>
 </html>
+<div *ngFor="let r of reminders">
+    <p>Name: {{r.name}}</p>
+    <p>Description: {{r.description}}</p>
+    <p>Frequency: {{r.frequency}}</p>
+    <p>Date Created: {{r.dateCreated}}</p>
+</div>
+<!--<table>-->
+<!--    <thead>-->
+<!--        <tr>-->
+<!--            <td>Name</td>-->
+<!--            <td>Description</td>-->
+<!--            <td>Frequency</td>-->
+<!--            <td>Date Created</td>-->
+<!--        </tr>-->
+<!--    </thead>-->
+<!--    <tbody>-->
+<!--        <tr *ngFor="let r of reminders">-->
+<!--            <td>{{ r.name }}</td>-->
+<!--            <td>{{ r.description }}</td>-->
+<!--            <td>{{ r.frequency }}</td>-->
+<!--            <td>{{ r.dateCreated }}</td>-->
+<!--        </tr>-->
+<!--    </tbody>-->
+<!--</table>-->
+

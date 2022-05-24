@@ -8,4 +8,8 @@ import { FormGroup, FormControl } from '@angular/forms';
 })
 export class AppComponent {
   title = 'demo reminder-app';
+  visible: boolean = true;
+  hideUtility() {
+  this.visible = this.visible?false:true;
+  }
 }
