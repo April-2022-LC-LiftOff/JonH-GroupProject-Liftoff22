@@ -15,6 +15,11 @@ public class RegisterFormDTO {
     @NotBlank
     private String email;
 
+    @Size(max=15)
+    private String mobile;
+
+    private String carrier;
+
     @NotNull
     @NotBlank
     @Size(min = 5, max = 30, message = "Invalid password. Must be between 5 and 30 characters.")
@@ -53,5 +58,13 @@ public class RegisterFormDTO {
     public void setVerifyPassword(String verifyPassword) {
         this.verifyPassword = verifyPassword;
     }
+
+    public String getMobile() { return mobile; }
+
+    public void setMobile(String mobile) { this.mobile = mobile; }
+
+    public String getCarrier() { return carrier; }
+
+    public void setCarrier(String carrier) { this.carrier = carrier; }
 
 }
