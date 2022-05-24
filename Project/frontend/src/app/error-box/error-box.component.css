@@ -1,0 +1,6 @@
+.errorBox {
+    background-color: red;
+    color: white;
+    border-style: solid;
+    visibility: hidden;
+}

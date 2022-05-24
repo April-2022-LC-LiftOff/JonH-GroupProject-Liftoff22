@@ -12,4 +12,15 @@ export class ErrorBoxComponent implements OnInit {
   ngOnInit() {
   }
 
+  displayError():void {
+    let box = document.getElementById("errorBox");
+    if(box==null) {
+      console.log("box is null test");
+    } else {
+       box.style.visibility = "visible";
+       console.log(box.innerHTML);
+    }
+  }
+
+
 }

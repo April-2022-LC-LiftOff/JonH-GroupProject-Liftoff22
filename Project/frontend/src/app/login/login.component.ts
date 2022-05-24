@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { LoginService } from "./login.service";
 import { LoginUser } from "./loginuser";
+import { ErrorBoxComponent } from '../error-box/error-box.component';
 
 import { Router } from "@angular/router";
 
@@ -28,6 +29,14 @@ export class LoginComponent {
       },
       (e) => {
         console.error("Error getting user " + JSON.stringify(e));
+//         let box = document.getElementById("errorBox");
+//         if(box==null) {
+//             console.log("box is null test");
+//         } else {
+//             box.style.visibility = "visible";
+//             console.log(box.innerHTML);
+//         }
+        ErrorBoxComponent.displayError();
         this.isLoading = false;
       }
     );
