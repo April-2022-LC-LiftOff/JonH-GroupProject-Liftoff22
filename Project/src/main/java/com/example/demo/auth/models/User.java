@@ -2,6 +2,8 @@ package com.example.demo.auth.models;
 
 import javax.persistence.Entity;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 @Entity
@@ -12,6 +14,11 @@ public class User extends AbstractEntity {
 
     @NotNull
     private String email;
+
+    @Size(max=15)
+    private String mobile;
+
+    private String carrier;
 
     @NotNull
     private String pwHash;
@@ -30,6 +37,29 @@ public class User extends AbstractEntity {
         return username;
     }
 
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getMobile() {
+        return mobile;
+    }
+
+    public void setMobile(String mobile) {
+        this.mobile = mobile;
+    }
+
+    public String getCarrier() {
+        return carrier;
+    }
+
+    public void setCarrier(String carrier) {
+        this.carrier = carrier;
+    }
 
     public boolean isMatchingPassword(String password) {
         return encoder.matches(password, pwHash);

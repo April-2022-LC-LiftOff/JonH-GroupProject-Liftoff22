@@ -38,12 +38,29 @@
   <div>
     <label for="verifyPassword">Verify Password: </label>
     <input
-      type="password"
-      id="verifyPassword"
-      name="verifyPassword"
-      [(ngModel)]="user.verifyPassword"
-      required
+            type="password"
+            id="verifyPassword"
+            name="verifyPassword"
+            [(ngModel)]="user.verifyPassword"
+            required
     />
+  </div>
+  <div>
+    <label for="mobile">Mobile Number</label>
+    <input
+            type="text"
+            id="mobile"
+            name="mobile"
+            [(ngModel)]="user.mobile"
+    />
+  </div>
+  <div>
+    <label>Carrier</label>
+    <select name="carrier" [(ngModel)]="user.carrier">
+      <option *ngFor="let carrier of carriers">
+        {{ carrier.name }}
+      </option>
+    </select>
   </div>
   <div>
     <button type="submit" [disabled]="!form.valid || isLoading">

@@ -9,8 +9,11 @@ import { User } from "./registeruser";
   styleUrls: ["./register.component.css"],
 })
 export class RegisterComponent implements OnInit {
-  user: User = { username: "", email: "", password: "", verifyPassword: "" };
+  user: User = { username: "", email: "", mobile: "", carrier: "", password: "", verifyPassword: "" };
   isLoading: boolean = false;
+  carriers = [
+  {name: "AT&T"}, {name: "Sprint"}, {name: "T-Mobile"}, {name: "Verizon"}, {name: "Cricket"}
+  ];
 
   constructor(
     private registerService: RegisterService,
