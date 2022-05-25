@@ -4,6 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { RegisterService } from "../register/register.service";
 import { ConstantsService } from "../constants.service";
 import { ThrowStmt } from "@angular/compiler";
+import {FormBuilder, ReactiveFormsModule, FormsModule, NgControl, FormGroup, FormControl} from '@angular/forms';
 
 import { User } from "../register/registeruser";
 
@@ -21,6 +22,7 @@ export class UpdateUserComponent implements OnInit {
   ];
   currentUser = null;
   message = "";
+  updateUserForm: FormGroup;
 
   constructor(
         http: HttpClient,
@@ -32,18 +34,41 @@ export class UpdateUserComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.updateUserForm = new FormGroup({
+         username: new FormControl(),
+         email: new FormControl(),
+         password: new FormControl(),
+         verifyPassword: new FormControl(),
+         mobile: new FormControl(),
+         carrier: new FormControl()
+       })
     this.message = '';
     const userObservable = this.registerService.getUser();
     userObservable.subscribe((userData: User) => {
           this.currentUser = userData;
-          console.log(`current user: ${JSON.stringify(this.currentUser)}`);
           });
   }
 
 updateUser(): void {
     this.isLoading = true;
-    this.currentUser.mobile = this.normalize(this.currentUser.mobile);
-    console.log(`current time: ${JSON.stringify(this.currentUser.mobile)}`);
+    if (this.updateUserForm.controls.username.value != null) {
+    this.currentUser.username = this.updateUserForm.controls.username.value;
+    }
+    if (this.updateUserForm.controls.email.value != null) {
+        this.currentUser.email = this.updateUserForm.controls.email.value;
+    }
+    if (this.updateUserForm.controls.password.value != null) {
+            this.currentUser.password = this.updateUserForm.controls.password.value;
+        }
+    if (this.updateUserForm.controls.verifyPassword.value != null) {
+                this.currentUser.verifyPassword = this.updateUserForm.controls.verifyPassword.value;
+            }
+    if (this.updateUserForm.controls.mobile.value != null) {
+                this.currentUser.mobile = this.normalize(this.updateUserForm.controls.mobile.value);
+            }
+    if (this.updateUserForm.controls.carrier.value != null) {
+                    this.currentUser.carrier = this.updateUserForm.controls.carrier.value;
+                }
     this.registerService.update(this.currentUser)
       .subscribe(
         response => {

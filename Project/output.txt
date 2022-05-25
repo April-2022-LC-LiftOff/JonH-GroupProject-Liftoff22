@@ -1,6 +1,0 @@
-Reminder Summary:
-Name: WWDC
-Description: Apple
-Frequency: Weekly
-Date Created: 2022-05-23
-Reminder Time: 02:15
