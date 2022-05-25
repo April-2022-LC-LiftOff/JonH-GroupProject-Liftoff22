@@ -15,7 +15,6 @@ public class RegisterFormDTO {
     @NotBlank
     private String email;
 
-    @Size(max=15)
     private String mobile;
 
     private String carrier;

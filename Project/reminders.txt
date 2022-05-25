@@ -1,7 +1,0 @@
-testing8 Reminders: 
-[Name: WWDC
-Description: Apple
-Frequency: Weekly
-Date Created: 2022-05-23Reminder Time: 02:15
- 
-]
