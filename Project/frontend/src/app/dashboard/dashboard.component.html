@@ -1,3 +1,6 @@
+<!DOCTYPE html>
+<html lang="en">
+
 <div id="button-container">
     <button type="button" id="add-button" (click)="goToAddReminder('/reminder')">+</button>
 </div>
@@ -9,9 +12,11 @@
             <p>Frequency: {{r.frequency}}</p>
             <p>Date Created: {{r.dateCreated}}</p>
             <p>Time To Remind: {{r.timeToRemind}}</p>
-            <button type="button" (click)="deleteReminder(r)">Delete</button>
-            <button type="button" (click)="goToUpdate(r.id)">Update</button>
+            <button type="button" class="btn btn-warning" (click)="goToUpdate(r.id)">Update</button>
+            <button type="button" class="btn btn-danger" (click)="deleteReminder(r)">Delete</button>
         </div>
     </div>
 </div>
 <router-outlet></router-outlet>
+
+</html>

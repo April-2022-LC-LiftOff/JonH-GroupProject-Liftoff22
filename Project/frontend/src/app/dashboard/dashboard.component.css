@@ -1,12 +1,19 @@
+html {
+
+    background-color: rgb(112, 102, 119);
+
+}
 #button-container {
+
     border: none;
     position: fixed;
     right: 50%;
     left: 50%;
     bottom: 100px;
-}
 
+}
 #add-button {
+
     color: white;
     background-color: #008099;
     border: none;
@@ -15,16 +22,22 @@
     bottom: 5px;
     border-radius: 50%;
     font-size: 85px;
-}
 
+}
 .reminder-wrapper {
-display: inline-block;
-width: 150px;
-border: 2px solid black;
-padding: 15px;
-margin: 15px;
-}
 
+    text-align: center;
+    display: inline-block;
+    width: 150px;
+    color: rgb(115, 85, 183);
+    background-color: rgb(197, 189, 237);
+    border: 5px rgb(115, 85, 183);
+    padding: 15px;
+    margin: 15px;
+
+}
 .reminder-container {
-width:100%;
+
+    width:100%;
+
 }
