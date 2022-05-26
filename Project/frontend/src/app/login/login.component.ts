@@ -1,7 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { LoginService } from "./login.service";
 import { LoginUser } from "./loginuser";
-import { ErrorBoxComponent } from '../error-box/error-box.component';
+
 
 import { Router } from "@angular/router";
 
@@ -17,7 +17,10 @@ export class LoginComponent {
   };
   isLoading: boolean = false;
 
-  constructor(private loginService: LoginService, private router: Router) {}
+  constructor(
+   private loginService: LoginService,
+   private router: Router
+  ) {}
 
   onLoginSubmit(): void {
     this.isLoading = true;
@@ -34,9 +37,9 @@ export class LoginComponent {
 //             console.log("box is null test");
 //         } else {
 //             box.style.visibility = "visible";
-//             console.log(box.innerHTML);
+//             //console.log(box.innerHTML);
 //         }
-        ErrorBoxComponent.displayError();
+//         this.ErrorBoxComponent.displayError();
         this.isLoading = false;
       }
     );

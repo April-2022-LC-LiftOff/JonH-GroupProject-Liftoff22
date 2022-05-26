@@ -1,7 +1,12 @@
-devinb Reminders: 
-[Name: yuuuuuuuuu
-Description: uuuuuuuuuu
+devdev2 Reminders: 
+[Name: testing4
+Description: testing4
 Frequency: Weekly
-Date Created: 2022-05-23Reminder Time: 17:30
+Date Created: 2022-05-26Reminder Time: 15:15
+ 
+, Name: shouldnt work
+Description: reminder without login
+Frequency: Weekly
+Date Created: 2022-05-26Reminder Time: 14:15
  
 ]

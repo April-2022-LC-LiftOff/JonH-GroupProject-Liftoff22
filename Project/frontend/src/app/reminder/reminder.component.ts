@@ -5,6 +5,7 @@ import { Reminder } from "./reminder";
 import { RTime } from "./rTime";
 import { ConstantsService } from "../constants.service";
 import { ThrowStmt } from "@angular/compiler";
+import { ErrorBoxComponent } from '../error-box/error-box.component';
 
 @Component({
   selector: "app-reminder",
@@ -70,6 +71,7 @@ export class ReminderComponent implements OnInit {
       },
       (e) => {
         console.error("Error adding reminder " + JSON.stringify(e));
+
         this.isLoading = false;
       }
     );
