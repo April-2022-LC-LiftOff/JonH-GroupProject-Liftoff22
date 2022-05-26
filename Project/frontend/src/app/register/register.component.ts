@@ -3,7 +3,7 @@ import { Router } from "@angular/router";
 import { RegisterService } from "./register.service";
 import { User } from "./registeruser";
 import {FormBuilder, ReactiveFormsModule, FormsModule, NgControl, FormGroup, FormControl, Validators} from '@angular/forms';
-
+import { ConfirmedValidator } from './confirmedValidator';
 @Component({
   selector: "app-register",
   templateUrl: "./register.component.html",
@@ -13,24 +13,28 @@ export class RegisterComponent implements OnInit {
   user: User = { username: "", email: "", mobile: "", carrier: "", password: "", verifyPassword: "" };
   isLoading: boolean = false;
   carriers = [
+  {name: "--Optional--"},
   {name: "AT&T"}, {name: "Sprint"}, {name: "T-Mobile"}, {name: "Verizon"}, {name: "Cricket"}
   ];
   registerUserForm: FormGroup;
 
   constructor(
     private registerService: RegisterService,
-    private router: Router
+    private router: Router,
+    private fb: FormBuilder
   ) {}
 
   ngOnInit() {
-  this.registerUserForm = new FormGroup({
-           username: new FormControl(),
-           email: new FormControl(),
-           password: new FormControl(),
-           verifyPassword: new FormControl(),
-           mobile: new FormControl(),
-           carrier: new FormControl()
-         })
+  this.registerUserForm = this.fb.group({
+           username: ["", [Validators.required, Validators.minLength(3), Validators.maxLength(15)]],
+           email: ["", [Validators.required, Validators.email]],
+           password: ["", [Validators.required, Validators.minLength(5), Validators.maxLength(25)]],
+           verifyPassword: ["", [Validators.required]],
+           mobile: [""],
+           carrier: [""]
+          }, { 
+            validator: ConfirmedValidator('password', 'verifyPassword')
+          })
   }
 
   onClickSubmit(): void {
@@ -41,6 +45,7 @@ export class RegisterComponent implements OnInit {
     this.user.verifyPassword = this.registerUserForm.controls.verifyPassword.value;
     this.user.mobile = this.normalize(this.registerUserForm.controls.mobile.value);
     this.user.carrier = this.registerUserForm.controls.carrier.value;
+    console.log(`user: ${JSON.stringify(this.user)}`);
     this.registerService.addUser(this.user).subscribe(
       (savedUser) => {
         console.log(`user saved: ${JSON.stringify(savedUser)}`);

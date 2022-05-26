@@ -1,9 +1,9 @@
 <div style="width: 400px; margin: auto;">
     <div *ngIf="currentUser" class="edit-form">
         <h4>User Profile</h4>
-        <form [formGroup]="updateUserForm">
+        <form [formGroup]="updateUserForm" (ngSubmit)="OnClickSubmit()">
             <div class="form-group">
-                <label for="username">Name</label>
+                <label for="username">Username</label>
                 <input
                         type="text"
                         id="username"

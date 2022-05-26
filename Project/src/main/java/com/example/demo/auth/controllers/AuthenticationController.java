@@ -73,10 +73,10 @@ public class AuthenticationController {
         }
 
         User newUser = new User(registerFormDTO.getUsername(), registerFormDTO.getEmail(), registerFormDTO.getPassword());
-        if (!registerFormDTO.getMobile().isEmpty()) {
+        if (registerFormDTO.getMobile()!=null) {
             newUser.setMobile(registerFormDTO.getMobile());
         }
-        if (!registerFormDTO.getCarrier().isEmpty()) {
+        if (registerFormDTO.getCarrier()!=null) {
             newUser.setCarrier(registerFormDTO.getCarrier());
         }
         userRepository.save(newUser);

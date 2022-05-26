@@ -18,6 +18,7 @@ export class UpdateUserComponent implements OnInit {
   user: User = { username: "", email: "", mobile: "", carrier: "", password: "", verifyPassword: "" };
   isLoading: boolean = false;
   carriers = [
+  {name: "--Optional--"},
   {name: "AT&T"}, {name: "Sprint"}, {name: "T-Mobile"}, {name: "Verizon"}, {name: "Cricket"}
   ];
   currentUser = null;
