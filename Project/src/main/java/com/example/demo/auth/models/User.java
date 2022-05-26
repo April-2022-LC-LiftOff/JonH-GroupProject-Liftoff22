@@ -15,7 +15,6 @@ public class User extends AbstractEntity {
     @NotNull
     private String email;
 
-    @Size(max=15)
     private String mobile;
 
     private String carrier;
@@ -36,6 +35,8 @@ public class User extends AbstractEntity {
     public String getUsername() {
         return username;
     }
+
+    public void setUsername(String username) { this.username = username; }
 
     public String getEmail() {
         return email;
@@ -59,6 +60,18 @@ public class User extends AbstractEntity {
 
     public void setCarrier(String carrier) {
         this.carrier = carrier;
+    }
+
+    public String setPassword(String password) {
+        return encoder.encode(password);
+    }
+
+    public void setPwHash(String pwHash) {
+        this.pwHash = pwHash;
+    }
+
+    public String getPwHash() {
+        return pwHash;
     }
 
     public boolean isMatchingPassword(String password) {

@@ -4,6 +4,7 @@ import { Observable } from "rxjs";
 import { User } from "../register/registeruser";
 import { ConstantsService } from "../constants.service";
 
+const baseUrl = 'http://localhost:8080/api/profile';
 @Injectable({
   providedIn: "root",
 })
@@ -16,4 +17,16 @@ export class RegisterService {
       user
     );
   }
+
+  getUser(): Observable<User> {
+      return this.http.get<User>(
+        this.constants.getRootURL() + "/profile");
+    }
+
+update(data): Observable<any> {
+    return this.http.put(`${baseUrl}`, data);
+  }
+
+
+
 }

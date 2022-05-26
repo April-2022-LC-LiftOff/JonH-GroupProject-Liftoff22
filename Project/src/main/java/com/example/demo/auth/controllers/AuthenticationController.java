@@ -1,11 +1,14 @@
 package com.example.demo.auth.controllers;
 
 import com.example.demo.auth.data.UserRepository;
+import com.example.demo.auth.models.Reminder;
 import com.example.demo.auth.models.User;
 import com.example.demo.auth.models.dto.LoginFormDTO;
 import com.example.demo.auth.models.dto.RegisterFormDTO;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.ui.Model;
 import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.*;
@@ -13,7 +16,11 @@ import org.springframework.web.bind.annotation.*;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
-import javax.validation.constraints.Null;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Optional;
 
 @RestController
@@ -66,10 +73,10 @@ public class AuthenticationController {
         }
 
         User newUser = new User(registerFormDTO.getUsername(), registerFormDTO.getEmail(), registerFormDTO.getPassword());
-        if (!registerFormDTO.getMobile().isEmpty()) {
+        if (registerFormDTO.getMobile()!=null) {
             newUser.setMobile(registerFormDTO.getMobile());
         }
-        if (!registerFormDTO.getCarrier().isEmpty()) {
+        if (registerFormDTO.getCarrier()!=null) {
             newUser.setCarrier(registerFormDTO.getCarrier());
         }
         userRepository.save(newUser);
@@ -110,5 +117,53 @@ public class AuthenticationController {
         request.getSession().invalidate();
         return ResponseEntity.ok().build();
     }
+
+    @PutMapping("/profile")
+    public ResponseEntity<Object> updateUser(@RequestBody User user, HttpServletRequest request, RegisterFormDTO registerFormDTO) {
+
+        HttpSession session = request.getSession();
+        User oldUserInfo = getUserFromSession(session);
+
+        try {
+            Files.write(Paths.get("user.txt"), Arrays.asList("User Info Input: \n" + user.getMobile()));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        if (user!=null) {
+            User _user = user;
+            _user.setUsername(user.getUsername());
+            _user.setEmail(user.getEmail());
+            _user.setMobile(user.getMobile());
+            _user.setCarrier(user.getCarrier());
+            if(registerFormDTO.getPassword()!=null) {
+                String password = registerFormDTO.getPassword();
+                String verifyPassword = registerFormDTO.getVerifyPassword();
+                if (!password.equals(verifyPassword)) {
+                    return ResponseEntity.badRequest().body("Password mismatch");
+                }
+                _user.setPassword(registerFormDTO.getPassword());
+            } else if(registerFormDTO.getPassword() == null) {
+                _user.setPwHash(oldUserInfo.getPwHash());
+            }
+            return new ResponseEntity<>(userRepository.save(_user), HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+    }
+
+    @GetMapping("/profile")
+    public ResponseEntity<User> getUser(HttpServletRequest request) {
+        HttpSession session = request.getSession();
+        User user = getUserFromSession(session);
+
+        if (user!=null) {
+            return ResponseEntity.ok(user);
+        } else {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+    }
+
+
 
 }
