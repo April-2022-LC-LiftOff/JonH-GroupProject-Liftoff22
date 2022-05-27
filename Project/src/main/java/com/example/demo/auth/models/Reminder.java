@@ -44,17 +44,11 @@ public class Reminder extends AbstractEntity {
 
     public Reminder() {}
 
-    public String getName() {
-        return name;
-    }
+    public String getName() { return name; }
 
-    public String getDescription() {
-        return description;
-    }
+    public String getDescription() { return description; }
 
-    public String getFrequency() {
-        return frequency;
-    }
+    public String getFrequency() { return frequency; }
 
     public LocalDate getDateCreated() {
         return dateCreated;
@@ -81,7 +75,7 @@ public class Reminder extends AbstractEntity {
     @Override
     public String toString() {
         return "Name: " + name + "\nDescription: " + description + "\nFrequency: " + frequency + "\nDate Created: " + dateCreated
-                + "Reminder Time: " + timeToRemind + "\n \n";
+                + "\nReminder Time: " + timeToRemind + "\n \n";
     }
 
 }
