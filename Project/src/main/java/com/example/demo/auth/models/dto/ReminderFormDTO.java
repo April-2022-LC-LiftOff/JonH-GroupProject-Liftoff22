@@ -34,6 +34,9 @@ public class ReminderFormDTO {
 
     private int rUserId;
 
+    @NotNull
+    private String reminderCategory;
+
     public String getName() {
         return name;
     }
@@ -78,6 +81,14 @@ public class ReminderFormDTO {
 
     public void setTimeToRemind(LocalTime timeToRemind) {
         this.timeToRemind = timeToRemind;
+    }
+
+    public String getReminderCategory() {
+        return reminderCategory;
+    }
+
+    public void setReminderCategory(String reminderCategory) {
+        this.reminderCategory = reminderCategory;
     }
 }
 

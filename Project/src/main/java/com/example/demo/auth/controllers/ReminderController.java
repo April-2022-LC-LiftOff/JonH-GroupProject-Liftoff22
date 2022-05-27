@@ -9,7 +9,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.*;
-import com.example.demo.auth.controllers.AuthenticationController;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
@@ -41,13 +41,13 @@ public class ReminderController {
             return ResponseEntity.badRequest().body("Has Errors");
         }
 
-        Reminder newReminder = new Reminder(reminderFormDTO.getName(), reminderFormDTO.getDescription(), reminderFormDTO.getFrequency(), reminderFormDTO.getTimeToRemind());
+        Reminder newReminder = new Reminder(reminderFormDTO.getName(), reminderFormDTO.getDescription(), reminderFormDTO.getFrequency(), reminderFormDTO.getTimeToRemind(), reminderFormDTO.getReminderCategory());
         newReminder.setRUserId(user.getId());
         reminderRepository.save(newReminder);
         try {
             Files.write(Paths.get("output.txt"), Arrays.asList("Reminder Summary:\nName: " + reminderFormDTO.getName() + "\nDescription: "
             + reminderFormDTO.getDescription() + "\nFrequency: " + reminderFormDTO.getFrequency()
-            + "\nDate Created: " + reminderFormDTO.getDateCreated() + "\nReminder Time: " + reminderFormDTO.getTimeToRemind()));
+            + " \nDate Created: " + reminderFormDTO.getDateCreated() + " \nReminder Time: " + reminderFormDTO.getTimeToRemind() + " \nReminder Category: " + reminderFormDTO.getReminderCategory()));
         } catch (IOException e) {
             e.printStackTrace();
         }

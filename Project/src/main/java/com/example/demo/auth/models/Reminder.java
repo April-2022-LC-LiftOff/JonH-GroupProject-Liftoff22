@@ -2,6 +2,7 @@ package com.example.demo.auth.models;
 
 
 import javax.persistence.Entity;
+import javax.persistence.ManyToOne;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
@@ -28,18 +29,21 @@ public class Reminder extends AbstractEntity {
     private LocalDate dateCreated;
 
     @NotNull
-    @NotEmpty
+    @NotEmpty(message="Time is required")
     private LocalTime timeToRemind;
 
     private int rUserId;
 
+    @NotNull(message="Category is required")
+    private String reminderCategory;
 
-    public Reminder(String name, String description, String frequency, LocalTime timeToRemind) {
+    public Reminder(String name, String description, String frequency, LocalTime timeToRemind, String reminderCategory) {
         this.name = name;
         this.description = description;
         this.frequency = frequency;
         this.dateCreated = LocalDate.now();
         this.timeToRemind = timeToRemind;
+        this.reminderCategory = reminderCategory;
     }
 
     public Reminder() {}
@@ -78,10 +82,18 @@ public class Reminder extends AbstractEntity {
         this.rUserId = rUserId;
     }
 
+    public String getReminderCategory() {
+        return reminderCategory;
+    }
+
+    public void setReminderCategory(String reminderCategory) {
+        this.reminderCategory = reminderCategory;
+    }
+
     @Override
     public String toString() {
         return "Name: " + name + "\nDescription: " + description + "\nFrequency: " + frequency + "\nDate Created: " + dateCreated
-                + "Reminder Time: " + timeToRemind + "\n \n";
+                + "\nReminder Time: " + timeToRemind + "\nCategory: " + reminderCategory + "\n \n";
     }
 
 }

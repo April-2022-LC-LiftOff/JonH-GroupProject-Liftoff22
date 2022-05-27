@@ -1,5 +1,9 @@
-<div id="button-container">
-    <button type="button" id="add-button" (click)="goToAddReminder('/reminder')">+</button>
+<div class="button-container">
+    <img src="../../assets/img/add-reminder.png" (click)="goToAddReminder('/reminder')" alt="Add Reminder">
+    <div class="button-text">
+        <p>Add Reminder</p>
+    </div>
+    
 </div>
 <div class="reminder-container">
     <div *ngFor="let r of reminders; let i = index" [class.active]="i == currentIndex" (mouseover)="setActiveReminder(reminder,i)">
@@ -9,6 +13,7 @@
             <p>Frequency: {{r.frequency}}</p>
             <p>Date Created: {{r.dateCreated}}</p>
             <p>Time To Remind: {{r.timeToRemind}}</p>
+            <p>Category: {{r.reminderCategory}}</p>
             <button type="button" (click)="deleteReminder(r)">Delete</button>
             <button type="button" (click)="goToUpdate(r.id)">Update</button>
         </div>
