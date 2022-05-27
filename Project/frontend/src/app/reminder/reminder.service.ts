@@ -5,6 +5,7 @@ import { Reminder } from "../reminder/reminder";
 import { ConstantsService } from "../constants.service";
 
 const baseUrl = 'http://localhost:8080/api/reminders';
+const baseUrl2 = 'http://localhost:8080/api/sendemail';
 @Injectable({
   providedIn: "root",
 })
@@ -34,6 +35,10 @@ export class ReminderService {
   update(id, data): Observable<any> {
       return this.http.put(`${baseUrl}/${id}`, data);
     }
+
+      sendEmail(id): Observable<any> {
+          return this.http.get(`${baseUrl2}/${id}`);
+        }
 
 
 

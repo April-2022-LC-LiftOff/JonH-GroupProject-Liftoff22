@@ -28,7 +28,9 @@ export class DashboardComponent implements OnInit {
   message = "";
   isLoading: boolean = false;
   visible: boolean = true;
+  currentEmail = null;
   reminderCategories = ["Personal", "Work", "Home", "Finance", "Other"];
+
 
   constructor(
       private http: HttpClient,
@@ -52,6 +54,7 @@ export class DashboardComponent implements OnInit {
   goToUpdate(id: string) {
       this.router.navigate(['/reminders/' + id]);
     }
+
 
 
   deleteReminder(reminder: Reminder): void {
@@ -87,5 +90,18 @@ export class DashboardComponent implements OnInit {
               this.isLoading = false;
             });
     }
+
+      sendReminder(id): void {
+          this.reminderService.sendEmail(id)
+            .subscribe(
+              data => {
+                this.currentEmail = data;
+                console.log(`current reminder: ${JSON.stringify(data)}`);
+                console.log("Email sent out to the world");
+              },
+              error => {
+                console.log(error);
+              });
+        }
 
 }

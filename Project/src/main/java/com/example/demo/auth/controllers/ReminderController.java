@@ -44,13 +44,15 @@ public class ReminderController {
         Reminder newReminder = new Reminder(reminderFormDTO.getName(), reminderFormDTO.getDescription(), reminderFormDTO.getFrequency(), reminderFormDTO.getTimeToRemind(), reminderFormDTO.getReminderCategory());
         newReminder.setRUserId(user.getId());
         reminderRepository.save(newReminder);
-        try {
-            Files.write(Paths.get("output.txt"), Arrays.asList("Reminder Summary:\nName: " + reminderFormDTO.getName() + "\nDescription: "
-            + reminderFormDTO.getDescription() + "\nFrequency: " + reminderFormDTO.getFrequency()
-            + " \nDate Created: " + reminderFormDTO.getDateCreated() + " \nReminder Time: " + reminderFormDTO.getTimeToRemind() + " \nReminder Category: " + reminderFormDTO.getReminderCategory()));
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+
+//        try {
+//            Files.write(Paths.get("output.txt"), Arrays.asList("Reminder Summary:\nName: " + reminderFormDTO.getName() + "\nDescription: "
+//            + reminderFormDTO.getDescription() + "\nFrequency: " + reminderFormDTO.getFrequency()
+//            + "\nDate Created: " + reminderFormDTO.getDateCreated() + "\nReminder Time: " + reminderFormDTO.getTimeToRemind()));
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+
         return ResponseEntity.ok(newReminder);
     }
 
@@ -97,11 +99,6 @@ public class ReminderController {
         User user = authenticationController.getUserFromSession(session);
 
         List<Reminder> userReminders = reminderRepository.findByrUserId(user.getId());
-        try {
-            Files.write(Paths.get("reminders.txt"), Arrays.asList(user.getUsername() + " Reminders: \n" + userReminders));
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
         return ResponseEntity.ok(userReminders);
     }
 

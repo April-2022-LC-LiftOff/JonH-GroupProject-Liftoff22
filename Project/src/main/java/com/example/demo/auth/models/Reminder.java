@@ -48,17 +48,11 @@ public class Reminder extends AbstractEntity {
 
     public Reminder() {}
 
-    public String getName() {
-        return name;
-    }
+    public String getName() { return name; }
 
-    public String getDescription() {
-        return description;
-    }
+    public String getDescription() { return description; }
 
-    public String getFrequency() {
-        return frequency;
-    }
+    public String getFrequency() { return frequency; }
 
     public LocalDate getDateCreated() {
         return dateCreated;
