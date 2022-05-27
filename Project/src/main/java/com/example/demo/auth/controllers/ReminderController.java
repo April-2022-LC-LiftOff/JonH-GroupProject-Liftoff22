@@ -77,6 +77,7 @@ public class ReminderController {
             _reminder.setDescription(reminder.getDescription());
             _reminder.setFrequency(reminder.getFrequency());
             _reminder.setTimeToRemind(reminder.getTimeToRemind());
+            _reminder.setReminderCategory(reminder.getReminderCategory());
             return new ResponseEntity<>(reminderRepository.save(_reminder), HttpStatus.OK);
         } else {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);

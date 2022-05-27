@@ -48,7 +48,7 @@
             </div>
             <div>
                 <label>Category:</label>
-                <select name="reminderCategory" [(ngModel)]="reminder.reminderCategory" required>
+                <select name="reminderCategory" [(ngModel)]="currentReminder.reminderCategory" required>
                     <option *ngFor="let category of reminderCategories">
                         {{ category }}
                     </option>
