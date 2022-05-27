@@ -30,3 +30,7 @@
 .topnav .icon {
   display: none;
 }
+
+.topnav-right {
+  float: right;
+}

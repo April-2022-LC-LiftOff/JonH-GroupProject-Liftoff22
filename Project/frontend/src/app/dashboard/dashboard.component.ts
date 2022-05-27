@@ -18,7 +18,8 @@ export class DashboardComponent implements OnInit {
     description: "",
     frequency: "",
     dateCreated: "",
-    timeToRemind: ""
+    timeToRemind: "",
+    reminderCategory:"",
   };
 
   reminders: Reminder[] = [];
@@ -28,6 +29,8 @@ export class DashboardComponent implements OnInit {
   isLoading: boolean = false;
   visible: boolean = true;
   currentEmail = null;
+  reminderCategories = ["Personal", "Work", "Home", "Finance", "Other"];
+
 
   constructor(
       private http: HttpClient,

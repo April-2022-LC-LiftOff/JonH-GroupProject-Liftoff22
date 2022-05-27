@@ -14,7 +14,9 @@ export class RegisterComponent implements OnInit {
   isLoading: boolean = false;
   carriers = [
   {name: "--Optional--"},
-  {name: "AT&T"}, {name: "Sprint"}, {name: "T-Mobile"}, {name: "Verizon"}, {name: "Cricket"}
+  {name: "Alltel"}, {name: "AT&T"}, {name: "Boost Mobile"},
+  {name: "Cingular"}, {name: "Nextel"}, {name: "Sprint"}, 
+  {name: "T-Mobile"}, {name: "Verizon"}, {name: "Virgin"},
   ];
   registerUserForm: FormGroup;
 

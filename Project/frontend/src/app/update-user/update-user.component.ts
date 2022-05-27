@@ -18,9 +18,11 @@ export class UpdateUserComponent implements OnInit {
   user: User = { username: "", email: "", mobile: "", carrier: "", password: "", verifyPassword: "" };
   isLoading: boolean = false;
   carriers = [
-  {name: "--Optional--"},
-  {name: "AT&T"}, {name: "Sprint"}, {name: "T-Mobile"}, {name: "Verizon"}, {name: "Cricket"}
-  ];
+    {name: "--Optional--"},
+    {name: "Alltel"}, {name: "AT&T"}, {name: "Boost Mobile"},
+    {name: "Cingular"}, {name: "Nextel"}, {name: "Sprint"}, 
+    {name: "T-Mobile"}, {name: "Verizon"}, {name: "Virgin"},
+    ];
   currentUser = null;
   message = "";
   updateUserForm: FormGroup;

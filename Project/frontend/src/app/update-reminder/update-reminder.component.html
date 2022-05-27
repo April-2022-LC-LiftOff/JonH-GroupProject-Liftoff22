@@ -46,6 +46,14 @@
                     </option>
                 </select>
             </div>
+            <div>
+                <label>Category:</label>
+                <select name="reminderCategory" [(ngModel)]="reminder.reminderCategory" required>
+                    <option *ngFor="let category of reminderCategories">
+                        {{ category }}
+                    </option>
+                </select>
+            </div>
         </form>
         <button
                 type="submit"

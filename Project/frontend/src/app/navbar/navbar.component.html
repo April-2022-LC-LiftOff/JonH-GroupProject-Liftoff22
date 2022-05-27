@@ -1,7 +1,8 @@
 <div class="topnav" id="myTopnav">
   <a routerLink="/register" routerLinkActive="active">Register</a>
   <a routerLink="/login" routerLinkActive="active">Login</a>
-  <a routerLink="/reminder" routerLinkActive="active">Create Reminder</a>
-  <a routerLink="/profile" routerLinkActive="active">Update Profile</a>
-  <app-logout></app-logout>
+  <div class="topnav-right">
+    <a routerLink="/profile" routerLinkActive="active"><img src="../../assets/img/user-edit.png" alt="Update User Profile"></a>
+    <app-logout></app-logout>
+  </div>
 </div>
