@@ -20,6 +20,7 @@ const routes: Routes = [
   { path: "landing", component: LandingComponent },
   { path: "", redirectTo: "/landing", pathMatch: "full" },
   { path: "sendemail/:id", redirectTo: "/dashboard", pathMatch: "full" },
+  { path: "sendsms/:id", redirectTo: "/dashboard", pathMatch: "full" },
   { path: "**", component: PagenotfoundComponent }
 ];
 

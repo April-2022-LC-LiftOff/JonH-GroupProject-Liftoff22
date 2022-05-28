@@ -86,8 +86,8 @@ public class Reminder extends AbstractEntity {
 
     @Override
     public String toString() {
-        return "Name: " + name + "\nDescription: " + description + "\nFrequency: " + frequency + "\nDate Created: " + dateCreated
-                + "\nReminder Time: " + timeToRemind + "\nCategory: " + reminderCategory + "\n \n";
+        return "Name: " + name + "<br>Description: " + description + "<br>Frequency: " + frequency + "<br>Date Created: " + dateCreated
+                + "<br>Reminder Time: " + timeToRemind + "<br>Category: " + reminderCategory + "\n \n";
     }
 
 }
