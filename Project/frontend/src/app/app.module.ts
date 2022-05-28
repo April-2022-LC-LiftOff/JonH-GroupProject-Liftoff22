@@ -18,6 +18,7 @@ import { UpdateReminderComponent } from "./update-reminder/update-reminder.compo
 import { NavbarComponent } from "./navbar/navbar.component";
 import { UpdateUserComponent } from './update-user/update-user.component';
 import { PhoneMaskDirective } from './update-user/phone-mask-directive';
+import { FooterComponent } from './footer/footer.component';
 
 
 @NgModule({
@@ -33,7 +34,8 @@ import { PhoneMaskDirective } from './update-user/phone-mask-directive';
     UpdateReminderComponent,
     NavbarComponent,
     UpdateUserComponent,
-    PhoneMaskDirective
+    PhoneMaskDirective,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
