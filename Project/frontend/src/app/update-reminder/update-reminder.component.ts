@@ -22,6 +22,7 @@ export class UpdateReminderComponent implements OnInit {
     dateCreated: "",
     timeToRemind: "",
     reminderCategory: "",
+    sendType: ""
   };
       isLoading: boolean = false;
       frequencies = [
@@ -34,6 +35,12 @@ export class UpdateReminderComponent implements OnInit {
       reminderCategories = ["Personal", "Work", "Home", "Finance", "Other"];
       message = "";
       currentReminder = null;
+
+      sendTypes = [
+          "Email",
+          "SMS",
+          "Email & SMS"
+        ];
 
         rTime: RTime = {
           hour: "",

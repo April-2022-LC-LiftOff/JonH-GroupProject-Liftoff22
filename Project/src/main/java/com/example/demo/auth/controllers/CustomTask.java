@@ -4,10 +4,7 @@ import com.example.demo.auth.models.Reminder;
 import com.example.demo.auth.models.User;
 
 import java.time.LocalTime;
-import java.util.Calendar;
-import java.util.List;
-import java.util.Timer;
-import java.util.TimerTask;
+import java.util.*;
 import java.util.concurrent.TimeUnit;
 
 import static java.lang.Integer.parseInt;
@@ -33,7 +30,6 @@ public class CustomTask extends TimerTask {
         try {
 
             // Your task process
-
             if(this.reminderType.contains("email")) {
                 EmailController.sendMail(this.reminder, this.user);
                 System.err.println("User id:" + this.user.getId() + " Reminder Name:" + this.reminder.getName() + " Sms");

@@ -16,8 +16,8 @@
             <p>Category: {{r.reminderCategory}}</p>
             <button type="button" (click)="deleteReminder(r)">Delete</button>
             <button type="button" (click)="goToUpdate(r.id)">Update</button>
-            <button type="button" (click)="sendReminderEmail(r.id)">Send Email</button>
-            <button type="button" (click)="sendReminderSms(r.id)">Send SMS</button>
+            <button type="button" (click)="sendReminder(r.id, r.sendType)">Send {{r.sendType}}l</button>
+<!--            <button type="button" (click)="sendReminderSms(r.id)">Send SMS</button>-->
         </div>
     </div>
 </div>

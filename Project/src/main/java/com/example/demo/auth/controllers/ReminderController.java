@@ -41,7 +41,7 @@ public class ReminderController {
             return ResponseEntity.badRequest().body("Has Errors");
         }
 
-        Reminder newReminder = new Reminder(reminderFormDTO.getName(), reminderFormDTO.getDescription(), reminderFormDTO.getFrequency(), reminderFormDTO.getTimeToRemind(), reminderFormDTO.getReminderCategory());
+        Reminder newReminder = new Reminder(reminderFormDTO.getName(), reminderFormDTO.getDescription(), reminderFormDTO.getFrequency(), reminderFormDTO.getTimeToRemind(), reminderFormDTO.getReminderCategory(), reminderFormDTO.getSendType());
         newReminder.setRUserId(user.getId());
         reminderRepository.save(newReminder);
 
@@ -78,6 +78,7 @@ public class ReminderController {
             _reminder.setFrequency(reminder.getFrequency());
             _reminder.setTimeToRemind(reminder.getTimeToRemind());
             _reminder.setReminderCategory(reminder.getReminderCategory());
+            _reminder.setSendType(reminder.getSendType());
             return new ResponseEntity<>(reminderRepository.save(_reminder), HttpStatus.OK);
         } else {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);

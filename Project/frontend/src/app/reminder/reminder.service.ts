@@ -36,12 +36,15 @@ export class ReminderService {
       return this.http.put(`${baseUrl}/${id}`, data);
     }
 
-  sendEmail(id): Observable<any> {
-          return this.http.get(`${baseUrl2}/sendemail/${id}`);
-  }
-  sendSms(id): Observable<any> {
-    return this.http.get(`${baseUrl2}/sendsms/${id}`);
-  }
+//   sendEmail(id): Observable<any> {
+//           return this.http.get(`${baseUrl2}/sendemail/${id}`);
+//   }
+//   sendSms(id): Observable<any> {
+//     return this.http.get(`${baseUrl2}/sendsms/${id}`);
+//   }
+  send(id): Observable<any> {
+      return this.http.get(`${baseUrl2}/sendsmsandemail/${id}`);
+    }
 
 
 

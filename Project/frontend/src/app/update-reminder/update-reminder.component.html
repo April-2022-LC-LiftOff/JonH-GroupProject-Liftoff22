@@ -54,6 +54,14 @@
                     </option>
                 </select>
             </div>
+            <div>
+                <label>How to notify:</label>
+                <select name="sendType" [(ngModel)]="currentReminder.sendType" required>
+                    <option *ngFor="let type of sendTypes">
+                        {{ type }}
+                    </option>
+                </select>
+            </div>
         </form>
         <button
                 type="submit"

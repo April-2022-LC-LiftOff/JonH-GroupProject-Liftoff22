@@ -20,6 +20,7 @@ export class DashboardComponent implements OnInit {
     dateCreated: "",
     timeToRemind: "",
     reminderCategory:"",
+    sendType: ""
   };
 
   reminders: Reminder[] = [];
@@ -30,6 +31,11 @@ export class DashboardComponent implements OnInit {
   visible: boolean = true;
   currentEmail = null;
   reminderCategories = ["Personal", "Work", "Home", "Finance", "Other"];
+  sendTypes = [
+      "Email",
+      "SMS",
+      "Email & SMS"
+    ];
 
 
   constructor(
@@ -91,25 +97,37 @@ export class DashboardComponent implements OnInit {
             });
     }
 
-      sendReminderEmail(id): void {
-          this.reminderService.sendEmail(id)
+//       sendReminderEmail(id): void {
+//           this.reminderService.sendEmail(id)
+//             .subscribe(
+//               data => {
+//                 this.currentEmail = data;
+//                 console.log(`current reminder: ${JSON.stringify(data)}`);
+//                 console.log("Email sent out to the world");
+//               },
+//               error => {
+//                 console.log(error);
+//               });
+//         }
+//     sendReminderSms(id): void {
+//               this.reminderService.sendSms(id)
+//                 .subscribe(
+//                   data => {
+//                     this.currentEmail = data;
+//                     console.log(`current reminder: ${JSON.stringify(data)}`);
+//                     console.log("Sms sent out to the world");
+//                   },
+//                   error => {
+//                     console.log(error);
+//                   });
+//             }
+    sendReminder(id): void {
+        this.reminderService.send(id)
             .subscribe(
-              data => {
-                this.currentEmail = data;
-                console.log(`current reminder: ${JSON.stringify(data)}`);
-                console.log("Email sent out to the world");
-              },
-              error => {
-                console.log(error);
-              });
-        }
-    sendReminderSms(id): void {
-              this.reminderService.sendSms(id)
-                .subscribe(
                   data => {
                     this.currentEmail = data;
                     console.log(`current reminder: ${JSON.stringify(data)}`);
-                    console.log("Sms sent out to the world");
+                    console.log("Email sent out to the world");
                   },
                   error => {
                     console.log(error);
