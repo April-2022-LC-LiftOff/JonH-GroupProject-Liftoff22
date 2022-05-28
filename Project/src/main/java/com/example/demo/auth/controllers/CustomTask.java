@@ -18,27 +18,38 @@ public class CustomTask extends TimerTask {
 
     private User user;
 
+    private String reminderType;
+
     public CustomTask() {
     }
 
-    public CustomTask(Reminder reminder, User user) {
+    public CustomTask(Reminder reminder, User user, String reminderType) {
         this.reminder = reminder;
         this.user = user;
+        this.reminderType = reminderType;
     }
 
     public void run() {
         try {
 
             // Your task process
-            System.err.println("User id:" + this.user.getId() + " Reminder Name:" + this.reminder.getName());
-            EmailController.sendMail(this.reminder, this.user);
+
+            if(this.reminderType.contains("email")) {
+                EmailController.sendMail(this.reminder, this.user);
+                System.err.println("User id:" + this.user.getId() + " Reminder Name:" + this.reminder.getName() + " Sms");
+            }
+            if(this.reminderType.contains("sms")) {
+                EmailController.sendSms(this.reminder, this.user);
+                System.err.println("User id:" + this.user.getId() + " Reminder Name:" + this.reminder.getName() + " Sms");
+            }
+
 
         } catch (Exception ex) {
             System.out.println("error running thread " + ex.getMessage());
         }
     }
 
-    public static void runTask(Reminder reminder, User user) {
+    public static void runTask(Reminder reminder, User user, String reminderType) {
 
         //Trasforms time to millis
         List times = List.of(reminder.getTimeToRemind().toString().split(":"));
@@ -68,7 +79,7 @@ public class CustomTask extends TimerTask {
 
         // Start running the task on Monday at 15:40:00, period is set to 8 hours
         // if you want to run the task immediately, set the 2nd parameter to 0
-        time.schedule(new CustomTask(reminder, user), calendar.getTime(), TimeUnit.DAYS.toMillis(alertTime));
+        time.schedule(new CustomTask(reminder, user, reminderType), calendar.getTime(), TimeUnit.DAYS.toMillis(alertTime));
     }
 
 //    private String toString(LocalTime timeToRemind) {

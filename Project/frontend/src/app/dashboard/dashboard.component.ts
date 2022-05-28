@@ -91,7 +91,7 @@ export class DashboardComponent implements OnInit {
             });
     }
 
-      sendReminder(id): void {
+      sendReminderEmail(id): void {
           this.reminderService.sendEmail(id)
             .subscribe(
               data => {
@@ -103,5 +103,18 @@ export class DashboardComponent implements OnInit {
                 console.log(error);
               });
         }
+    sendReminderSms(id): void {
+              this.reminderService.sendSms(id)
+                .subscribe(
+                  data => {
+                    this.currentEmail = data;
+                    console.log(`current reminder: ${JSON.stringify(data)}`);
+                    console.log("Sms sent out to the world");
+                  },
+                  error => {
+                    console.log(error);
+                  });
+            }
+
 
 }
