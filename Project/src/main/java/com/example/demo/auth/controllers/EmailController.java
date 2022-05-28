@@ -77,7 +77,7 @@ public class EmailController {
         if (Objects.equals(user.getCarrier(), "Alltel")) {
             sms = user.getMobile() + "@message.alltel.com";
         } else if (Objects.equals(user.getCarrier(), "AT&T")) {
-            sms = user.getMobile() + "@mmode.com";
+            sms = user.getMobile() + "@txt.att.net";
         } else if (Objects.equals(user.getCarrier(), "Boost Mobile")) {
             sms = user.getMobile() + "@myboostmobile.com";
         } else if (Objects.equals(user.getCarrier(), "Cingular")) {
