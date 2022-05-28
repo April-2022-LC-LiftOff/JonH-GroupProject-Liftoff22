@@ -20,6 +20,7 @@ export class ReminderComponent implements OnInit {
     dateCreated: "",
     timeToRemind: "",
     reminderCategory: "",
+    sendType: ""
   };
 
   isLoading: boolean = false;
@@ -27,6 +28,12 @@ export class ReminderComponent implements OnInit {
     { id: 0, name: "Daily" },
     { id: 1, name: "Weekly" },
     { id: 2, name: "Monthly" }
+  ];
+
+  sendTypes = [
+    "Email",
+    "SMS",
+    "Email & SMS"
   ];
 
   rTime: RTime = {

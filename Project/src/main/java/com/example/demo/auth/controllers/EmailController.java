@@ -174,4 +174,22 @@ public class EmailController {
         }
     }
 
+    @GetMapping("/sendsmsandemail/{id}")
+    public ResponseEntity<Object> sendReminderSmsAndEmailbyId(@PathVariable("id") int id, HttpServletRequest request) throws AddressException, MessagingException, IOException, IOException  {
+
+        Optional<Reminder> reminderData = reminderRepository.findById(id);
+
+        HttpSession userSession = request.getSession();
+        User user = authenticationController.getUserFromSession(userSession);
+
+        if(reminderData.isPresent()) {
+            Reminder emailReminder = reminderData.get();
+            CustomTask.runTask(emailReminder, user, emailReminder.getSendType().toLowerCase(Locale.ROOT));
+//            sendmail(emailReminder, request);
+            return new ResponseEntity<>(emailReminder, HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+    }
+
 }

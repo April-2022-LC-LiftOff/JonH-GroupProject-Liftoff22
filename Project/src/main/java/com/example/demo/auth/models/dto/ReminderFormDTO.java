@@ -37,6 +37,9 @@ public class ReminderFormDTO {
     @NotNull
     private String reminderCategory;
 
+    @NotNull
+    private String sendType;
+
     public String getName() {
         return name;
     }
@@ -89,6 +92,14 @@ public class ReminderFormDTO {
 
     public void setReminderCategory(String reminderCategory) {
         this.reminderCategory = reminderCategory;
+    }
+
+    public String getSendType() {
+        return sendType;
+    }
+
+    public void setSendType(String sendType) {
+        this.sendType = sendType;
     }
 }
 
