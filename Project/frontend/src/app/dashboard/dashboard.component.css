@@ -5,13 +5,6 @@
     left: 50%;
 }
 
-.button-container1 {
-    border: none;
-    position: fixed;
-    right: 50%;
-    left: 50%;
-}
-
 .button-text {
     display:inline-block;
     text-align: justify;
