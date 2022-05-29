@@ -47,12 +47,12 @@ public class CustomTask extends TimerTask {
 
     public static void runTask(Reminder reminder, User user, String reminderType) {
 
-        //Trasforms time to millis
+        //Transforms time to millis
         List times = List.of(reminder.getTimeToRemind().toString().split(":"));
         int hours = parseInt(times.get(0).toString());
         int minutes =  parseInt(times.get(1).toString());
 
-        //Trasforms frequency to millis
+        //Transforms frequency to millis
         long alertTime = 1;
         if (reminder.getFrequency() == "Daily") {
             alertTime = 1;
