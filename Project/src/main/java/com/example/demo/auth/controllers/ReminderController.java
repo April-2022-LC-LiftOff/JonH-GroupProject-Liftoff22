@@ -16,6 +16,7 @@ import javax.validation.Valid;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
@@ -99,9 +100,14 @@ public class ReminderController {
     public ResponseEntity<Object> displayAllReminders(HttpServletRequest request) {
         HttpSession session = request.getSession();
         User user = authenticationController.getUserFromSession(session);
+        if (user != null) {
+            List<Reminder> userReminders = reminderRepository.findByrUserId(user.getId());
+            return ResponseEntity.ok(userReminders);
+        }
+        List<Reminder> nullReminders = new ArrayList<>();
+        nullReminders.add(new Reminder("error"));
+        return ResponseEntity.ok(nullReminders);
 
-        List<Reminder> userReminders = reminderRepository.findByrUserId(user.getId());
-        return ResponseEntity.ok(userReminders);
     }
 
 

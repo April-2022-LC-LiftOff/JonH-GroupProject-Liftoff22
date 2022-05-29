@@ -1,4 +1,7 @@
-<p>Login !!</p>
+<div class="error-box "*ngIf="errorBox.eMessage">
+  <p>{{errorBox.eMessage}}</p>
+</div>
+
 <form
   #form="ngForm"
   method="post"

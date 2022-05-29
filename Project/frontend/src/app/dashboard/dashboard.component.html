@@ -1,13 +1,17 @@
-<div class="button-container">
+<div class="error-box "*ngIf="errorBox.eMessage">
+    <p>{{errorBox.eMessage}}</p>
+</div>
+<ng-container *ngFor="let r of reminders">
+<div class="button-container" *ngIf="r.name != 'error'">
     <img src="../../assets/img/add-reminder.png" (click)="goToAddReminder('/reminder')" alt="Add Reminder">
     <div class="button-text">
         <p>Add Reminder</p>
     </div>
-    
 </div>
+</ng-container>
 <div class="reminder-container">
     <div *ngFor="let r of reminders; let i = index" [class.active]="i == currentIndex" (mouseover)="setActiveReminder(reminder,i)">
-        <div class="reminder-wrapper" id="{{r.id}}" >
+        <div class="reminder-wrapper" id="{{r.id}}" *ngIf="r.name != 'error'">
             <p>Name: {{r.name}}</p>
             <p>Description: {{r.description}}</p>
             <p>Frequency: {{r.frequency}}</p>
@@ -17,7 +21,6 @@
             <button type="button" (click)="deleteReminder(r)">Delete</button>
             <button type="button" (click)="goToUpdate(r.id)">Update</button>
             <button type="button" (click)="sendReminder(r.id, r.sendType)">Send {{r.sendType}}l</button>
-<!--            <button type="button" (click)="sendReminderSms(r.id)">Send SMS</button>-->
         </div>
     </div>
 </div>

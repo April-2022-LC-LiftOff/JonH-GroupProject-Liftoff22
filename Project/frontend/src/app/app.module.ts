@@ -20,7 +20,6 @@ import { UpdateUserComponent } from './update-user/update-user.component';
 import { PhoneMaskDirective } from './update-user/phone-mask-directive';
 import { FooterComponent } from './footer/footer.component';
 
-
 @NgModule({
   declarations: [
     AppComponent,

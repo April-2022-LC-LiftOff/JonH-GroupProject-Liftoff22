@@ -36,7 +36,12 @@ export class DashboardComponent implements OnInit {
       "SMS",
       "Email & SMS"
     ];
-
+  errorBox = {eMessage: "" };
+  nullReminders = [
+  {id: 0, name: "error", description: null, frequency: null,
+  dateCreated: null, timeToRemind: null, reminderCategory: null,
+  sendType: null, ruserId: 0}
+  ];
 
   constructor(
       private http: HttpClient,
@@ -50,6 +55,9 @@ export class DashboardComponent implements OnInit {
    const remindersObservable = this.reminderService.getAllReminders();
             remindersObservable.subscribe((remindersData: Reminder[]) => {
                 this.reminders = remindersData;
+                if(JSON.stringify(this.reminders)==JSON.stringify(this.nullReminders)) {
+                this.errorBox.eMessage = "Please log in first";
+                }
             });
   }
 
@@ -97,30 +105,6 @@ export class DashboardComponent implements OnInit {
             });
     }
 
-//       sendReminderEmail(id): void {
-//           this.reminderService.sendEmail(id)
-//             .subscribe(
-//               data => {
-//                 this.currentEmail = data;
-//                 console.log(`current reminder: ${JSON.stringify(data)}`);
-//                 console.log("Email sent out to the world");
-//               },
-//               error => {
-//                 console.log(error);
-//               });
-//         }
-//     sendReminderSms(id): void {
-//               this.reminderService.sendSms(id)
-//                 .subscribe(
-//                   data => {
-//                     this.currentEmail = data;
-//                     console.log(`current reminder: ${JSON.stringify(data)}`);
-//                     console.log("Sms sent out to the world");
-//                   },
-//                   error => {
-//                     console.log(error);
-//                   });
-//             }
     sendReminder(id): void {
         this.reminderService.send(id)
             .subscribe(
@@ -133,6 +117,5 @@ export class DashboardComponent implements OnInit {
                     console.log(error);
                   });
             }
-
 
 }
