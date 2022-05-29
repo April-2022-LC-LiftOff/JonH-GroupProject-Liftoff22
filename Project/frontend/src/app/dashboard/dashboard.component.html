@@ -1,7 +1,15 @@
 <div class="error-box "*ngIf="errorBox.eMessage">
     <p>{{errorBox.eMessage}}</p>
 </div>
-<ng-container *ngFor="let r of reminders">
+<ng-container *ngIf="reminders != null">
+    <div class="button-container1">
+        <img src="../../assets/img/add-reminder.png" (click)="goToAddReminder('/reminder')" alt="Add Reminder">
+        <div class="button-text">
+            <p>Add Reminder</p>
+        </div>
+    </div>
+</ng-container>
+<ng-container *ngFor="let r of reminders | slice:0:1; let i=index">
 <div class="button-container" *ngIf="r.name != 'error'">
     <img src="../../assets/img/add-reminder.png" (click)="goToAddReminder('/reminder')" alt="Add Reminder">
     <div class="button-text">

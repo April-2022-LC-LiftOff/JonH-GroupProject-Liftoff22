@@ -55,6 +55,7 @@ export class DashboardComponent implements OnInit {
    const remindersObservable = this.reminderService.getAllReminders();
             remindersObservable.subscribe((remindersData: Reminder[]) => {
                 this.reminders = remindersData;
+                console.log(`deleted reminder: ${JSON.stringify(this.reminders)}`);
                 if(JSON.stringify(this.reminders)==JSON.stringify(this.nullReminders)) {
                 this.errorBox.eMessage = "Please log in first";
                 }
