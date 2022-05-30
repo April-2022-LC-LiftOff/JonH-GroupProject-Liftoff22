@@ -37,36 +37,44 @@
       </div>
       <div class="form-group">
         <label for="hourToRemind" class="control-label">Time To Remind:</label>
-        <select
-          name="hourToRemind"
-          class="form-control"
-          [(ngModel)]="rTime.hour"
-          required
-        >
-          <option *ngFor="let hour of hours">
-            {{ hour }}
-          </option>
-        </select>
-        <select
-          name="minuteToRemind"
-          class="form-control"
-          [(ngModel)]="rTime.minute"
-          required
-        >
-          <option *ngFor="let minute of minutes">
-            {{ minute }}
-          </option>
-        </select>
-        <select
-          name="meridiemToRemind"
-          class="form-control"
-          [(ngModel)]="rTime.meridiem"
-          required
-        >
-          <option *ngFor="let meridiem of meridiems">
-            {{ meridiem }}
-          </option>
-        </select>
+        <div class="row">
+          <div class="col-sm-2">
+            <select
+              name="hourToRemind"
+              class="form-control"
+              [(ngModel)]="rTime.hour"
+              required
+            >
+              <option *ngFor="let hour of hours">
+                {{ hour }}
+              </option>
+            </select>
+          </div>
+          <div class="col-sm-2">
+            <select
+              name="minuteToRemind"
+              class="form-control"
+              [(ngModel)]="rTime.minute"
+              required
+            >
+              <option *ngFor="let minute of minutes">
+                {{ minute }}
+              </option>
+            </select>
+          </div>
+          <div class="col-sm-2">
+            <select
+              name="meridiemToRemind"
+              class="form-control"
+              [(ngModel)]="rTime.meridiem"
+              required
+            >
+              <option *ngFor="let meridiem of meridiems">
+                {{ meridiem }}
+              </option>
+            </select>
+          </div>
+        </div>
       </div>
       <div class="form-group">
         <label for="reminderCategory" class="control-label">Category:</label>
@@ -105,7 +113,7 @@
     </button>
     <p>{{ message }}</p>
   </div>
-  <div *ngIf="!currentReminder">
+  <div role="alert" aria-relevant="all" *ngIf="!currentReminder">
     <br />
     <p>Cannot access this Reminder...</p>
   </div>
