@@ -21,6 +21,7 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Locale;
 import java.util.Optional;
 
 @RestController
@@ -63,7 +64,8 @@ public class AuthenticationController {
         User existingUser = userRepository.findByUsername(registerFormDTO.getUsername());
 
         if (existingUser != null) {
-            return ResponseEntity.badRequest().body("Already Exists");
+            User nullUser = new User();
+            return ResponseEntity.ok(nullUser);
         }
 
         String password = registerFormDTO.getPassword();
@@ -98,13 +100,15 @@ public class AuthenticationController {
         User theUser = userRepository.findByUsername(loginFormDTO.getUsername());
 
         if (theUser == null) {
-            return ResponseEntity.badRequest().body("The given username does not exist");
+            User nullUser = new User();
+            return ResponseEntity.ok(nullUser);
         }
 
         String password = loginFormDTO.getPassword();
 
         if (!theUser.isMatchingPassword(password)) {
-            return ResponseEntity.badRequest().body("Password mismatch");
+            User badPasswordUser = new User("error");
+            return ResponseEntity.ok(badPasswordUser);
         }
 
         setUserInSession(request.getSession(), theUser);

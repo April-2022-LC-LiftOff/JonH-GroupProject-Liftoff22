@@ -49,6 +49,9 @@ public class Reminder extends AbstractEntity {
         this.reminderCategory = reminderCategory;
         this.sendType = sendType;
     }
+    public Reminder(String name) {
+        this.name = name;
+    }
 
     public Reminder() {}
 

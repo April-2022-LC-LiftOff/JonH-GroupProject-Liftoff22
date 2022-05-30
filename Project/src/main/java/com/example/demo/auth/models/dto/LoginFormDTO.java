@@ -3,6 +3,7 @@ package com.example.demo.auth.models.dto;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+import java.util.Locale;
 
 
 public class LoginFormDTO {
@@ -22,7 +23,7 @@ public class LoginFormDTO {
     }
 
     public void setUsername(String username) {
-        this.username = username;
+        this.username = username.toLowerCase(Locale.ROOT);
     }
 
     public String getPassword() {
