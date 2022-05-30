@@ -81,7 +81,7 @@
     </button>
     <p>{{ message }}</p>
   </div>
-  <div *ngIf="!currentUser">
+  <div role="alert" aria-relevant="all" *ngIf="!currentUser">
     <br />
     <p>Cannot access profile. Please log in and retry...</p>
   </div>
