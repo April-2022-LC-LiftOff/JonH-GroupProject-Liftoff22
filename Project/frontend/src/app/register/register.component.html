@@ -31,10 +31,16 @@
             registerUserForm.get('username').errors
           "
         >
-          <span *ngIf="registerUserForm.get('username').errors.required">
+          <span
+            role="alert"
+            aria-relevant="all"
+            *ngIf="registerUserForm.get('username').errors.required"
+          >
             Username is required
           </span>
           <span
+            role="alert"
+            aria-relevant="all"
             *ngIf="
               registerUserForm.get('username').errors.minlength ||
               registerUserForm.get('username').errors.maxlength
@@ -72,10 +78,18 @@
             registerUserForm.get('email').errors
           "
         >
-          <span *ngIf="registerUserForm.get('email').errors.required">
+          <span
+            role="alert"
+            aria-relevant="all"
+            *ngIf="registerUserForm.get('email').errors.required"
+          >
             Email is required
           </span>
-          <span *ngIf="registerUserForm.get('email').errors.email">
+          <span
+            role="alert"
+            aria-relevant="all"
+            *ngIf="registerUserForm.get('email').errors.email"
+          >
             Email must be in valid format (example@address.com)
           </span>
         </span>
@@ -109,10 +123,16 @@
             registerUserForm.get('password').errors
           "
         >
-          <span *ngIf="registerUserForm.get('password').errors.required">
+          <span
+            role="alert"
+            aria-relevant="all"
+            *ngIf="registerUserForm.get('password').errors.required"
+          >
             Password is required
           </span>
           <span
+            role="alert"
+            aria-relevant="all"
             *ngIf="
               registerUserForm.get('password').errors.minlength ||
               registerUserForm.get('password').errors.maxlength
@@ -153,10 +173,16 @@
             registerUserForm.get('verifyPassword').errors
           "
         >
-          <span *ngIf="registerUserForm.get('verifyPassword').errors.required">
+          <span
+            role="alert"
+            aria-relevant="all"
+            *ngIf="registerUserForm.get('verifyPassword').errors.required"
+          >
             Please verify password
           </span>
           <span
+            role="alert"
+            aria-relevant="all"
             *ngIf="
               registerUserForm.get('verifyPassword').errors.confirmedValidator
             "
@@ -166,7 +192,7 @@
         </span>
       </div>
       <div class="form-group">
-        <label for="mobile" class="col-sm-2 control-label" for="mobile"
+        <label for="mobile" class="control-label" for="mobile"
           >Mobile Number</label
         >
         <input
@@ -180,7 +206,7 @@
         />
       </div>
       <div class="form-group">
-        <label for="carrier" class="col-sm-2 control-label">Carrier</label>
+        <label for="carrier" class="control-label">Carrier</label>
         <select name="carrier" class="form-control" formControlName="carrier">
           <option *ngFor="let service of carriers">
             {{ service.name }}
