@@ -1,6 +1,6 @@
 <div class="container">
   <div class="edit-form">
-    <h4>Register</h4>
+    <h2>Register</h2>
     <form [formGroup]="registerUserForm">
       <div
         class="form-group"
@@ -11,7 +11,7 @@
             registerUserForm.get('username').errors
         }"
       >
-        <label for="username" class="col-sm-2 control-label" for="username"
+        <label for="username" class="control-label" for="username"
           >Username</label
         >
         <input
@@ -53,15 +53,14 @@
             registerUserForm.get('email').errors
         }"
       >
-        <label for="email" class="col-sm-2 control-label" for="email"
-          >Email</label
-        >
+        <label for="email" class="control-label" for="email">Email</label>
         <input
           type="email"
           id="email"
           class="form-control"
           formControlName="email"
           name="email"
+          placeholder="example@address.com"
         />
         <span
           class="help-block"
@@ -88,7 +87,7 @@
             registerUserForm.get('password').errors
         }"
       >
-        <label for="password" class="col-sm-2 control-label" for="password"
+        <label for="password" class="control-label" for="password"
           >Password:
         </label>
         <input
@@ -97,6 +96,7 @@
           name="password"
           class="form-control"
           formControlName="password"
+          placeholder="Password"
         />
         <span
           class="help-block"
@@ -129,10 +129,7 @@
             registerUserForm.get('verifyPassword').errors
         }"
       >
-        <label
-          for="verifyPassword"
-          class="col-sm-2 control-label"
-          for="verifyPassword"
+        <label for="verifyPassword" class="control-label" for="verifyPassword"
           >Verify Password:
         </label>
         <input
@@ -141,6 +138,7 @@
           name="verifyPassword"
           class="form-control"
           formControlName="verifyPassword"
+          placeholder="Verify Password"
           required
         />
         <span
@@ -173,6 +171,7 @@
           formControlName="mobile"
           type="text"
           id="mobile"
+          placeholder="(123) 456-7890"
           name="mobile"
         />
       </div>
