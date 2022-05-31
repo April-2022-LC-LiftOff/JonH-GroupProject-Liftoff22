@@ -114,7 +114,7 @@ public class EmailController {
         //Recipient email
         msg.setRecipients(Message.RecipientType.TO, InternetAddress.parse(sms));
         //Subject of email
-        msg.setSubject("ReminderApp: " + reminder.getName());
+        msg.setSubject("RMMBR: " + reminder.getName());
         //Content of email
         msg.setContent(reminder.toString(), "text/html");
         //Sets email date
