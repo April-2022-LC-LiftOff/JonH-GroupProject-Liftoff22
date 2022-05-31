@@ -1,8 +1,7 @@
-package com.example.demo.auth.models;
+package com.example.RMMBR.auth.models;
 
 import javax.persistence.Entity;
 import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
 
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 

@@ -1,8 +1,8 @@
-package com.example.demo.auth.controllers;
+package com.example.RMMBR.auth.controllers;
 
-import com.example.demo.auth.data.ReminderRepository;
-import com.example.demo.auth.models.Reminder;
-import com.example.demo.auth.models.User;
+import com.example.RMMBR.auth.data.ReminderRepository;
+import com.example.RMMBR.auth.models.Reminder;
+import com.example.RMMBR.auth.models.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -13,11 +13,7 @@ import javax.mail.*;
 import javax.mail.internet.*;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Paths;
 import java.util.*;
-
-import com.example.demo.auth.controllers.AuthenticationController;
 
 @RestController
 @RequestMapping("/api")
@@ -118,7 +114,7 @@ public class EmailController {
         //Recipient email
         msg.setRecipients(Message.RecipientType.TO, InternetAddress.parse(sms));
         //Subject of email
-        msg.setSubject("ReminderApp: " + reminder.getName());
+        msg.setSubject("RMMBR: " + reminder.getName());
         //Content of email
         msg.setContent(reminder.toString(), "text/html");
         //Sets email date

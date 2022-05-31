@@ -1,4 +1,4 @@
-package com.example.demo.auth.models.dto;
+package com.example.RMMBR.auth.models.dto;
 
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotEmpty;

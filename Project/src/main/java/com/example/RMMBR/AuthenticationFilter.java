@@ -1,8 +1,8 @@
-package com.example.demo;
+package com.example.RMMBR;
 
-import com.example.demo.auth.controllers.AuthenticationController;
-import com.example.demo.auth.data.UserRepository;
-import com.example.demo.auth.models.User;
+import com.example.RMMBR.auth.controllers.AuthenticationController;
+import com.example.RMMBR.auth.data.UserRepository;
+import com.example.RMMBR.auth.models.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.servlet.HandlerInterceptor;

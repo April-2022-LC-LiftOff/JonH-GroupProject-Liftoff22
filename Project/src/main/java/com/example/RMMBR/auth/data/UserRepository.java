@@ -1,6 +1,6 @@
-package com.example.demo.auth.data;
+package com.example.RMMBR.auth.data;
 
-import com.example.demo.auth.models.User;
+import com.example.RMMBR.auth.models.User;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 

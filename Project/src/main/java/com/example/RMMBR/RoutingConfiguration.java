@@ -1,4 +1,4 @@
-package com.example.demo;
+package com.example.RMMBR;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.io.ClassPathResource;

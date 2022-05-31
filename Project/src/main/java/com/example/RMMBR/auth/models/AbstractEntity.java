@@ -1,4 +1,4 @@
-package com.example.demo.auth.models;
+package com.example.RMMBR.auth.models;
 
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
