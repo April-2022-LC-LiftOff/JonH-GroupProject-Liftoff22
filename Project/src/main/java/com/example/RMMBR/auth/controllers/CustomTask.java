@@ -1,9 +1,8 @@
-package com.example.demo.auth.controllers;
+package com.example.RMMBR.auth.controllers;
 
-import com.example.demo.auth.models.Reminder;
-import com.example.demo.auth.models.User;
+import com.example.RMMBR.auth.models.Reminder;
+import com.example.RMMBR.auth.models.User;
 
-import java.time.LocalTime;
 import java.util.*;
 import java.util.concurrent.TimeUnit;
 
