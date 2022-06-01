@@ -1,17 +1,12 @@
-vvv Reminders: 
-[Name: test2
-Description: test2
-Frequency: Monthly
-Date Created: 2022-05-22Reminder Time: null
+nita Reminders: 
+[Name: wow a test
+Description: look at that!
+Frequency: Daily
+Date Created: 2022-05-25Reminder Time: 17:00
  
-, Name: test4
-Description: test4
+, Name: two of them
+Description: TWO OF THEM!
 Frequency: Weekly
-Date Created: 2022-05-22Reminder Time: 14:15
- 
-, Name: lunch
-Description: panera
-Frequency: Monthly
-Date Created: 2022-05-22Reminder Time: 15:30
+Date Created: 2022-05-25Reminder Time: 14:15
  
 ]
