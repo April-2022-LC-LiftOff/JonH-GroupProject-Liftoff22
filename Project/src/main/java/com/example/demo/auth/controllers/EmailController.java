@@ -54,7 +54,22 @@ public class EmailController {
         //Subject of email
         msg.setSubject("ReminderApp: " + reminder.getName());
         //Content of email
-        msg.setContent(reminder.toString(), "text/html");
+        msg.setContent("<table style='border-collapse: collapse; font-family: Tahoma, Generva, sans-serif'>" +
+                "<thead style='width: 60%;'>" +
+                "<tr style='background-color:#f9fafc; padding: 15px;'>" +
+                "<td style='background-color: #54585d; color: #ffffff; font-weight: bold;'>Name</td>" +
+                "<td style='background-color: #54585d; color: #ffffff; font-weight: bold;'>Description</td>" +
+                "<td style='background-color: #54585d; color: #ffffff; font-weight: bold;'>Time</td>" +
+                "</tr>" +
+                "</thead>" +
+                "<tbody>" +
+                "<tr style='background-color: #f9fafb;'>" +
+                "<td style='color: #636363; border: 1px solid #dddfe1;'>" + reminder.getName() + "</td>" +
+                "<td style='color: #636363; border: 1px solid #dddfe1;'>" + reminder.getDescription() + "</td>" +
+                "<td style='color: #636363; border: 1px solid #dddfe1;'>" + reminder.getTimeToRemind() + "</td>" +
+                "</tr>" +
+                "</tbody>" +
+                "</table>", "text/html");
         //Sets email date
         msg.setSentDate(new Date());
 
