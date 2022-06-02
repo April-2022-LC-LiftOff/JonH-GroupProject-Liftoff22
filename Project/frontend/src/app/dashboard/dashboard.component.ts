@@ -19,8 +19,9 @@ export class DashboardComponent implements OnInit {
     frequency: "",
     dateCreated: "",
     timeToRemind: "",
-    reminderCategory:"",
-    sendType: ""
+    reminderCategory: "",
+    sendType: "",
+    status: ""
   };
 
   reminders: Reminder[] = [];
@@ -31,92 +32,113 @@ export class DashboardComponent implements OnInit {
   visible: boolean = true;
   currentEmail = null;
   reminderCategories = ["Personal", "Work", "Home", "Finance", "Other"];
+  statusTypes = ["active", "inactive"];
   sendTypes = [
-      "Email",
-      "SMS",
-      "Email & SMS"
-    ];
-  errorBox = {eMessage: "" };
+    "Email",
+    "SMS",
+    "Email & SMS"
+  ];
+  errorBox = { eMessage: "" };
   nullReminders = [
-  {id: 0, name: "error", description: null, frequency: null,
-  dateCreated: null, timeToRemind: null, reminderCategory: null,
-  sendType: null, ruserId: 0}
+    {
+      id: 0, name: "error", description: null, frequency: null,
+      dateCreated: null, timeToRemind: null, reminderCategory: null,
+      sendType: null, ruserId: 0
+    }
   ];
 
   constructor(
-      private http: HttpClient,
-      private constants: ConstantsService,
-      private reminderService: ReminderService,
-      private router: Router,
-      private constantsService: ConstantsService
-      ) { }
+    private http: HttpClient,
+    private constants: ConstantsService,
+    private reminderService: ReminderService,
+    private router: Router,
+    private constantsService: ConstantsService
+  ) { }
 
   ngOnInit() {
-   const remindersObservable = this.reminderService.getAllReminders();
-            remindersObservable.subscribe((remindersData: Reminder[]) => {
-                this.reminders = remindersData;
-                console.log(`deleted reminder: ${JSON.stringify(this.reminders)}`);
-                if(JSON.stringify(this.reminders)==JSON.stringify(this.nullReminders)) {
-                this.errorBox.eMessage = "Please log in first";
-                }
-            });
+    const remindersObservable = this.reminderService.getAllReminders();
+    remindersObservable.subscribe((remindersData: Reminder[]) => {
+      this.reminders = remindersData;
+      console.log(`deleted reminder: ${JSON.stringify(this.reminders)}`);
+      if (JSON.stringify(this.reminders) == JSON.stringify(this.nullReminders)) {
+        this.errorBox.eMessage = "Please log in first";
+      }
+    });
   }
 
-  goToAddReminder(pageName:string) {
+  goToAddReminder(pageName: string) {
     this.router.navigate([pageName]);
   }
 
   goToUpdate(id: string) {
-      this.router.navigate(['/reminders/' + id]);
-    }
+    this.router.navigate(['/reminders/' + id]);
+  }
 
 
 
   deleteReminder(reminder: Reminder): void {
     document.getElementById(reminder.id.toString()).remove();
     console.log(`deleted reminder: ${JSON.stringify(reminder)}`);
-        this.reminderService.delete(reminder.id)
-          .subscribe(
-            response => {
-              console.log(response);
-              this.router.navigate(['/dashboard']);
-            },
-            error => {
-              console.log(error);
-            });
+    this.reminderService.delete(reminder.id)
+      .subscribe(
+        response => {
+          console.log(response);
+          this.router.navigate(['/dashboard']);
+        },
+        error => {
+          console.log(error);
+        });
   }
 
   setActiveReminder(reminder, index): void {
-      this.currentReminder = reminder;
-      this.currentIndex = index;
-    }
+    this.currentReminder = reminder;
+    this.currentIndex = index;
+  }
 
   updateReminder(reminder: Reminder): void {
-        this.isLoading = true;
-        this.reminderService.update(reminder.id, reminder)
-          .subscribe(
-            response => {
-              this.isLoading = false;
-              console.log(response);
-              this.message = 'The reminder was updated successfully!';
-            },
-            error => {
-              console.log(error);
-              this.isLoading = false;
-            });
-    }
+    this.isLoading = true;
+    this.reminderService.update(reminder.id, reminder)
+      .subscribe(
+        response => {
+          this.isLoading = false;
+          console.log(response);
+          this.message = 'The reminder was updated successfully!';
+        },
+        error => {
+          console.log(error);
+          this.isLoading = false;
+        });
+  }
 
-    sendReminder(id): void {
-        this.reminderService.send(id)
-            .subscribe(
-                  data => {
-                    this.currentEmail = data;
-                    console.log(`current reminder: ${JSON.stringify(data)}`);
-                    console.log("Email sent out to the world");
-                  },
-                  error => {
-                    console.log(error);
-                  });
-            }
+  sendReminder(id): void {
+    this.reminderService.send(id)
+      .subscribe(
+        data => {
+          this.currentEmail = data;
+          console.log(`current reminder: ${JSON.stringify(data)}`);
+          console.log("Email sent out to the world");
+        },
+        error => {
+          console.log(error);
+        }
+      );
+  }
+
+  changeStatus(id): void {
+    if (document.getElementById("status" + id).innerHTML == "Is inactive") {
+      document.getElementById("status" + id).innerHTML = "Is active";
+    } else {
+      document.getElementById("status" + id).innerHTML = "Is inactive";
+    }
+    this.reminderService.changeStatus(id).subscribe(
+      data => {
+        this.currentEmail = data;
+        console.log(`Status change`);
+      },
+      error => {
+        console.log(error);
+      }
+    );
+  }
 
 }

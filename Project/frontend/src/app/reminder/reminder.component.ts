@@ -20,7 +20,8 @@ export class ReminderComponent implements OnInit {
     dateCreated: "",
     timeToRemind: "",
     reminderCategory: "",
-    sendType: ""
+    sendType: "",
+    status: ""
   };
 
   isLoading: boolean = false;
@@ -55,19 +56,19 @@ export class ReminderComponent implements OnInit {
     private reminderService: ReminderService,
     private router: Router,
     private constantsService: ConstantsService
-  ) {}
+  ) { }
 
   ngOnInit() { }
 
   gatherTime(): string {
 
-     if (this.rTime.meridiem == 'PM') {
-         this.rTime.hour = (parseInt(this.rTime.hour) + 12).toString(10);
-     }
-     else {
+    if (this.rTime.meridiem == 'PM') {
+      this.rTime.hour = (parseInt(this.rTime.hour) + 12).toString(10);
+    }
+    else {
 
-     }
-     return this.rTime.hour + ":" + this.rTime.minute + ":00";
+    }
+    return this.rTime.hour + ":" + this.rTime.minute + ":00";
   }
 
   onClickSubmit(): void {

@@ -39,7 +39,10 @@ public class Reminder extends AbstractEntity {
     @NotNull(message="SendType is required")
     private String sendType;
 
-    public Reminder(String name, String description, String frequency, LocalTime timeToRemind, String reminderCategory, String sendType) {
+    @NotNull(message="status is required")
+    private String status;
+
+    public Reminder(String name, String description, String frequency, LocalTime timeToRemind, String reminderCategory, String sendType, String status) {
         this.name = name;
         this.description = description;
         this.frequency = frequency;
@@ -47,6 +50,7 @@ public class Reminder extends AbstractEntity {
         this.timeToRemind = timeToRemind;
         this.reminderCategory = reminderCategory;
         this.sendType = sendType;
+        this.status = status;
     }
     public Reminder(String name) {
         this.name = name;
@@ -96,6 +100,14 @@ public class Reminder extends AbstractEntity {
 
     public void setSendType(String sendType) {
         this.sendType = sendType;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 
     @Override

@@ -22,87 +22,88 @@ export class UpdateReminderComponent implements OnInit {
     dateCreated: "",
     timeToRemind: "",
     reminderCategory: "",
-    sendType: ""
+    sendType: "",
+    status: ""
   };
-      isLoading: boolean = false;
-      frequencies = [
-        { id: 0, name: "Daily" },
-        { id: 1, name: "Weekly" },
-        { id: 2, name: "Monthly" },
-      ];
+  isLoading: boolean = false;
+  frequencies = [
+    { id: 0, name: "Daily" },
+    { id: 1, name: "Weekly" },
+    { id: 2, name: "Monthly" },
+  ];
 
-      reminders: Reminder[] = [];
-      reminderCategories = ["Personal", "Work", "Home", "Finance", "Other"];
-      message = "";
-      currentReminder = null;
+  reminders: Reminder[] = [];
+  reminderCategories = ["Personal", "Work", "Home", "Finance", "Other"];
+  message = "";
+  currentReminder = null;
+  statusTypes = ["active", "inactive"];
+  sendTypes = [
+    "Email",
+    "SMS",
+    "Email & SMS"
+  ];
 
-      sendTypes = [
-          "Email",
-          "SMS",
-          "Email & SMS"
-        ];
+  rTime: RTime = {
+    hour: "",
+    minute: "",
+    meridiem: ""
+  }
 
-        rTime: RTime = {
-          hour: "",
-          minute: "",
-          meridiem: ""
-        }
+  hours = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12'];
 
-        hours = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12'];
+  minutes = ['00', '15', '30', '45'];
 
-        minutes = ['00', '15', '30', '45'];
-
-        meridiems = ['AM', 'PM'];
+  meridiems = ['AM', 'PM'];
 
   constructor(
-  private http: HttpClient,
-        private constants: ConstantsService,
-        private reminderService: ReminderService,
-        private router: Router,
-        private route: ActivatedRoute,
-        private constantsService: ConstantsService
+    private http: HttpClient,
+    private constants: ConstantsService,
+    private reminderService: ReminderService,
+    private router: Router,
+    private route: ActivatedRoute,
+    private constantsService: ConstantsService
   ) { }
 
   ngOnInit() {
-      this.message = '';
-      this.getReminder(this.route.snapshot.paramMap.get('id'));
+    this.message = '';
+    this.getReminder(this.route.snapshot.paramMap.get('id'));
   }
 
   getReminder(id): void {
-      this.reminderService.get(id)
-        .subscribe(
-          data => {
-            this.currentReminder = data;
-            console.log(`current reminder: ${JSON.stringify(data)}`);
-          },
-          error => {
-            console.log(error);
-          });
+    this.reminderService.get(id)
+      .subscribe(
+        data => {
+          this.currentReminder = data;
+          console.log(`current reminder: ${JSON.stringify(data)}`);
+        },
+        error => {
+          console.log(error);
+        });
+  }
+
+  gatherTime(): string {
+
+    if (this.rTime.meridiem == 'PM') {
+      this.rTime.hour = (parseInt(this.rTime.hour) + 12).toString(10);
+
     }
-
-      gatherTime(): string {
-
-        if (this.rTime.meridiem == 'PM') {
-            this.rTime.hour = (parseInt(this.rTime.hour) + 12).toString(10);
-
-        }
-        return this.rTime.hour + ":" + this.rTime.minute + ":00";
-      }
+    return this.rTime.hour + ":" + this.rTime.minute + ":00";
+  }
 
   updateReminder(): void {
-      this.isLoading = true;
-      this.currentReminder.timeToRemind = this.gatherTime();
-      this.reminderService.update(this.currentReminder.id, this.currentReminder)
-        .subscribe(
-          response => {
-            this.isLoading = false;
-            console.log(response);
-            this.message = 'The reminder was updated successfully!';
-            this.router.navigate(["dashboard"]);
-          },
-          error => {
-            console.log(error);
-            this.isLoading = false;
-          });
+    this.isLoading = true;
+    this.currentReminder.timeToRemind = this.gatherTime();
+    this.reminderService.update(this.currentReminder.id, this.currentReminder)
+      .subscribe(
+        response => {
+          this.isLoading = false;
+          console.log(response);
+          this.message = 'The reminder was updated successfully!';
+          this.router.navigate(["dashboard"]);
+        },
+        error => {
+          console.log(error);
+          this.isLoading = false;
+        });
   }
 }

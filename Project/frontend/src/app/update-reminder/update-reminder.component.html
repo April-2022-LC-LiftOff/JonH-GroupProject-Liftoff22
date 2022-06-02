@@ -108,6 +108,20 @@
           </option>
         </select>
       </div>
+      <div class="form-group">
+        <label for="statusType" class="control-label">Set status:</label>
+        <select
+                name="statusType"
+                class="form-control"
+                [(ngModel)]="currentReminder.status"
+                aria-required="true"
+                required
+        >
+          <option *ngFor="let status of statusTypes">
+            {{ status }}
+          </option>
+        </select>
+      </div>
     </form>
     <button
       role="button"

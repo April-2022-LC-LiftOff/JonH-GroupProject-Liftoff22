@@ -25,6 +25,9 @@ public class EmailController {
     @Autowired
     AuthenticationController authenticationController;
 
+    //Passcode to send emails
+    static String pass = "Backup123Power4P@$$w0rDH@h@";
+
 
     static void sendMail(Reminder reminder, User user) throws AddressException, MessagingException, IOException, IOException {
 
@@ -38,7 +41,7 @@ public class EmailController {
             protected PasswordAuthentication getPasswordAuthentication() {
                 //Email username and Email password
                 //Ensure Less secure app access is on in Google Account > Security
-                return new PasswordAuthentication("automatic.imtatiar@gmail.com", "password");
+                return new PasswordAuthentication("automatic.imtatiar@gmail.com", pass);
             }
         });
         Message msg = new MimeMessage(session);
@@ -119,7 +122,7 @@ public class EmailController {
             protected PasswordAuthentication getPasswordAuthentication() {
                 //Email username and Email password
                 //Ensure Less secure app access is on in Google Account > Security
-                return new PasswordAuthentication("automatic.imtatiar@gmail.com", "password");
+                return new PasswordAuthentication("automatic.imtatiar@gmail.com", pass);
             }
         });
         Message msg = new MimeMessage(session);

@@ -7,4 +7,5 @@ export interface Reminder {
   timeToRemind: string;
   reminderCategory: string;
   sendType: string;
+  status: string;
 }

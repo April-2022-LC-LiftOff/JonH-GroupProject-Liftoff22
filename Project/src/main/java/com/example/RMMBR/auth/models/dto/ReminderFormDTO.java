@@ -40,6 +40,9 @@ public class ReminderFormDTO {
     @NotNull
     private String sendType;
 
+    @NotNull
+    private String status;
+
     public String getName() {
         return name;
     }
@@ -100,6 +103,14 @@ public class ReminderFormDTO {
 
     public void setSendType(String sendType) {
         this.sendType = sendType;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 }
 

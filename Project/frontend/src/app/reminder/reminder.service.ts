@@ -10,7 +10,7 @@ const baseUrl2 = 'http://localhost:8080/api';
   providedIn: "root",
 })
 export class ReminderService {
-  constructor(private http: HttpClient, private constants: ConstantsService ) {}
+  constructor(private http: HttpClient, private constants: ConstantsService) { }
 
   getAllReminders(): Observable<Reminder[]> {
     return this.http.get<Reminder[]>(
@@ -18,28 +18,31 @@ export class ReminderService {
   }
 
   get(id): Observable<any> {
-      return this.http.get(`${baseUrl}/${id}`);
-    }
+    return this.http.get(`${baseUrl}/${id}`);
+  }
 
   addReminder(reminder: Reminder): Observable<Reminder> {
-      return this.http.post<Reminder>(
-        this.constants.getRootURL() + "/reminder",
-        reminder
-      );
-    }
+    return this.http.post<Reminder>(
+      this.constants.getRootURL() + "/reminder",
+      reminder
+    );
+  }
 
   delete(id): Observable<any> {
-      return this.http.delete(`${baseUrl}/${id}`);
-    }
+    return this.http.delete(`${baseUrl}/${id}`);
+  }
 
   update(id, data): Observable<any> {
-      return this.http.put(`${baseUrl}/${id}`, data);
-    }
+    return this.http.put(`${baseUrl}/${id}`, data);
+  }
 
   send(id): Observable<any> {
-      return this.http.get(`${baseUrl2}/sendsmsandemail/${id}`);
-    }
+    return this.http.get(`${baseUrl2}/sendsmsandemail/${id}`);
+  }
 
+  changeStatus(id): Observable<any> {
+    return this.http.get(`${baseUrl}/changestatus/${id}`)
+  }
 
 
 }

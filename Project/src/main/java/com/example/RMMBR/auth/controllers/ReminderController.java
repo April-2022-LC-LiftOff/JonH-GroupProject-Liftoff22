@@ -10,12 +10,13 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.*;
 
+import javax.mail.MessagingException;
+import javax.mail.internet.AddressException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Optional;
+import java.io.IOException;
+import java.util.*;
 
 @RestController
 @RequestMapping("/api")
@@ -38,7 +39,7 @@ public class ReminderController {
             return ResponseEntity.badRequest().body("Has Errors");
         }
 
-        Reminder newReminder = new Reminder(reminderFormDTO.getName(), reminderFormDTO.getDescription(), reminderFormDTO.getFrequency(), reminderFormDTO.getTimeToRemind(), reminderFormDTO.getReminderCategory(), reminderFormDTO.getSendType());
+        Reminder newReminder = new Reminder(reminderFormDTO.getName(), reminderFormDTO.getDescription(), reminderFormDTO.getFrequency(), reminderFormDTO.getTimeToRemind(), reminderFormDTO.getReminderCategory(), reminderFormDTO.getSendType(), reminderFormDTO.getStatus());
         newReminder.setRUserId(user.getId());
         reminderRepository.save(newReminder);
 
@@ -76,6 +77,7 @@ public class ReminderController {
             _reminder.setTimeToRemind(reminder.getTimeToRemind());
             _reminder.setReminderCategory(reminder.getReminderCategory());
             _reminder.setSendType(reminder.getSendType());
+            _reminder.setStatus(reminder.getStatus());
             return new ResponseEntity<>(reminderRepository.save(_reminder), HttpStatus.OK);
         } else {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
@@ -103,8 +105,32 @@ public class ReminderController {
         List<Reminder> nullReminders = new ArrayList<>();
         nullReminders.add(new Reminder("error"));
         return ResponseEntity.ok(nullReminders);
-
     }
+
+    @GetMapping("/reminders/changestatus/{id}")
+    public ResponseEntity<Object> changeReminderStatusById(@PathVariable("id") int id, HttpServletRequest request) throws AddressException, MessagingException, IOException, IOException  {
+
+        Optional<Reminder> reminderData = reminderRepository.findById(id);
+
+        HttpSession userSession = request.getSession();
+        User user = authenticationController.getUserFromSession(userSession);
+
+        if(reminderData.isPresent()) {
+            Reminder emailReminder = reminderData.get();
+            if (Objects.equals(emailReminder.getStatus(), "active")) {
+                //Should stop deactivate task
+                //Change status to inactive
+                emailReminder.setStatus("inactive");
+            } else {
+                emailReminder.setStatus("active");
+                CustomTask.runTask(emailReminder, user, emailReminder.getSendType().toLowerCase(Locale.ROOT));
+            }
+            return new ResponseEntity<>(emailReminder, HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+    }
+
 
 
 
