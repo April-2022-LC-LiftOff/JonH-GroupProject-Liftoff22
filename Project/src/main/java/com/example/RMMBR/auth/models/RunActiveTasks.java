@@ -30,6 +30,7 @@ public class RunActiveTasks {
         for (Reminder reminder : reminders) {
             System.out.println(reminder.getName());
             if (Objects.equals(reminder.getStatus(), "active")) {
+                System.err.println("Activated reminder: " + reminder.getName());
                 if(userRepository.findById(reminder.getRUserId()).isPresent()) {
                     User user = userRepository.findById(reminder.getRUserId()).get();
                     CustomTask.runTask(reminder, user, reminder.getSendType().toLowerCase(Locale.ROOT));

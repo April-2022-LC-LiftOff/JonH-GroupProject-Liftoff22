@@ -26,7 +26,7 @@ public class EmailController {
     AuthenticationController authenticationController;
 
     //Passcode to send emails
-    static String pass = "Backup123Power4P@$$w0rDH@h@";
+    static String pass = "Password goes here";
 
 
     static void sendMail(Reminder reminder, User user) throws AddressException, MessagingException, IOException, IOException {

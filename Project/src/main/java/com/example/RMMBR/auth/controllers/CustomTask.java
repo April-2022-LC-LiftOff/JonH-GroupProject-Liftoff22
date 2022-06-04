@@ -53,28 +53,43 @@ public class CustomTask extends TimerTask {
 
         //Transforms frequency to millis
         long alertTime = 1;
-        if (reminder.getFrequency() == "Daily") {
+        if (Objects.equals(reminder.getFrequency(), "Daily")) {
             alertTime = 1;
-        } else if (reminder.getFrequency() == "Weekly") {
+        } else if (Objects.equals(reminder.getFrequency(), "Weekly")) {
             alertTime = 7;
-        } else if (reminder.getFrequency() == "Monthly") {
+        } else if (Objects.equals(reminder.getFrequency(), "Monthly")) {
             alertTime = 30;
         }
 
+        Calendar calendarNow = Calendar.getInstance();
+        long calendarNowTime = calendarNow.getTimeInMillis();
+//        String[] currentTimeArr = List.of(calendarNowTime.toString().split(" ")).get(3).split(":");
+        
+        
         Calendar calendar = Calendar.getInstance();
 //        calendar.set(Calendar.DAY_OF_WEEK, Calendar.FRIDAY);
         calendar.set(Calendar.HOUR_OF_DAY, hours);
         calendar.set(Calendar.MINUTE, minutes);
         calendar.set(Calendar.SECOND, 0);
         calendar.set(Calendar.MILLISECOND, 0);
+        long calendarReminderTime = calendar.getTimeInMillis();
 
+        long reminderDelay = 0;
+        if (calendarNowTime < calendarReminderTime) {
+            reminderDelay = calendarReminderTime - calendarNowTime;
+        } else {
+            reminderDelay = TimeUnit.DAYS.toMillis(1) - (calendarNowTime - calendarReminderTime);
+        }
+        
         System.out.println(calendar);
 
         Timer time = new Timer(); // Instantiate Timer Object
 
         // Start running the task on Monday at 15:40:00, period is set to 8 hours
         // if you want to run the task immediately, set the 2nd parameter to 0
-        time.schedule(new CustomTask(reminder, user, reminderType), calendar.getTime(), TimeUnit.DAYS.toMillis(alertTime));
+        // calendar.getTime() returns a date which needs
+        System.err.println(calendar.getTime());
+        time.schedule(new CustomTask(reminder, user, reminderType), reminderDelay, TimeUnit.DAYS.toMillis(alertTime));
     }
 
 //    private String toString(LocalTime timeToRemind) {

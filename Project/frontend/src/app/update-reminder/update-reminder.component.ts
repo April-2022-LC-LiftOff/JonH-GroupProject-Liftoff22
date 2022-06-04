@@ -49,9 +49,9 @@ export class UpdateReminderComponent implements OnInit {
     meridiem: ""
   }
 
-  hours = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12'];
+  hours = [];
 
-  minutes = ['00', '15', '30', '45'];
+  minutes = [];
 
   meridiems = ['AM', 'PM'];
 
@@ -67,6 +67,20 @@ export class UpdateReminderComponent implements OnInit {
   ngOnInit() {
     this.message = '';
     this.getReminder(this.route.snapshot.paramMap.get('id'));
+    for (let i = 1; i <= 12; i++) {
+            if (i < 10) {
+                this.hours.push('0' + i.toString());
+            } else {
+                this.hours.push(i.toString());
+            };
+          };
+        for (let i = 0; i <= 60; i += 1) {
+          if (i < 10) {
+              this.minutes.push('0' + i.toString());
+          } else {
+              this.minutes.push(i.toString());
+          };
+        };
   }
 
   getReminder(id): void {

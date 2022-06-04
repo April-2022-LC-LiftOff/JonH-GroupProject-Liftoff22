@@ -37,15 +37,21 @@ export class ReminderComponent implements OnInit {
     "Email & SMS"
   ];
 
+  statusTypes = [
+    "active",
+    "inactive"
+  ];
+
   rTime: RTime = {
     hour: "",
     minute: "",
     meridiem: ""
   }
 
-  hours = ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12'];
+  hours = [];
 
-  minutes = ['00', '15', '30', '45'];
+
+  minutes = [];
 
   meridiems = ['AM', 'PM'];
 
@@ -58,7 +64,22 @@ export class ReminderComponent implements OnInit {
     private constantsService: ConstantsService
   ) { }
 
-  ngOnInit() { }
+  ngOnInit() {
+    for (let i = 1; i <= 12; i++) {
+        if (i < 10) {
+            this.hours.push('0' + i.toString());
+        } else {
+            this.hours.push(i.toString());
+        };
+      };
+    for (let i = 0; i <= 60; i += 5) {
+      if (i < 10) {
+          this.minutes.push('0' + i.toString());
+      } else {
+          this.minutes.push(i.toString());
+      };
+    };
+  }
 
   gatherTime(): string {
 
