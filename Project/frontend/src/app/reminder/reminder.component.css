@@ -1,0 +1,11 @@
+.errorBox {
+    background-color: red;
+    color: white;
+    border-style: solid;
+    visibility: hidden;
+    display-property: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 50%;
+}
