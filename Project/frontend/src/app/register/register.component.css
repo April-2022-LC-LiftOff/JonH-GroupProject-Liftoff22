@@ -37,3 +37,17 @@ p {
     padding-top: 20px;
 
 }
+
+.error-box {
+    overflow: hidden;
+    background-color: red;
+}
+
+.error-box p {
+    margin-top: 5px;
+    text-align: center;
+    font-size: 17px;
+    font-family:Verdana, Tahoma, sans-serif;
+    text-decoration: underline;
+    color: white;
+}

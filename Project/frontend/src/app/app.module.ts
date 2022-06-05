@@ -12,11 +12,13 @@ import { HomeComponent } from "./home/home.component";
 import { ReminderComponent } from "./reminder/reminder.component";
 import { LandingComponent } from "./landing/landing.component";
 import { LogoutComponent } from "./logout/logout.component";
-import { SimpleTableComponent } from "./simple-table/simple-table.component";
 import { DashboardComponent } from "./dashboard/dashboard.component";
 import { UpdateReminderComponent } from "./update-reminder/update-reminder.component";
 
 import { NavbarComponent } from "./navbar/navbar.component";
+import { UpdateUserComponent } from './update-user/update-user.component';
+import { PhoneMaskDirective } from './update-user/phone-mask-directive';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -27,17 +29,22 @@ import { NavbarComponent } from "./navbar/navbar.component";
     ReminderComponent,
     LandingComponent,
     LogoutComponent,
-    SimpleTableComponent,
     DashboardComponent,
     UpdateReminderComponent,
     NavbarComponent,
+    UpdateUserComponent,
+    PhoneMaskDirective,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
     ReactiveFormsModule,
     FormsModule,
     HttpClientModule,
-    AppRoutingModule,
+    AppRoutingModule
+  ],
+  exports: [
+    PhoneMaskDirective
   ],
   providers: [],
   bootstrap: [AppComponent],

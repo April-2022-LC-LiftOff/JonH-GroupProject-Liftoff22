@@ -18,7 +18,9 @@ export class ReminderComponent implements OnInit {
     description: "",
     frequency: "",
     dateCreated: "",
-    timeToRemind: ""
+    timeToRemind: "",
+    reminderCategory: "",
+    sendType: ""
   };
 
   isLoading: boolean = false;
@@ -28,19 +30,26 @@ export class ReminderComponent implements OnInit {
     { id: 2, name: "Monthly" }
   ];
 
+  sendTypes = [
+    "Email",
+    "SMS",
+    "Email & SMS"
+  ];
+
   rTime: RTime = {
     hour: "",
     minute: "",
     meridiem: ""
   }
 
-  hours = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12'];
+  hours = ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12'];
 
   minutes = ['00', '15', '30', '45'];
 
   meridiems = ['AM', 'PM'];
 
   reminders: Reminder[] = [];
+  reminderCategories = ["Personal", "Work", "Home", "Finance", "Other"];
 
   constructor(
     private reminderService: ReminderService,
@@ -54,6 +63,9 @@ export class ReminderComponent implements OnInit {
 
      if (this.rTime.meridiem == 'PM') {
          this.rTime.hour = (parseInt(this.rTime.hour) + 12).toString(10);
+     }
+     else {
+
      }
      return this.rTime.hour + ":" + this.rTime.minute + ":00";
   }

@@ -18,7 +18,9 @@ export class DashboardComponent implements OnInit {
     description: "",
     frequency: "",
     dateCreated: "",
-    timeToRemind: ""
+    timeToRemind: "",
+    reminderCategory:"",
+    sendType: ""
   };
 
   reminders: Reminder[] = [];
@@ -27,6 +29,19 @@ export class DashboardComponent implements OnInit {
   message = "";
   isLoading: boolean = false;
   visible: boolean = true;
+  currentEmail = null;
+  reminderCategories = ["Personal", "Work", "Home", "Finance", "Other"];
+  sendTypes = [
+      "Email",
+      "SMS",
+      "Email & SMS"
+    ];
+  errorBox = {eMessage: "" };
+  nullReminders = [
+  {id: 0, name: "error", description: null, frequency: null,
+  dateCreated: null, timeToRemind: null, reminderCategory: null,
+  sendType: null, ruserId: 0}
+  ];
 
   constructor(
       private http: HttpClient,
@@ -40,6 +55,10 @@ export class DashboardComponent implements OnInit {
    const remindersObservable = this.reminderService.getAllReminders();
             remindersObservable.subscribe((remindersData: Reminder[]) => {
                 this.reminders = remindersData;
+                console.log(`deleted reminder: ${JSON.stringify(this.reminders)}`);
+                if(JSON.stringify(this.reminders)==JSON.stringify(this.nullReminders)) {
+                this.errorBox.eMessage = "Please log in first";
+                }
             });
   }
 
@@ -50,6 +69,7 @@ export class DashboardComponent implements OnInit {
   goToUpdate(id: string) {
       this.router.navigate(['/reminders/' + id]);
     }
+
 
 
   deleteReminder(reminder: Reminder): void {
@@ -85,5 +105,18 @@ export class DashboardComponent implements OnInit {
               this.isLoading = false;
             });
     }
+
+    sendReminder(id): void {
+        this.reminderService.send(id)
+            .subscribe(
+                  data => {
+                    this.currentEmail = data;
+                    console.log(`current reminder: ${JSON.stringify(data)}`);
+                    console.log("Email sent out to the world");
+                  },
+                  error => {
+                    console.log(error);
+                  });
+            }
 
 }

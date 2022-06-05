@@ -8,9 +8,10 @@ import { DashboardComponent } from "./dashboard/dashboard.component";
 import { ReminderComponent } from "./reminder/reminder.component";
 import { LandingComponent } from "./landing/landing.component";
 import { UpdateReminderComponent } from "./update-reminder/update-reminder.component";
-
+import { UpdateUserComponent } from './update-user/update-user.component';
 
 const routes: Routes = [
+  { path: "profile", component: UpdateUserComponent },
   { path: "reminders/:id", component: UpdateReminderComponent },
   { path: "dashboard", component: DashboardComponent },
   { path: "reminder", component: ReminderComponent },
@@ -18,6 +19,9 @@ const routes: Routes = [
   { path: "login", component: LoginComponent },
   { path: "landing", component: LandingComponent },
   { path: "", redirectTo: "/landing", pathMatch: "full" },
+//   { path: "sendemail/:id", redirectTo: "/dashboard", pathMatch: "full" },
+//   { path: "sendsms/:id", redirectTo: "/dashboard", pathMatch: "full" },
+  { path: "sendsmsandemail/:id", redirectTo: "/dashboard", pathMatch: "full" },
   { path: "**", component: PagenotfoundComponent }
 ];
 

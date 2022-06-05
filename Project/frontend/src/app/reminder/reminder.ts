@@ -5,4 +5,6 @@ export interface Reminder {
   frequency: string;
   dateCreated: string;
   timeToRemind: string;
+  reminderCategory: string;
+  sendType: string;
 }

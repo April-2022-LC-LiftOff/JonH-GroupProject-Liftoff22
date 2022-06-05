@@ -4,8 +4,10 @@ html {
 
 }
 
-.button {
-
-    padding: 20px;
+.logout {
+    border-radius: 50%;
+    padding-top: 10%;
+    width: 50%;
+    text-size-adjust: 10%;
 
 }

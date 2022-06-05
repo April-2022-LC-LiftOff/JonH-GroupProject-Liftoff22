@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
+import { Component, EventEmitter } from '@angular/core';
+import { FormGroup, FormControl, FormBuilder, ReactiveFormsModule, FormsModule, NgControl } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -7,9 +7,7 @@ import { FormGroup, FormControl } from '@angular/forms';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+
   title = 'demo reminder-app';
   visible: boolean = true;
-  hideUtility() {
-  this.visible = this.visible?false:true;
-  }
 }

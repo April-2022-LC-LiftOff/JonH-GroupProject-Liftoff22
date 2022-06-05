@@ -1,12 +1,12 @@
-nita Reminders: 
+nita Reminders:
 [Name: wow a test
 Description: look at that!
 Frequency: Daily
 Date Created: 2022-05-25Reminder Time: 17:00
- 
+
 , Name: two of them
 Description: TWO OF THEM!
 Frequency: Weekly
 Date Created: 2022-05-25Reminder Time: 14:15
- 
+
 ]
