@@ -1,20 +1,13 @@
-#button-container {
+.button-container {
     border: none;
     position: fixed;
     right: 50%;
     left: 50%;
-    bottom: 100px;
 }
 
-#add-button {
-    color: white;
-    background-color: #008099;
-    border: none;
-    display: block;
-    margin: auto;
-    bottom: 5px;
-    border-radius: 50%;
-    font-size: 85px;
+.button-text {
+    display:inline-block;
+    text-align: justify;
 }
 
 .reminder-wrapper {
@@ -27,4 +20,18 @@ margin: 15px;
 
 .reminder-container {
 width:100%;
+}
+
+.error-box {
+    overflow: hidden;
+    background-color: red;
+}
+
+.error-box p {
+    margin-top: 5px;
+    text-align: center;
+    font-size: 17px;
+    font-family:Verdana, Tahoma, sans-serif;
+    text-decoration: underline;
+    color: white;
 }

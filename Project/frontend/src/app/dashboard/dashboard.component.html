@@ -1,17 +1,36 @@
-<div id="button-container">
-    <button type="button" id="add-button" (click)="goToAddReminder('/reminder')">+</button>
+<div class="error-box "*ngIf="errorBox.eMessage">
+    <p>{{errorBox.eMessage}}</p>
 </div>
+<ng-container *ngIf="reminders != null">
+    <div class="button-container">
+        <img src="../../assets/img/add-reminder.png" (click)="goToAddReminder('/reminder')" alt="Add Reminder">
+        <div class="button-text">
+            <p>Add Reminder</p>
+        </div>
+    </div>
+</ng-container>
+<ng-container *ngFor="let r of reminders | slice:0:1; let i=index">
+<div class="button-container" *ngIf="r.name != 'error'">
+    <img src="../../assets/img/add-reminder.png" (click)="goToAddReminder('/reminder')" alt="Add Reminder">
+    <div class="button-text">
+        <p>Add Reminder</p>
+    </div>
+</div>
+</ng-container>
 <div class="reminder-container">
     <div *ngFor="let r of reminders; let i = index" [class.active]="i == currentIndex" (mouseover)="setActiveReminder(reminder,i)">
-        <div class="reminder-wrapper" id="{{r.id}}" >
+        <div class="reminder-wrapper" id="{{r.id}}" *ngIf="r.name != 'error'">
             <p>Name: {{r.name}}</p>
             <p>Description: {{r.description}}</p>
             <p>Frequency: {{r.frequency}}</p>
             <p>Date Created: {{r.dateCreated}}</p>
             <p>Time To Remind: {{r.timeToRemind}}</p>
+            <p>Category: {{r.reminderCategory}}</p>
             <button type="button" (click)="deleteReminder(r)">Delete</button>
             <button type="button" (click)="goToUpdate(r.id)">Update</button>
+            <button type="button" (click)="sendReminder(r.id, r.sendType)">Send {{r.sendType}}</button>
         </div>
-    </div>
+  </div>
 </div>
+
 <router-outlet></router-outlet>

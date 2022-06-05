@@ -20,7 +20,9 @@ export class UpdateReminderComponent implements OnInit {
     description: "",
     frequency: "",
     dateCreated: "",
-    timeToRemind: ""
+    timeToRemind: "",
+    reminderCategory: "",
+    sendType: ""
   };
       isLoading: boolean = false;
       frequencies = [
@@ -30,8 +32,15 @@ export class UpdateReminderComponent implements OnInit {
       ];
 
       reminders: Reminder[] = [];
+      reminderCategories = ["Personal", "Work", "Home", "Finance", "Other"];
       message = "";
       currentReminder = null;
+
+      sendTypes = [
+          "Email",
+          "SMS",
+          "Email & SMS"
+        ];
 
         rTime: RTime = {
           hour: "",

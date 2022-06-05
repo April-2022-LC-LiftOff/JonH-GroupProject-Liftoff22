@@ -14,9 +14,13 @@ export class RegisterComponent implements OnInit {
   isLoading: boolean = false;
   carriers = [
   {name: "--Optional--"},
-  {name: "AT&T"}, {name: "Sprint"}, {name: "T-Mobile"}, {name: "Verizon"}, {name: "Cricket"}
+  {name: "Alltel"}, {name: "AT&T"}, {name: "Boost Mobile"},
+  {name: "Cingular"}, {name: "Nextel"}, {name: "Sprint"}, 
+  {name: "T-Mobile"}, {name: "Verizon"}, {name: "Virgin"},
   ];
   registerUserForm: FormGroup;
+  errorBox = {eMessage: "" };
+  nullUser = { id: 0, username: null, email: null, mobile: null, carrier: null, pwHash: null };
 
   constructor(
     private registerService: RegisterService,
@@ -34,7 +38,7 @@ export class RegisterComponent implements OnInit {
            carrier: [""]
           }, { 
             validator: ConfirmedValidator('password', 'verifyPassword')
-          })
+          });
   }
 
   onClickSubmit(): void {
@@ -45,14 +49,23 @@ export class RegisterComponent implements OnInit {
     this.user.verifyPassword = this.registerUserForm.controls.verifyPassword.value;
     this.user.mobile = this.normalize(this.registerUserForm.controls.mobile.value);
     this.user.carrier = this.registerUserForm.controls.carrier.value;
-    console.log(`user: ${JSON.stringify(this.user)}`);
     this.registerService.addUser(this.user).subscribe(
       (savedUser) => {
-        console.log(`user saved: ${JSON.stringify(savedUser)}`);
-        this.isLoading = false;
-        this.router.navigate(["login"]);
+
+        if(Object.entries(savedUser).toString() === Object.entries(this.nullUser).toString()) {
+
+                console.log(`null user: ${JSON.stringify(this.nullUser)}`);
+                this.isLoading = false;
+                this.errorBox.eMessage = "User already exists";
+                this.router.navigate(["register"]);
+        } else {
+                this.isLoading = false;
+                this.router.navigate(["login"]);
+        }
+
       },
       (e) => {
+        this.errorBox.eMessage = "User already exists";
         console.error("Error adding user " + JSON.stringify(e));
         this.isLoading = false;
       }

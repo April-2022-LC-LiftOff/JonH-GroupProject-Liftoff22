@@ -19,7 +19,9 @@ export class ReminderComponent implements OnInit {
     description: "",
     frequency: "",
     dateCreated: "",
-    timeToRemind: ""
+    timeToRemind: "",
+    reminderCategory: "",
+    sendType: ""
   };
 
   isLoading: boolean = false;
@@ -27,6 +29,12 @@ export class ReminderComponent implements OnInit {
     { id: 0, name: "Daily" },
     { id: 1, name: "Weekly" },
     { id: 2, name: "Monthly" }
+  ];
+
+  sendTypes = [
+    "Email",
+    "SMS",
+    "Email & SMS"
   ];
 
   rTime: RTime = {
@@ -42,6 +50,7 @@ export class ReminderComponent implements OnInit {
   meridiems = ['AM', 'PM'];
 
   reminders: Reminder[] = [];
+  reminderCategories = ["Personal", "Work", "Home", "Finance", "Other"];
 
   constructor(
     private reminderService: ReminderService,

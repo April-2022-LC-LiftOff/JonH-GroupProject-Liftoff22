@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <p>reminder works!</p>
 <form
   #form="ngForm"
@@ -59,3 +60,145 @@
   </div>
 </form>
 <app-error-box></app-error-box>
+=======
+<div class="container">
+  <h1>Add A Reminder</h1>
+  <form
+    #form="ngForm"
+    method="post"
+    action="reminder"
+    #userregister="ngForm"
+    (ngSubmit)="onClickSubmit()"
+  >
+    <div class="form-group">
+      <label for="name" class="control-label">Reminder Name: </label>
+      <input
+        class="form-control"
+        type="text"
+        id="name"
+        name="name"
+        [(ngModel)]="reminder.name"
+        placeholder="Reminder Name"
+        aria-required="true"
+        required
+      />
+    </div>
+    <div class="form-group">
+      <label for="description" class="control-label">Description: </label>
+      <input
+        class="form-control"
+        type="text"
+        id="description"
+        name="description"
+        [(ngModel)]="reminder.description"
+        placeholder="Description"
+        aria-required="true"
+        required
+      />
+    </div>
+    <div class="form-group">
+      <label for="frequency" class="control-label">Frequency:</label>
+      <select
+        name="frequency"
+        [(ngModel)]="reminder.frequency"
+        class="form-control"
+        placeholder="Frequency"
+        aria-required="true"
+        required
+      >
+        <option value="" disabled selected>Select Frequency</option>
+        <option *ngFor="let frequency of frequencies">
+          {{ frequency.name }}
+        </option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="hourToRemind" class="control-label">Time To Remind:</label>
+      <div class="row">
+        <div class="col-sm-2">
+          <select
+            class="form-control"
+            name="hourToRemind"
+            [(ngModel)]="rTime.hour"
+            aria-required="true"
+            required
+          >
+            <option value="" disabled selected>Select Hour</option>
+            <option *ngFor="let hour of hours">
+              {{ hour }}
+            </option>
+          </select>
+        </div>
+        <div class="col-sm-2">
+          <select
+            class="form-control"
+            name="minuteToRemind"
+            [(ngModel)]="rTime.minute"
+            aria-required="true"
+            required
+          >
+            <option value="" disabled selected>Select Minutes</option>
+            <option *ngFor="let minute of minutes">
+              {{ minute }}
+            </option>
+          </select>
+        </div>
+        <div class="col-sm-2">
+          <select
+            class="form-control"
+            name="meridiemToRemind"
+            [(ngModel)]="rTime.meridiem"
+            aria-required="true"
+            required
+          >
+            <option value="" disabled selected>Select Meridiem</option>
+            <option *ngFor="let meridiem of meridiems">
+              {{ meridiem }}
+            </option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="reminderCategory" class="control-label">Category:</label>
+      <select
+        class="form-control"
+        name="reminderCategory"
+        [(ngModel)]="reminder.reminderCategory"
+        aria-required="true"
+        required
+      >
+        <option value="" disabled selected>Select Category</option>
+        <option *ngFor="let category of reminderCategories">
+          {{ category }}
+        </option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="sendType" class="control-label">How to notify:</label>
+      <select
+        class="form-control"
+        name="sendType"
+        [(ngModel)]="reminder.sendType"
+        aria-required="true"
+        required
+      >
+        <option value="" disabled selected>Select Notification</option>
+        <option *ngFor="let type of sendTypes">
+          {{ type }}
+        </option>
+      </select>
+    </div>
+    <div class="form-group">
+      <button
+        role="button"
+        class="btn btn-primary"
+        type="submit"
+        [disabled]="!form.valid || isLoading"
+      >
+        Create Reminder
+      </button>
+    </div>
+  </form>
+</div>
+>>>>>>> 5f22d0f35b999b585d8cfef6ff2a4a7f0f6ea6db
