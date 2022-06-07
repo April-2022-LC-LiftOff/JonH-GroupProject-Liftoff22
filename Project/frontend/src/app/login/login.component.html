@@ -1,5 +1,5 @@
-<div class="error-box "*ngIf="errorBox.eMessage">
-  <p>{{errorBox.eMessage}}</p>
+<div class="error-box" *ngIf="errorBox.eMessage">
+  <p>{{ errorBox.eMessage }}</p>
 </div>
 
 <div class="container">
@@ -25,14 +25,6 @@
       />
     </div>
 
-<<<<<<< HEAD
-  <div>
-    <button type="submit" [disabled]="!form.valid || isLoading">Login</button>
-  </div>
-</form>
-
-
-=======
     <div class="form-group">
       <label for="password">Password: </label>
       <input
@@ -59,4 +51,3 @@
     </div>
   </form>
 </div>
->>>>>>> 5f22d0f35b999b585d8cfef6ff2a4a7f0f6ea6db
