@@ -5,7 +5,6 @@ import { Reminder } from "./reminder";
 import { RTime } from "./rTime";
 import { ConstantsService } from "../constants.service";
 import { ThrowStmt } from "@angular/compiler";
-import { ErrorBoxComponent } from '../error-box/error-box.component';
 
 @Component({
   selector: "app-reminder",
@@ -21,33 +20,29 @@ export class ReminderComponent implements OnInit {
     dateCreated: "",
     timeToRemind: "",
     reminderCategory: "",
-    sendType: ""
+    sendType: "",
   };
 
   isLoading: boolean = false;
   frequencies = [
     { id: 0, name: "Daily" },
     { id: 1, name: "Weekly" },
-    { id: 2, name: "Monthly" }
+    { id: 2, name: "Monthly" },
   ];
 
-  sendTypes = [
-    "Email",
-    "SMS",
-    "Email & SMS"
-  ];
+  sendTypes = ["Email", "SMS", "Email & SMS"];
 
   rTime: RTime = {
     hour: "",
     minute: "",
-    meridiem: ""
-  }
+    meridiem: "",
+  };
 
-  hours = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12'];
+  hours = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"];
 
-  minutes = ['00', '15', '30', '45'];
+  minutes = ["00", "15", "30", "45"];
 
-  meridiems = ['AM', 'PM'];
+  meridiems = ["AM", "PM"];
 
   reminders: Reminder[] = [];
   reminderCategories = ["Personal", "Work", "Home", "Finance", "Other"];
@@ -58,14 +53,13 @@ export class ReminderComponent implements OnInit {
     private constantsService: ConstantsService
   ) {}
 
-  ngOnInit() { }
+  ngOnInit() {}
 
   gatherTime(): string {
-
-     if (this.rTime.meridiem == 'PM') {
-         this.rTime.hour = (parseInt(this.rTime.hour) + 12).toString(10);
-     }
-     return this.rTime.hour + ":" + this.rTime.minute + ":00";
+    if (this.rTime.meridiem == "PM") {
+      this.rTime.hour = (parseInt(this.rTime.hour) + 12).toString(10);
+    }
+    return this.rTime.hour + ":" + this.rTime.minute + ":00";
   }
 
   onClickSubmit(): void {
