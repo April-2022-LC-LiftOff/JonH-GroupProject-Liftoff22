@@ -5,7 +5,6 @@ import { Reminder } from "./reminder";
 import { RTime } from "./rTime";
 import { ConstantsService } from "../constants.service";
 import { ThrowStmt } from "@angular/compiler";
-import { ErrorBoxComponent } from '../error-box/error-box.component';
 
 @Component({
   selector: "app-reminder",
@@ -26,9 +25,10 @@ export class ReminderComponent implements OnInit {
 
   isLoading: boolean = false;
   frequencies = [
-    { id: 0, name: "Daily" },
-    { id: 1, name: "Weekly" },
-    { id: 2, name: "Monthly" }
+    { id: 0, name: "A Nudge" },
+    { id: 1, name: "Daily" },
+    { id: 2, name: "Weekly" },
+    { id: 3, name: "Monthly" }
   ];
 
   sendTypes = [

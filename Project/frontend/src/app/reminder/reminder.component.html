@@ -1,66 +1,3 @@
-<<<<<<< HEAD
-<p>reminder works!</p>
-<form
-  #form="ngForm"
-  method="post"
-  action="reminder"
-  #userregister="ngForm"
-  (ngSubmit)="onClickSubmit()"
->
-  <div>
-    <label for="name">Reminder Name: </label>
-    <input
-      type="text"
-      id="name"
-      name="name"
-      [(ngModel)]="reminder.name"
-      required
-    />
-  </div>
-  <div>
-    <label for="description">Description: </label>
-    <input
-      type="text"
-      id="description"
-      name="description"
-      [(ngModel)]="reminder.description"
-      required
-    />
-  </div>
-  <div>
-    <label>Frequency:</label>
-    <select name="frequency" [(ngModel)]="reminder.frequency" required>
-      <option *ngFor="let frequency of frequencies">
-        {{ frequency.name }}
-      </option>
-    </select>
-  </div>
-  <div>
-    <label>Time To Remind:</label>
-    <select name="hourToRemind" [(ngModel)]="rTime.hour" required>
-      <option *ngFor="let hour of hours">
-        {{ hour }}
-      </option>
-    </select>
-    <select name="minuteToRemind" [(ngModel)]="rTime.minute" required>
-      <option *ngFor="let minute of minutes">
-        {{ minute }}
-      </option>
-    </select>
-    <select name="meridiemToRemind" [(ngModel)]="rTime.meridiem" required>
-      <option *ngFor="let meridiem of meridiems">
-        {{ meridiem }}
-      </option>
-    </select>
-  </div>
-  <div>
-    <button type="submit" [disabled]="!form.valid || isLoading">
-      Create Reminder
-    </button>
-  </div>
-</form>
-<app-error-box></app-error-box>
-=======
 <div class="container">
   <h1>Add A Reminder</h1>
   <form
@@ -201,4 +138,3 @@
     </div>
   </form>
 </div>
->>>>>>> 5f22d0f35b999b585d8cfef6ff2a4a7f0f6ea6db
