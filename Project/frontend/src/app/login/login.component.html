@@ -1,66 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
-<link href='https://fonts.googleapis.com/css?family=Niramit' rel='stylesheet'>
+<link href='https://fonts.googleapis.com/css?family=Overpass Mono' rel='stylesheet'>
 
 <div class="error-box "*ngIf="errorBox.eMessage">
-  <p>{{errorBox.eMessage}}</p>
+<p>{{errorBox.eMessage}}</p>
 </div>
 
 <div class="container">
-<p style="text-align: center">LOGIN</p>
-<form
-  #form="ngForm"
-  method="post"
-  action="login"
-  #userlogin="ngForm"
-  (ngSubmit)="onLoginSubmit()"
->
+  <h2>Login</h2>
+  <form
+          #form="ngForm"
+          method="post"
+          action="login"
+          #userlogin="ngForm"
+          (ngSubmit)="onLoginSubmit()"
+  >
+    <div class="form-group">
+      <label for="userName">User Name: </label>
+      <input
+              class="form-control"
+              type="text"
+              id="userName"
+              name="userName"
+              [(ngModel)]="user.username"
+              placeholder="User Name"
+              aria-required="true"
+              required
+      />
+    </div>
 
-  <div class="loginTab" style="text-align: center">
-
-
-  <div class="row">
-  <div class="col form-group">
-    <label for="userName">User Name: </label>
-    <input
-       class="form-control"
-       type="text"
-       id="userName"
-       name="userName"
-       [(ngModel)]="user.username"
-       placeholder="User Name"
-       aria-required="true"
-       required
-    />
-  </div>
-
-  <div class="col form-group">
+  <div class="form-group">
     <label for="password">Password: </label>
     <input
-       class="form-control"
-       type="password"
-       id="password"
-       name="password"
-       [(ngModel)]="user.password"
-       placeholder="Password"
-       aria-required="true"
-       required
+            class="form-control"
+            type="password"
+            id="password"
+            name="password"
+            [(ngModel)]="user.password"
+            placeholder="Password"
+            aria-required="true"
+            required
     />
   </div>
-  </div>
 
-    <div class="button form-group">
+  <div class="form-group">
     <button
-     role="button"
-     class="btn btn-outline-info"
-     type="submit"
-     [disabled]="!form.valid || isLoading"
+            role="button"
+            class="btn btn-primary"
+            type="submit"
+            [disabled]="!form.valid || isLoading"
     >
       Login
     </button>
   </div>
-  </div>
-</form>
+  </form>
 </div>
-
 </html>

@@ -1,12 +1,15 @@
 .topnav {
   overflow: hidden;
-  background-color: rgb(112, 102, 119);
+  font-family: 'Overpass Mono';
+  background-color: rgb(185, 193, 225);
+  border-style: none none double none;
+  border-color: rgb(140, 149, 184);
 }
 
 .topnav a {
   float: left;
   display: block;
-  color: rgb(255, 242, 201);
+  color: rgb(227, 238, 251);
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
@@ -17,14 +20,25 @@
   float: right;
 }
 
+.topnav .navbar-brand:hover {
+  background-color: rgb(159, 155, 228);
+  color: rgb(112, 95, 179);
+  border-style: none none double none;
+  border-color: rgb(112, 95, 179);
+}
+
 .topnav a:hover {
-  background-color: rgb(255, 166, 158);
-  color: rgb(218, 75, 94);
+  background-color: rgb(255, 158, 187);
+  color: rgb(218, 75, 149);
+  border-style: none none double none;
+  border-color: rgb(218, 75, 149);
 }
 
 .topnav a.active {
   background-color: rgb(184, 242, 230);
   color: rgb(75, 93, 186);
+  border-style: none none double none;
+  border-color: rgb(75, 93, 186);
 }
 
 .topnav .icon {

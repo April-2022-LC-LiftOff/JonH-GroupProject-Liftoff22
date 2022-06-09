@@ -1,16 +1,22 @@
 html {
 
-    background-color: rgb(112, 102, 119);
+    background-color: rgb(185, 193, 225);
+
+}
+
+h2 {
+
+    font-family: 'Overpass Mono';
 
 }
 
 p {
 
-    color: rgb(218, 75, 94);
+    color: rgb(218, 75, 149);
     font-family: 'Niramit';
     font-size: 28px;
     border-radius: 10px;
-    background-color: rgb(255, 166, 158);
+    background-color: rgb(255, 158, 187);
     margin-top: 15px;
     margin-bottom: 15px;
     margin-right: 800px;

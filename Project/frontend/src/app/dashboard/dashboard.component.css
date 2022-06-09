@@ -1,6 +1,6 @@
 html {
 
-    background-color: rgb(112, 102, 119);
+    background-color: rgb(185, 193, 225);
 
 }
 
@@ -25,9 +25,12 @@ html {
     text-align: center;
     display: inline-block;
     width: 150px;
-    color: rgb(115, 85, 183);
-    background-color: rgb(197, 189, 237);
-    border: 5px rgb(115, 85, 183);
+    color: rgb(112, 95, 179);
+    background-color: rgb(159, 155, 228);
+    border: 3px;
+    border-color: rgb(112, 95, 179);
+    border-style: solid;
+    border-radius: 5px;
     padding: 15px;
     margin: 15px;
 
@@ -50,7 +53,7 @@ html {
     margin-top: 5px;
     text-align: center;
     font-size: 17px;
-    font-family:Verdana, Tahoma, sans-serif;
+    font-family: Verdana, Tahoma, sans-serif;
     text-decoration: underline;
     color: white;
 

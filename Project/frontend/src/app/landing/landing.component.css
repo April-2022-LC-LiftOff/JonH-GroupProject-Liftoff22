@@ -1,6 +1,6 @@
 html {
 
-    background-color: rgb(112, 102, 119);
+    background-color: rgb(185, 193, 225);
 
 }
 
@@ -32,6 +32,7 @@ html {
 /* Place text in the middle of the image */
 .hero-text {
   text-align: center;
+  font-family: 'Overpass Mono';
   position: absolute;
   top: 50%;
   left: 50%;

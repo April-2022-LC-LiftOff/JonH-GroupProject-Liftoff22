@@ -1,15 +1,22 @@
 html {
 
-    background-color: rgb(112, 102, 119);
+    background-color: rgb(185, 193, 225);
+
+}
+
+body {
+
+    background-color: rgb(185, 193, 225);
 
 }
 
 h1 {
 
-    color: rgb(423, 79, 112);
+    color: rgb(218, 75, 149);
     font-size: 35px;
+    font-family: 'Overpass Mono';
     border-radius: 25px;
-    background-color: rgb(255, 166, 158);
+    background-color: rgb(255, 158, 187);
     padding: 15px 10px;
     margin-top: 20px;
     margin-bottom: 20px;
@@ -22,6 +29,7 @@ p {
 
     color: rgb(75, 93, 186);
     font-size: 25px;
+    font-family: 'Molengo';
     border-radius: 15px;
     background-color: rgb(184, 242, 230);
     padding: 15px 10px;
