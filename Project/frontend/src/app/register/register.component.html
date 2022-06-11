@@ -3,42 +3,42 @@
 <link href='https://fonts.googleapis.com/css?family=Overpass Mono' rel='stylesheet'>
 
 
-<div class="error-box "*ngIf="errorBox.eMessage">
-  <p>{{errorBox.eMessage}}</p>
+<div class="error-box " *ngIf="errorBox.eMessage">
+    <p>{{errorBox.eMessage}}</p>
 </div>
 
 
-  <div class="container">
+<div class="container">
     <div class="edit-form">
-      <h2>Register</h2>
-      <form [formGroup]="registerUserForm">
-        <div
-                class="form-group"
-                [ngClass]="{
+        <h2>Register</h2>
+        <form [formGroup]="registerUserForm">
+            <div
+                    class="form-group"
+                    [ngClass]="{
           'has-error':
             (registerUserForm.get('username').touched ||
               registerUserForm.get('username').dirty) &&
             registerUserForm.get('username').errors
         }"
-        >
-          <label for="username" class="control-label">Username</label>
-          <input
-                  type="text"
-                  id="username"
-                  class="form-control"
-                  formControlName="username"
-                  name="username"
-                  placeholder="User Name"
-                  aria-required="true"
-          />
-          <span
-                  class="help-block"
-                  *ngIf="
+            >
+                <label for="username" class="control-label">Username</label>
+                <input
+                        type="text"
+                        id="username"
+                        class="form-control"
+                        formControlName="username"
+                        name="username"
+                        placeholder="User Name"
+                        aria-required="true"
+                />
+                <span
+                        class="help-block"
+                        *ngIf="
             (registerUserForm.get('username').touched ||
               registerUserForm.get('username').dirty) &&
             registerUserForm.get('username').errors
           "
-          >
+                >
           <span
                   role="alert"
                   aria-relevant="all"
@@ -58,34 +58,34 @@
             characters
           </span>
         </span>
-        </div>
-        <div
-                class="form-group"
-                [ngClass]="{
+            </div>
+            <div
+                    class="form-group"
+                    [ngClass]="{
           'has-error':
             (registerUserForm.get('email').touched ||
               registerUserForm.get('email').dirty) &&
             registerUserForm.get('email').errors
         }"
-        >
-          <label for="email" class="control-label">Email</label>
-          <input
-                  type="email"
-                  id="email"
-                  class="form-control"
-                  formControlName="email"
-                  name="email"
-                  placeholder="example@address.com"
-                  aria-required="true"
-          />
-          <span
-                  class="help-block"
-                  *ngIf="
+            >
+                <label for="email" class="control-label">Email</label>
+                <input
+                        type="email"
+                        id="email"
+                        class="form-control"
+                        formControlName="email"
+                        name="email"
+                        placeholder="example@address.com"
+                        aria-required="true"
+                />
+                <span
+                        class="help-block"
+                        *ngIf="
             (registerUserForm.get('email').touched ||
               registerUserForm.get('email').dirty) &&
             registerUserForm.get('email').errors
           "
-          >
+                >
           <span
                   role="alert"
                   aria-relevant="all"
@@ -101,34 +101,34 @@
             Email must be in valid format (example@address.com)
           </span>
         </span>
-        </div>
-        <div
-                class="form-group"
-                [ngClass]="{
+            </div>
+            <div
+                    class="form-group"
+                    [ngClass]="{
           'has-error':
             (registerUserForm.get('password').touched ||
               registerUserForm.get('password').dirty) &&
             registerUserForm.get('password').errors
         }"
-        >
-          <label for="password" class="control-label">Password: </label>
-          <input
-                  type="password"
-                  id="password"
-                  name="password"
-                  class="form-control"
-                  formControlName="password"
-                  placeholder="Password"
-                  aria-required="true"
-          />
-          <span
-                  class="help-block"
-                  *ngIf="
+            >
+                <label for="password" class="control-label">Password: </label>
+                <input
+                        type="password"
+                        id="password"
+                        name="password"
+                        class="form-control"
+                        formControlName="password"
+                        placeholder="Password"
+                        aria-required="true"
+                />
+                <span
+                        class="help-block"
+                        *ngIf="
             (registerUserForm.get('password').touched ||
               registerUserForm.get('password').dirty) &&
             registerUserForm.get('password').errors
           "
-          >
+                >
           <span
                   role="alert"
                   aria-relevant="all"
@@ -148,37 +148,37 @@
             characters
           </span>
         </span>
-        </div>
-        <div
-                class="form-group"
-                [ngClass]="{
+            </div>
+            <div
+                    class="form-group"
+                    [ngClass]="{
           'has-error':
             (registerUserForm.get('verifyPassword').touched ||
               registerUserForm.get('verifyPassword').dirty) &&
             registerUserForm.get('verifyPassword').errors
         }"
-        >
-          <label for="verifyPassword" class="control-label"
-          >Verify Password:
-          </label>
-          <input
-                  type="password"
-                  id="verifyPassword"
-                  name="verifyPassword"
-                  class="form-control"
-                  formControlName="verifyPassword"
-                  placeholder="Verify Password"
-                  aria-required="true"
-                  required
-          />
-          <span
-                  class="help-block"
-                  *ngIf="
+            >
+                <label for="verifyPassword" class="control-label"
+                >Verify Password:
+                </label>
+                <input
+                        type="password"
+                        id="verifyPassword"
+                        name="verifyPassword"
+                        class="form-control"
+                        formControlName="verifyPassword"
+                        placeholder="Verify Password"
+                        aria-required="true"
+                        required
+                />
+                <span
+                        class="help-block"
+                        *ngIf="
             (registerUserForm.get('verifyPassword').touched ||
               registerUserForm.get('verifyPassword').dirty) &&
             registerUserForm.get('verifyPassword').errors
           "
-          >
+                >
           <span
                   role="alert"
                   aria-relevant="all"
@@ -196,39 +196,39 @@
             Passwords must match
           </span>
         </span>
+            </div>
+            <div class="form-group">
+                <label for="mobile" class="control-label">Mobile Number</label>
+                <input
+                        class="form-control"
+                        appPhoneMask
+                        formControlName="mobile"
+                        type="text"
+                        id="mobile"
+                        placeholder="(123) 456-7890"
+                        name="mobile"
+                />
+            </div>
+            <div class="form-group">
+                <label for="carrier" class="control-label">Carrier</label>
+                <select name="carrier" class="form-control" formControlName="carrier">
+                    <option *ngFor="let service of carriers">
+                        {{ service.name }}
+                    </option>
+                </select>
+            </div>
+        </form>
+        <div>
+            <button
+                    type="submit"
+                    class="badge text-bg-info"
+                    (click)="onClickSubmit()"
+                    role="button"
+            >
+                Register
+            </button>
         </div>
-        <div class="form-group">
-          <label for="mobile" class="control-label">Mobile Number</label>
-          <input
-                  class="form-control"
-                  appPhoneMask
-                  formControlName="mobile"
-                  type="text"
-                  id="mobile"
-                  placeholder="(123) 456-7890"
-                  name="mobile"
-          />
-        </div>
-        <div class="form-group">
-          <label for="carrier" class="control-label">Carrier</label>
-          <select name="carrier" class="form-control" formControlName="carrier">
-            <option *ngFor="let service of carriers">
-              {{ service.name }}
-            </option>
-          </select>
-        </div>
-      </form>
-      <div>
-        <button
-                type="submit"
-                class="badge text-bg-info"
-                (click)="onClickSubmit()"
-                role="button"
-        >
-          Register
-        </button>
-      </div>
-      <p>{{ message }}</p>
+        <p>{{ message }}</p>
     </div>
-  </div>
+</div>
 </html>
