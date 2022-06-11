@@ -10,31 +10,16 @@ h2 {
 
 }
 
-p {
+.container {
 
-    color: rgb(218, 75, 149);
-    font-family: 'Niramit';
-    font-size: 28px;
+    color: rgb(75, 193, 149);
+    font-size: 18px;
+    font-family: 'Bai Jamjuree';
+    background-color: rgb(184, 242, 212);
     border-radius: 10px;
-    background-color: rgb(255, 158, 187);
-    margin-top: 15px;
-    margin-bottom: 15px;
-    margin-right: 800px;
-    margin-left: 800px;
-
-}
-
-.registration {
-
-    color: rgb(75, 93, 186);
-    font-size: 20px;
-    border-radius: 15px;
-    background-color: rgb(184, 242, 230);
-    padding: 15px 10px;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    margin-right: 650px;
-    margin-left: 650px;
+    border: 5px;
+    border-color: rgb(75, 193, 149);
+    border-style: outset;
 
 }
 

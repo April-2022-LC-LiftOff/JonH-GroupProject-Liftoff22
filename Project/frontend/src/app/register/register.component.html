@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <link href='https://fonts.googleapis.com/css?family=Overpass Mono' rel='stylesheet'>
+<link href='https://fonts.googleapis.com/css?family=Bai Jamjuree' rel='stylesheet'>
+
 
 
 <div class="error-box " *ngIf="errorBox.eMessage">
@@ -10,7 +12,7 @@
 
 <div class="container">
     <div class="edit-form">
-        <h2>Register</h2>
+        <h2><u>Register</u></h2>
         <form [formGroup]="registerUserForm">
             <div
                     class="form-group"
@@ -221,7 +223,7 @@
         <div>
             <button
                     type="submit"
-                    class="badge text-bg-info"
+                    class="btn btn-success"
                     (click)="onClickSubmit()"
                     role="button"
             >

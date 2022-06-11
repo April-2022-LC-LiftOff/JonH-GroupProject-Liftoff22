@@ -4,6 +4,18 @@ html {
 
 }
 
+h1 {
+
+    font-family: 'Overpass Mono';
+
+}
+
+p {
+
+    font-family: 'Bai Jamjuree';
+
+}
+
 body,
 html {
   height: 100%;

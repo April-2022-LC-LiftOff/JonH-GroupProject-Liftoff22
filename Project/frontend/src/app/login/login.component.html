@@ -2,15 +2,17 @@
 <html lang="en">
   <link
     href="https://fonts.googleapis.com/css?family=Overpass Mono"
-    rel="stylesheet"
-  />
+    rel="stylesheet">
+  <link
+    href='https://fonts.googleapis.com/css?family=Bai Jamjuree'
+    rel='stylesheet'>
 
   <div class="error-box" *ngIf="errorBox.eMessage">
     <p>{{ errorBox.eMessage }}</p>
   </div>
 
   <div class="container">
-    <h2>Login</h2>
+    <h2><u>Login</u></h2>
     <form
       #form="ngForm"
       method="post"
@@ -49,7 +51,7 @@
       <div class="form-group">
         <button
           role="button"
-          class="btn btn-primary"
+          class="btn btn-warning"
           type="submit"
           [disabled]="!form.valid || isLoading"
         >

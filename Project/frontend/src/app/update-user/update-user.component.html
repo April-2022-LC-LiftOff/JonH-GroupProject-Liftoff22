@@ -1,6 +1,9 @@
+<link href='https://fonts.googleapis.com/css?family=Overpass Mono' rel='stylesheet'>
+<link href='https://fonts.googleapis.com/css?family=Bai Jamjuree' rel='stylesheet'>
+
 <div class="container">
     <div *ngIf="currentUser" class="edit-form">
-        <h2>User Profile</h2>
+        <h2><u>User Profile</u></h2>
         <form [formGroup]="updateUserForm" (ngSubmit)="OnClickSubmit()">
             <div class="form-group">
                 <label for="username" class="control-label">Username</label>
@@ -74,7 +77,7 @@
         <button
                 role="button"
                 type="submit"
-                class="badge badge-success"
+                class="btn btn-info"
                 (click)="updateUser()"
         >
             Update

@@ -10,17 +10,16 @@ h2 {
 
 }
 
-p {
+.container {
 
-    color: rgb(218, 75, 149);
-    font-family: 'Niramit';
-    font-size: 28px;
+    color: rgb(255, 189, 76);
+    font-size: 18px;
+    font-family: 'Bai Jamjuree';
+    background-color: rgb(255, 242, 201);
     border-radius: 10px;
-    background-color: rgb(255, 158, 187);
-    margin-top: 15px;
-    margin-bottom: 15px;
-    margin-right: 850px;
-    margin-left: 850px;
+    border: 5px;
+    border-color: rgb(255, 189, 76);
+    border-style: outset;
 
 }
 

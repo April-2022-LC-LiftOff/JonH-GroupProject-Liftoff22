@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+<link href='https://fonts.googleapis.com/css?family=Overpass Mono' rel='stylesheet'>
+<link href='https://fonts.googleapis.com/css?family=Bai Jamjuree' rel='stylesheet'>
 
 <div class="container">
     <div *ngIf="currentReminder" class="edit-form">
-        <h2>Update Reminder</h2>
+        <h2><u>Update Reminder</u></h2>
         <form>
             <div class="form-group">
                 <label for="name" class="control-label">Name</label>
@@ -115,7 +117,7 @@
         <button
                 role="button"
                 type="submit"
-                class="badge badge-success"
+                class="btn btn-dark"
                 (click)="updateReminder()"
         >
             Update

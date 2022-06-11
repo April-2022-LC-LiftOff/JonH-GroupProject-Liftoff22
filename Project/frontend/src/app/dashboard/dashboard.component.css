@@ -15,14 +15,15 @@ html {
 }
 
 .reminder-wrapper {
+  font-family: 'Bai Jamjuree';
   text-align: center;
   display: inline-block;
-  width: 150px;
+  width: 200px;
   color: rgb(112, 95, 179);
-  background-color: rgb(159, 155, 228);
-  border: 3px;
+  background-color: rgb(176, 173, 233);
+  border: 4px;
   border-color: rgb(112, 95, 179);
-  border-style: solid;
+  border-style: outset;
   border-radius: 5px;
   padding: 15px;
   margin: 15px;

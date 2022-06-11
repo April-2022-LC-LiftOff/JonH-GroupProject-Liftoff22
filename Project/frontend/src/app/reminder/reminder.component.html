@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <link href='https://fonts.googleapis.com/css?family=Overpass Mono' rel='stylesheet'>
+<link href='https://fonts.googleapis.com/css?family=Bai Jamjuree' rel='stylesheet'>
 
 <div class="container">
-    <h1>Add A Reminder</h1>
+    <h1><u>Add A Reminder</u></h1>
     <form
             #form="ngForm"
             method="post"
@@ -133,7 +134,7 @@
         <div class="form-group">
             <button
                     role="button"
-                    class="btn btn-primary"
+                    class="btn btn-danger"
                     type="submit"
                     [disabled]="!form.valid || isLoading"
             >

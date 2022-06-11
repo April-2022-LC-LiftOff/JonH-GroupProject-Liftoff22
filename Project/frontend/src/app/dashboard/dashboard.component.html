@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
+<link href='https://fonts.googleapis.com/css?family=Overpass Mono' rel='stylesheet'>
+<link href='https://fonts.googleapis.com/css?family=Bai Jamjuree' rel='stylesheet'>
 
   <div class="error-box" *ngIf="errorBox.eMessage">
     <p>{{ errorBox.eMessage }}</p>
@@ -33,12 +35,12 @@
         >
           <div class="media">
             <div class="media-body">
-              <h4 class="media-heading">Name: {{ r.name }}</h4>
-              <p>Description: {{ r.description }}</p>
-              <p>Frequency: {{ r.frequency }}</p>
-              <p>Date Created: {{ r.dateCreated }}</p>
-              <p>Time To Remind: {{ r.timeToRemind }}</p>
-              <p>Category: {{ r.reminderCategory }}</p>
+              <h4 class="media-heading"><b>Name:</b> {{ r.name }}</h4>
+              <p><b>Description:</b> {{ r.description }}</p>
+              <p><b>Frequency:</b> {{ r.frequency }}</p>
+              <p><b>Date Created:</b> {{ r.dateCreated }}</p>
+              <p><b>Time To Remind:</b> {{ r.timeToRemind }}</p>
+              <p><b>Category:</b> {{ r.reminderCategory }}</p>
               <button
                 type="button"
                 class="btn btn-danger btn-sm"
