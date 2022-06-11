@@ -1,58 +1,46 @@
-<<<<<<< HEAD
 html {
-
-    background-color: rgb(185, 193, 225);
-
+  background-color: rgb(185, 193, 225);
 }
 
 h1 {
-
-    font-family: 'Overpass Mono';
-
+  font-family: "Overpass Mono";
 }
 
 p {
-
-    color: rgb(115, 85, 183);
-    font-family: 'Niramit';
-    font-size: 28px;
-    border-radius: 10px;
-    background-color: rgb(197, 189, 237);
-    margin-top: 15px;
-    margin-bottom: 15px;
-    margin-right: 800px;
-    margin-left: 800px;
-
+  color: rgb(115, 85, 183);
+  font-family: "Niramit";
+  font-size: 28px;
+  border-radius: 10px;
+  background-color: rgb(197, 189, 237);
+  margin-top: 15px;
+  margin-bottom: 15px;
+  margin-right: 800px;
+  margin-left: 800px;
 }
 
 .reminderTable {
-
-    color: rgb(255, 189, 76);
-    font-size: 20px;
-    border-radius: 15px;
-    background-color: rgb(255, 242, 201);
-    padding: 15px 10px;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    margin-right: 650px;
-    margin-left: 650px;
-
+  color: rgb(255, 189, 76);
+  font-size: 20px;
+  border-radius: 15px;
+  background-color: rgb(255, 242, 201);
+  padding: 15px 10px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-right: 650px;
+  margin-left: 650px;
 }
 
 .button {
-
-    padding-top: 20px;
-
-=======
+  padding-top: 20px;
+}
 .errorBox {
-    background-color: red;
-    color: white;
-    border-style: solid;
-    visibility: hidden;
-    display-property: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    width: 50%;
->>>>>>> master
+  background-color: red;
+  color: white;
+  border-style: solid;
+  visibility: hidden;
+  display-property: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 50%;
 }

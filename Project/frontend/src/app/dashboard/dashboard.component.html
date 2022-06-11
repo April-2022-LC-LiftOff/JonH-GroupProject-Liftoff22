@@ -3,31 +3,32 @@
   <div class="error-box" *ngIf="errorBox.eMessage">
     <p>{{ errorBox.eMessage }}</p>
   </div>
-  <ng-container *ngIf="reminders != null">
-    <div class="button-container">
-      <img
-        src="../../assets/img/add-reminder.png"
-        (click)="goToAddReminder('/reminder')"
-        alt="Add Reminder"
-      />
-      <div class="button-text">
-        <p>Add Reminder</p>
+  <div class="container">
+    <ng-container *ngIf="reminders != null">
+      <div class="button-container">
+        <img
+          src="../../assets/img/add-reminder.png"
+          (click)="goToAddReminder('/reminder')"
+          alt="Add Reminder"
+        />
+        <div class="button-text">
+          <p>Add Reminder</p>
+        </div>
       </div>
-    </div>
-  </ng-container>
-  <ng-container *ngFor="let r of reminders | slice: 0:1; let i = index">
-    <div class="button-container" *ngIf="r.name != 'error'">
-      <img
-        src="../../assets/img/add-reminder.png"
-        (click)="goToAddReminder('/reminder')"
-        alt="Add Reminder"
-      />
-      <div class="button-text">
-        <p>Add Reminder</p>
+    </ng-container>
+    <ng-container *ngFor="let r of reminders | slice: 0:1; let i = index">
+      <div class="button-container" *ngIf="r.name != 'error'">
+        <img
+          src="../../assets/img/add-reminder.png"
+          (click)="goToAddReminder('/reminder')"
+          alt="Add Reminder"
+        />
+        <div class="button-text">
+          <p>Add Reminder</p>
+        </div>
       </div>
-    </div>
-  </ng-container>
-
+    </ng-container>
+  </div>
   <div class="row" style="margin-top: 5%">
     <div class="container">
       <div
