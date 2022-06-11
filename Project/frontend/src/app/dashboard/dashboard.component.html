@@ -1,68 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
-
-
-    <div class="error-box" *ngIf="errorBox.eMessage">
-        <p>{{ errorBox.eMessage }}</p>
+  <div class="error-box" *ngIf="errorBox.eMessage">
+    <p>{{ errorBox.eMessage }}</p>
+  </div>
+  <ng-container *ngIf="reminders != null">
+    <div class="button-container">
+      <img
+        src="../../assets/img/add-reminder.png"
+        (click)="goToAddReminder('/reminder')"
+        alt="Add Reminder"
+      />
+      <div class="button-text">
+        <p>Add Reminder</p>
+      </div>
     </div>
-    <ng-container *ngIf="reminders != null">
-        <div class="button-container">
-            <img
-                    src="../../assets/img/add-reminder.png"
-                    (click)="goToAddReminder('/reminder')"
-                    alt="Add Reminder"
-            />
-            <div class="button-text">
-                <p>Add Reminder</p>
-            </div>
-        </div>
-    </ng-container>
-    <ng-container *ngFor="let r of reminders | slice: 0:1; let i = index">
-        <div class="button-container" *ngIf="r.name != 'error'">
-            <img
-                    src="../../assets/img/add-reminder.png"
-                    (click)="goToAddReminder('/reminder')"
-                    alt="Add Reminder"
-            />
-            <div class="button-text">
-                <p>Add Reminder</p>
-            </div>
-        </div>
-    </ng-container>
-
-    <div class="row" style="margin-top: 5%">
-        <div class="container">
-            <div
-                    *ngFor="let r of reminders; let i = index"
-                    [class.active]="i == currentIndex"
-                    (mouseover)="setActiveReminder(reminder, i)"
-            >
-                <div
-                        class="col-sm-4 reminder-wrapper"
-                        id="{{ r.id }}"
-                        *ngIf="r.name != 'error'"
-                >
-                    <div class="media">
-                        <div class="media-body">
-                            <h4 class="media-heading">Name: {{ r.name }}</h4>
-                            <p>Description: {{ r.description }}</p>
-                            <p>Frequency: {{ r.frequency }}</p>
-                            <p>Date Created: {{ r.dateCreated }}</p>
-                            <p>Time To Remind: {{ r.timeToRemind }}</p>
-                            <p>Category: {{ r.reminderCategory }}</p>
-                            <button type="button" class="btn btn-danger btn-sm" (click)="deleteReminder(r)">Delete</button>
-                            <button type="button" class="btn btn-warning btn-sm" (click)="goToUpdate(r.id)">Update</button>
-                            <button type="button" class="btn btn-info btn-sm" (click)="sendReminder(r.id, r.sendType)">
-                                Send {{ r.sendType }}
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+  </ng-container>
+  <ng-container *ngFor="let r of reminders | slice: 0:1; let i = index">
+    <div class="button-container" *ngIf="r.name != 'error'">
+      <img
+        src="../../assets/img/add-reminder.png"
+        (click)="goToAddReminder('/reminder')"
+        alt="Add Reminder"
+      />
+      <div class="button-text">
+        <p>Add Reminder</p>
+      </div>
     </div>
+  </ng-container>
 
-    <router-outlet></router-outlet>
+  <div class="row" style="margin-top: 5%">
+    <div class="container">
+      <div
+        *ngFor="let r of reminders; let i = index"
+        [class.active]="i == currentIndex"
+        (mouseover)="setActiveReminder(reminder, i)"
+      >
+        <div
+          class="col-sm-4 reminder-wrapper"
+          id="{{ r.id }}"
+          *ngIf="r.name != 'error'"
+        >
+          <div class="media">
+            <div class="media-body">
+              <h4 class="media-heading">Name: {{ r.name }}</h4>
+              <p>Description: {{ r.description }}</p>
+              <p>Frequency: {{ r.frequency }}</p>
+              <p>Date Created: {{ r.dateCreated }}</p>
+              <p>Time To Remind: {{ r.timeToRemind }}</p>
+              <p>Category: {{ r.reminderCategory }}</p>
+              <button
+                type="button"
+                class="btn btn-danger btn-sm"
+                (click)="deleteReminder(r)"
+              >
+                Delete
+              </button>
+              <button
+                type="button"
+                class="btn btn-warning btn-sm"
+                (click)="goToUpdate(r.id)"
+              >
+                Update
+              </button>
+              <button
+                type="button"
+                class="btn btn-info btn-sm"
+                (click)="sendReminder(r.id, r.sendType)"
+              >
+                Send {{ r.sendType }}
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
+  <router-outlet></router-outlet>
 </html>
-

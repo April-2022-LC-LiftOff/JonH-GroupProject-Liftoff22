@@ -25,9 +25,10 @@ export class ReminderComponent implements OnInit {
 
   isLoading: boolean = false;
   frequencies = [
-    { id: 0, name: "Daily" },
-    { id: 1, name: "Weekly" },
-    { id: 2, name: "Monthly" }
+    { id: 0, name: "A Nudge" },
+    { id: 1, name: "Daily" },
+    { id: 2, name: "Weekly" },
+    { id: 3, name: "Monthly" }
   ];
 
   sendTypes = [
@@ -42,7 +43,7 @@ export class ReminderComponent implements OnInit {
     meridiem: ""
   }
 
-  hours = ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12'];
+  hours = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12'];
 
   minutes = ['00', '15', '30', '45'];
 
@@ -64,9 +65,6 @@ export class ReminderComponent implements OnInit {
      if (this.rTime.meridiem == 'PM') {
          this.rTime.hour = (parseInt(this.rTime.hour) + 12).toString(10);
      }
-     else {
-
-     }
      return this.rTime.hour + ":" + this.rTime.minute + ":00";
   }
 
@@ -82,6 +80,7 @@ export class ReminderComponent implements OnInit {
       },
       (e) => {
         console.error("Error adding reminder " + JSON.stringify(e));
+
         this.isLoading = false;
       }
     );

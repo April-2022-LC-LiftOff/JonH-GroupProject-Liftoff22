@@ -52,7 +52,7 @@ public class CustomTask extends TimerTask {
         int minutes =  parseInt(times.get(1).toString());
 
         //Transforms frequency to millis
-        long alertTime = 1;
+        long alertTime = 0;
         if (reminder.getFrequency() == "Daily") {
             alertTime = 1;
         } else if (reminder.getFrequency() == "Weekly") {

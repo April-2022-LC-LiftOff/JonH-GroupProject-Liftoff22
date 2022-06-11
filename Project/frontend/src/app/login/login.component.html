@@ -1,58 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
-<link href='https://fonts.googleapis.com/css?family=Overpass Mono' rel='stylesheet'>
+  <link
+    href="https://fonts.googleapis.com/css?family=Overpass Mono"
+    rel="stylesheet"
+  />
 
-<div class="error-box "*ngIf="errorBox.eMessage">
-<p>{{errorBox.eMessage}}</p>
-</div>
-
-<div class="container">
-  <h2>Login</h2>
-  <form
-          #form="ngForm"
-          method="post"
-          action="login"
-          #userlogin="ngForm"
-          (ngSubmit)="onLoginSubmit()"
-  >
-    <div class="form-group">
-      <label for="userName">User Name: </label>
-      <input
-              class="form-control"
-              type="text"
-              id="userName"
-              name="userName"
-              [(ngModel)]="user.username"
-              placeholder="User Name"
-              aria-required="true"
-              required
-      />
-    </div>
-
-  <div class="form-group">
-    <label for="password">Password: </label>
-    <input
-            class="form-control"
-            type="password"
-            id="password"
-            name="password"
-            [(ngModel)]="user.password"
-            placeholder="Password"
-            aria-required="true"
-            required
-    />
+  <div class="error-box" *ngIf="errorBox.eMessage">
+    <p>{{ errorBox.eMessage }}</p>
   </div>
 
-  <div class="form-group">
-    <button
-            role="button"
-            class="btn btn-primary"
-            type="submit"
-            [disabled]="!form.valid || isLoading"
+  <div class="container">
+    <h2>Login</h2>
+    <form
+      #form="ngForm"
+      method="post"
+      action="login"
+      #userlogin="ngForm"
+      (ngSubmit)="onLoginSubmit()"
     >
-      Login
-    </button>
+      <div class="form-group">
+        <label for="userName">User Name: </label>
+        <input
+          class="form-control"
+          type="text"
+          id="userName"
+          name="userName"
+          [(ngModel)]="user.username"
+          placeholder="User Name"
+          aria-required="true"
+          required
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="password">Password: </label>
+        <input
+          class="form-control"
+          type="password"
+          id="password"
+          name="password"
+          [(ngModel)]="user.password"
+          placeholder="Password"
+          aria-required="true"
+          required
+        />
+      </div>
+
+      <div class="form-group">
+        <button
+          role="button"
+          class="btn btn-primary"
+          type="submit"
+          [disabled]="!form.valid || isLoading"
+        >
+          Login
+        </button>
+      </div>
+    </form>
   </div>
-  </form>
-</div>
 </html>
