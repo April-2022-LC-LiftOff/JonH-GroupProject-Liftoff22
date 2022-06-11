@@ -5,6 +5,7 @@
     <div class="error-box" *ngIf="errorBox.eMessage">
         <p>{{ errorBox.eMessage }}</p>
     </div>
+
     <ng-container *ngIf="reminders != null">
         <div class="button-container">
             <img
@@ -27,8 +28,9 @@
             <div class="button-text">
                 <p>Add Reminder</p>
             </div>
-        </div>
-    </ng-container>
+
+</div>
+</ng-container>
 
     <div class="row" style="margin-top: 5%">
         <div class="container">
