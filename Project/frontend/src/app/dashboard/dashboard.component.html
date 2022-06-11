@@ -1,14 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
-<link href='https://fonts.googleapis.com/css?family=Overpass Mono' rel='stylesheet'>
-<link href='https://fonts.googleapis.com/css?family=Bai Jamjuree' rel='stylesheet'>
+  <link
+    href="https://fonts.googleapis.com/css?family=Overpass Mono"
+    rel="stylesheet"
+  />
+  <link
+    href="https://fonts.googleapis.com/css?family=Bai Jamjuree"
+    rel="stylesheet"
+  />
 
-  <div class="error-box" *ngIf="errorBox.eMessage">
+  <div class="error-box" *ngIf="errorBox.eMessage; else elseBlock">
     <p>{{ errorBox.eMessage }}</p>
   </div>
+
   <div class="container">
-    <ng-container *ngFor="let r of reminders | slice: 0:1; let i = index">
-      <div class="button-container" *ngIf="r.name != 'error'">
+    <ng-template #elseBlock>
+      <div class="button-container">
         <img
           src="../../assets/img/add-reminder.png"
           (click)="goToAddReminder('/reminder')"
@@ -18,9 +25,9 @@
           <p>Add Reminder</p>
         </div>
       </div>
-    </ng-container>
-
+    </ng-template>
   </div>
+
   <div class="row" style="margin-top: 5%">
     <div class="container">
       <div
