@@ -1,15 +1,22 @@
-<link href='https://fonts.googleapis.com/css?family=Overpass Mono' rel='stylesheet'>
+<link
+  href="https://fonts.googleapis.com/css?family=Overpass Mono"
+  rel="stylesheet"
+/>
 
-<nav role="navigation" class="topnav" id="myTopnav">
+<nav role="navigation" class="navbar topnav" id="myTopnav">
+  <div class="container-fluid">
     <div class="navbar-header">
-        <a class="navbar-brand" href="#">RMMBR</a>
+      <a class="navbar-brand" href="#">RMMBR</a>
     </div>
     <a role="link" routerLink="/register" routerLinkActive="active">Register</a>
     <a role="link" routerLink="/login" routerLinkActive="active">Login</a>
-    <div class="topnav-right">
+    <ul class="nav navbar-nav navbar-right">
+      <li>
         <a role="link" routerLink="/profile" routerLinkActive="active"
-        ><img src="../../assets/img/user-edit.png" alt="Update User Profile"
+          ><img src="../../assets/img/user-edit.png" alt="Update User Profile"
         /></a>
-        <app-logout></app-logout>
-    </div>
+      </li>
+      <li><app-logout></app-logout></li>
+    </ul>
+  </div>
 </nav>
