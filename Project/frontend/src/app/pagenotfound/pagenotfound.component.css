@@ -1,0 +1,68 @@
+html {
+
+    background-color: rgb(185, 193, 225);
+
+}
+
+body {
+
+    background-color: rgb(185, 193, 225);
+
+}
+
+h1 {
+
+    color: rgb(218, 75, 149);
+    font-size: 35px;
+    font-family: 'Overpass Mono';
+    border-radius: 25px;
+    background-color: rgb(255, 158, 187);
+    border-radius: 10px;
+    border: 4px;
+    border-color: rgb(218, 75, 149);
+    border-style: outset;
+    padding: 15px 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-right: 800px;
+    margin-left: 800px;
+
+}
+
+p {
+
+    color: rgb(75, 93, 186);
+    font-size: 25px;
+    font-family: 'Bai Jamjuree';
+    border-radius: 15px;
+    background-color: rgb(184, 242, 230);
+    border-radius: 10px;
+    border: 4px;
+    border-color: rgb(75, 93, 186);
+    border-style: outset;
+    padding: 15px 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-right: 650px;
+    margin-left: 650px;
+
+}
+
+a {
+
+    color: rgb(255, 189, 76);
+    font-size: 25px;
+    font-family: 'Bai Jamjuree';
+    border-radius: 15px;
+    background-color: rgb(255, 242, 201);
+    border-radius: 10px;
+    border: 4px;
+    border-color: rgb(255, 189, 76);
+    border-style: outset;
+    padding: 15px 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-right: 650px;
+    margin-left: 650px;
+
+}
