@@ -1,37 +1,48 @@
+html {
+  background-color: rgb(185, 193, 225);
+}
+
 .button-container {
-    border: none;
-    position: fixed;
-    right: 50%;
-    left: 50%;
+  border: none;
+  text-align: center;
+  right: 50%;
+  left: 50%;
 }
 
 .button-text {
-    display:inline-block;
-    text-align: justify;
+  display: inline-block;
+  text-align: justify;
 }
 
 .reminder-wrapper {
-display: inline-block;
-width: 150px;
-border: 2px solid black;
-padding: 15px;
-margin: 15px;
+  font-family: 'Bai Jamjuree';
+  text-align: center;
+  display: inline-block;
+  width: 200px;
+  color: rgb(112, 95, 179);
+  background-color: rgb(176, 173, 233);
+  border: 4px;
+  border-color: rgb(112, 95, 179);
+  border-style: outset;
+  border-radius: 5px;
+  padding: 15px;
+  margin: 15px;
 }
 
 .reminder-container {
-width:100%;
+  width: 100%;
 }
 
 .error-box {
-    overflow: hidden;
-    background-color: red;
+  overflow: hidden;
+  background-color: red;
 }
 
 .error-box p {
-    margin-top: 5px;
-    text-align: center;
-    font-size: 17px;
-    font-family:Verdana, Tahoma, sans-serif;
-    text-decoration: underline;
-    color: white;
+  margin-top: 5px;
+  text-align: center;
+  font-size: 17px;
+  font-family: Verdana, Tahoma, sans-serif;
+  text-decoration: underline;
+  color: white;
 }

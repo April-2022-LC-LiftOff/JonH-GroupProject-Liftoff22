@@ -1,0 +1,6 @@
+Reminder Summary:
+Name: two of them
+Description: TWO OF THEM!
+Frequency: Weekly
+Date Created: 2022-05-25
+Reminder Time: 14:15

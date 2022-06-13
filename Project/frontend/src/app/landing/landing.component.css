@@ -1,3 +1,21 @@
+html {
+
+    background-color: rgb(185, 193, 225);
+
+}
+
+h1 {
+
+    font-family: 'Overpass Mono';
+
+}
+
+p {
+
+    font-family: 'Bai Jamjuree';
+
+}
+
 body,
 html {
   height: 100%;
@@ -26,6 +44,7 @@ html {
 /* Place text in the middle of the image */
 .hero-text {
   text-align: center;
+  font-family: 'Overpass Mono';
   position: absolute;
   top: 50%;
   left: 50%;
