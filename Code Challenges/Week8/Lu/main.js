@@ -3,7 +3,7 @@ const charCount = (myChar, str) => {
     if (myChar.length!==1) {
         return 'Please enter single character as first parameter';
     }
-    if((myChar.match(/A-z/))=== null) {
+    if((myChar.match(/[A-z]/))=== null) {
         return 'Please only enter letters as the search character';
     }
     for (let char of str) {
@@ -14,4 +14,6 @@ const charCount = (myChar, str) => {
     return counter;
 }
 
+console.log(charCount('A', 'And another one'));
+console.log(charCount('a', 'And another one'));
 console.log(charCount('5', 'And another one'));
