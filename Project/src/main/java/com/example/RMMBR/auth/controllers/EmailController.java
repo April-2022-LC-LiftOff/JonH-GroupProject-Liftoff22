@@ -25,6 +25,12 @@ public class EmailController {
     @Autowired
     AuthenticationController authenticationController;
 
+    //Passcode to send emails
+    static String pass = "";
+
+    //Username to send emails
+    static String appEmail = "";
+
 
     static void sendMail(Reminder reminder, User user) throws AddressException, MessagingException, IOException, IOException {
 
@@ -38,12 +44,12 @@ public class EmailController {
             protected PasswordAuthentication getPasswordAuthentication() {
                 //Email username and Email password
                 //Ensure Less secure app access is on in Google Account > Security
-                return new PasswordAuthentication("automatic.imtatiar@gmail.com", "password");
+                return new PasswordAuthentication(appEmail, pass);
             }
         });
         Message msg = new MimeMessage(session);
         //Email username
-        msg.setFrom(new InternetAddress("automatic.imtatiar@gmail.com", false));
+        msg.setFrom(new InternetAddress(appEmail, false));
 
         //Recipient email
         msg.setRecipients(Message.RecipientType.TO, InternetAddress.parse(user.getEmail()));
@@ -84,7 +90,7 @@ public class EmailController {
     }
 
     static void sendSms(Reminder reminder, User user) throws AddressException, MessagingException, IOException, IOException {
-    String sms;
+        String sms;
         if (Objects.equals(user.getCarrier(), "Alltel")) {
             sms = user.getMobile() + "@message.alltel.com";
         } else if (Objects.equals(user.getCarrier(), "AT&T")) {
@@ -119,12 +125,12 @@ public class EmailController {
             protected PasswordAuthentication getPasswordAuthentication() {
                 //Email username and Email password
                 //Ensure Less secure app access is on in Google Account > Security
-                return new PasswordAuthentication("automatic.imtatiar@gmail.com", "password");
+                return new PasswordAuthentication(appEmail, pass);
             }
         });
         Message msg = new MimeMessage(session);
         //Email username
-        msg.setFrom(new InternetAddress("automatic.imtatiar@gmail.com", false));
+        msg.setFrom(new InternetAddress(appEmail, false));
 
         //Recipient email
         msg.setRecipients(Message.RecipientType.TO, InternetAddress.parse(sms));
